@@ -168,6 +168,7 @@ function buildMember(person) {
     slug: person.slug ?? undefined,
     name: person.name,
     nameKana: person.nameKana ?? undefined,
+    aliases: person.aliases?.length ? person.aliases : undefined,
     birthDate: person.birthDate ?? null,
     careerStartYear: person.careerStartYear ?? null,
     careerStartYearStatus: personCareerStartYearStatus(person),

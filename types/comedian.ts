@@ -85,6 +85,8 @@ export type Member = {
 
   name: string
   nameKana?: string
+  // 別名・旧芸名など（検索に使う）
+  aliases?: string[]
 
   birthDate?: string | null
 

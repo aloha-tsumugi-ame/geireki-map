@@ -6,7 +6,7 @@ type SearchIndexItem = {
   comedian: Comedian
   // 芸人名・読み・別名
   primaryKeys: string[]
-  // メンバー名・メンバーの読み
+  // メンバー名・メンバーの読み・メンバーの別名
   memberKeys: string[]
 }
 
@@ -21,7 +21,11 @@ const searchIndex: SearchIndexItem[] = comedians.map((comedian) => ({
     ...(comedian.aliases ?? []),
   ]),
   memberKeys: normalizeAll(
-    (comedian.members ?? []).flatMap((member) => [member.name, member.nameKana])
+    (comedian.members ?? []).flatMap((member) => [
+      member.name,
+      member.nameKana,
+      ...(member.aliases ?? []),
+    ])
   ),
 }))
 
