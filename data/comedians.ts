@@ -829,6 +829,15 @@ export const comedians: Comedian[] = [
               "birthDate",
             ],
           },
+          {
+            title: "名倉潤、“幻の相方”の変わらぬ思いに感激「自分ももっと頑張らないと」",
+            url: "https://www.oricon.co.jp/news/2081563/",
+            checkedAt: "2026-10-08",
+            type: "news",
+            fields: [
+              "careerStartYear",
+            ],
+          },
         ],
       },
       {
@@ -854,6 +863,15 @@ export const comedians: Comedian[] = [
               "birthDate",
             ],
           },
+          {
+            title: "原田泰造 - チケットぴあ",
+            url: "https://t.pia.jp/pia/artist/artists.do?afid=L14&artistsCd=29100002",
+            checkedAt: "2026-10-08",
+            type: "secondary_database",
+            fields: [
+              "careerStartYear",
+            ],
+          },
         ],
       },
       {
@@ -877,6 +895,15 @@ export const comedians: Comedian[] = [
             fields: [
               "nameKana",
               "birthDate",
+            ],
+          },
+          {
+            title: "堀内健 プロフィール - Sirabee",
+            url: "https://sirabee.com/tag/堀内健/",
+            checkedAt: "2026-10-08",
+            type: "news",
+            fields: [
+              "careerStartYear",
             ],
           },
         ],
@@ -2211,6 +2238,15 @@ export const comedians: Comedian[] = [
           "status",
         ],
       },
+      {
+        title: "バカリズムのプロフィール - ORICON NEWS",
+        url: "https://www.oricon.co.jp/prof/126517/",
+        checkedAt: "2026-10-08",
+        type: "secondary_database",
+        fields: [
+          "careerStartYear",
+        ],
+      },
     ],
   },
   {
@@ -2255,6 +2291,15 @@ export const comedians: Comedian[] = [
               "schoolGeneration",
             ],
           },
+          {
+            title: "芸人の芸歴・所属事務所・年齢 - 芸歴 DATABASE",
+            url: "https://geireki.tvshowdatabase.com/geinin/geirekigeininasc",
+            checkedAt: "2026-10-08",
+            type: "secondary_database",
+            fields: [
+              "careerStartYear",
+            ],
+          },
         ],
       },
       {
@@ -2280,6 +2325,15 @@ export const comedians: Comedian[] = [
               "birthDate",
               "school",
               "schoolGeneration",
+            ],
+          },
+          {
+            title: "芸人の芸歴・所属事務所・年齢 - 芸歴 DATABASE",
+            url: "https://geireki.tvshowdatabase.com/geinin/geirekigeininasc",
+            checkedAt: "2026-10-08",
+            type: "secondary_database",
+            fields: [
+              "careerStartYear",
             ],
           },
         ],
@@ -2665,6 +2719,15 @@ export const comedians: Comedian[] = [
               "schoolEquivalent",
             ],
           },
+          {
+            title: "「よしもとCA」所属の芸人の芸歴等 - 芸歴 DATABASE",
+            url: "https://geireki.tvshowdatabase.com/geinin/jimusyoyoshimoto",
+            checkedAt: "2026-10-08",
+            type: "secondary_database",
+            fields: [
+              "careerStartYear",
+            ],
+          },
         ],
       },
       {
@@ -2690,6 +2753,15 @@ export const comedians: Comedian[] = [
               "birthDate",
               "school",
               "schoolGeneration",
+            ],
+          },
+          {
+            title: "「よしもとCA」所属の芸人の芸歴等 - 芸歴 DATABASE",
+            url: "https://geireki.tvshowdatabase.com/geinin/jimusyoyoshimoto",
+            checkedAt: "2026-10-08",
+            type: "secondary_database",
+            fields: [
+              "careerStartYear",
             ],
           },
         ],
@@ -2753,6 +2825,15 @@ export const comedians: Comedian[] = [
               "schoolGeneration",
             ],
           },
+          {
+            title: "芸人の芸歴・所属事務所・年齢 - 芸歴 DATABASE",
+            url: "https://geireki.tvshowdatabase.com/geinin/geirekigeininasc",
+            checkedAt: "2026-10-08",
+            type: "secondary_database",
+            fields: [
+              "careerStartYear",
+            ],
+          },
         ],
       },
       {
@@ -2766,7 +2847,17 @@ export const comedians: Comedian[] = [
         schoolGeneration: null,
         schoolEquivalent: null,
         verificationStatus: "candidate_unverified",
-        sources: [],
+        sources: [
+          {
+            title: "芸人の芸歴・所属事務所・年齢 - 芸歴 DATABASE",
+            url: "https://geireki.tvshowdatabase.com/geinin/geirekigeininasc",
+            checkedAt: "2026-10-08",
+            type: "secondary_database",
+            fields: [
+              "careerStartYear",
+            ],
+          },
+        ],
         membershipStatus: "former",
         leftYear: 2026,
       },
@@ -3168,6 +3259,15 @@ export const comedians: Comedian[] = [
               "schoolGeneration",
             ],
           },
+          {
+            title: "結成20年、トータルテンボスが語った「モヤモヤ」からの脱出",
+            url: "https://www.excite.co.jp/news/article/RollingStone_28720/",
+            checkedAt: "2026-10-08",
+            type: "interview",
+            fields: [
+              "careerStartYear",
+            ],
+          },
         ],
       },
       {
@@ -3193,6 +3293,15 @@ export const comedians: Comedian[] = [
               "birthDate",
               "school",
               "schoolGeneration",
+            ],
+          },
+          {
+            title: "結成20年、トータルテンボスが語った「モヤモヤ」からの脱出",
+            url: "https://www.excite.co.jp/news/article/RollingStone_28720/",
+            checkedAt: "2026-10-08",
+            type: "interview",
+            fields: [
+              "careerStartYear",
             ],
           },
         ],
@@ -3259,6 +3368,15 @@ export const comedians: Comedian[] = [
               "schoolGeneration",
             ],
           },
+          {
+            title: "芸歴まとめ大辞典",
+            url: "https://geireki-matome.net/",
+            checkedAt: "2026-10-08",
+            type: "secondary_database",
+            fields: [
+              "careerStartYear",
+            ],
+          },
         ],
       },
       {
@@ -3284,6 +3402,15 @@ export const comedians: Comedian[] = [
               "birthDate",
               "school",
               "schoolGeneration",
+            ],
+          },
+          {
+            title: "芸歴まとめ大辞典",
+            url: "https://geireki-matome.net/",
+            checkedAt: "2026-10-08",
+            type: "secondary_database",
+            fields: [
+              "careerStartYear",
             ],
           },
         ],

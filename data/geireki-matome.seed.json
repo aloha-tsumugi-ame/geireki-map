@@ -34,6 +34,10 @@
       {
         "date": "2026-10-08",
         "note": "パイロット15組の careerStartYear 出典補完: seed 既存の Wikipedia「角田晃広」（本文に飯塚・豊本の1995年デビューの記載）を飯塚悟志・豊本明長の出典に追加。値の変更なし。"
+      },
+      {
+        "date": "2026-10-08",
+        "note": "パイロット15組の careerStartYear 出典補完（レビュー済みURLのみ）: ネプチューン3名・フットボールアワー・麒麟・笑い飯・トータルテンボス・東京ダイナマイト各2名・バカリズムに出典を追加。値の変更なし。"
       }
     ],
     "legacyRecords": {
@@ -3715,9 +3719,18 @@
             "nameKana",
             "birthDate"
           ]
+        },
+        {
+          "title": "名倉潤、“幻の相方”の変わらぬ思いに感激「自分ももっと頑張らないと」",
+          "url": "https://www.oricon.co.jp/news/2081563/",
+          "type": "news",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
         }
       ],
-      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 芸歴開始年を明記した出典なし（Wikipediaの前コンビ結成年・オーディション合格年は芸歴開始年として扱わない）。"
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。careerStartYear の根拠: 名倉潤、“幻の相方”の変わらぬ思いに感激「自分ももっと頑張らないと」。 参考: 芸歴開始年を明記した出典なし（Wikipediaの前コンビ結成年・オーディション合格年は芸歴開始年として扱わない）。"
     },
     {
       "id": "person-0166",
@@ -3743,9 +3756,18 @@
             "nameKana",
             "birthDate"
           ]
+        },
+        {
+          "title": "原田泰造 - チケットぴあ",
+          "url": "https://t.pia.jp/pia/artist/artists.do?afid=L14&artistsCd=29100002",
+          "type": "secondary_database",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
         }
       ],
-      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 芸歴開始年を明記した出典なし（Wikipediaの前コンビ結成年・オーディション合格年は芸歴開始年として扱わない）。"
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。careerStartYear の根拠: 原田泰造 - チケットぴあ。 参考: 芸歴開始年を明記した出典なし（Wikipediaの前コンビ結成年・オーディション合格年は芸歴開始年として扱わない）。"
     },
     {
       "id": "person-0167",
@@ -3771,9 +3793,18 @@
             "nameKana",
             "birthDate"
           ]
+        },
+        {
+          "title": "堀内健 プロフィール - Sirabee",
+          "url": "https://sirabee.com/tag/堀内健/",
+          "type": "news",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
         }
       ],
-      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 芸歴開始年を明記した出典なし（Wikipediaの前コンビ結成年・オーディション合格年は芸歴開始年として扱わない）。"
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。careerStartYear の根拠: 堀内健 プロフィール - Sirabee。 参考: 芸歴開始年を明記した出典なし（Wikipediaの前コンビ結成年・オーディション合格年は芸歴開始年として扱わない）。"
     },
     {
       "id": "person-0168",
@@ -3916,9 +3947,18 @@
             "school",
             "schoolGeneration"
           ]
+        },
+        {
+          "title": "芸人の芸歴・所属事務所・年齢 - 芸歴 DATABASE",
+          "url": "https://geireki.tvshowdatabase.com/geinin/geirekigeininasc",
+          "type": "secondary_database",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
         }
       ],
-      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 公式の「1994年 NSC大阪校 14期生」はNSC入学の記載で、芸歴開始年としては扱わない。"
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。careerStartYear の根拠: 芸人の芸歴・所属事務所・年齢 - 芸歴 DATABASE。 参考: 公式の「1994年 NSC大阪校 14期生」はNSC入学の記載で、芸歴開始年としては扱わない。"
     },
     {
       "id": "person-0172",
@@ -3946,9 +3986,18 @@
             "school",
             "schoolGeneration"
           ]
+        },
+        {
+          "title": "芸人の芸歴・所属事務所・年齢 - 芸歴 DATABASE",
+          "url": "https://geireki.tvshowdatabase.com/geinin/geirekigeininasc",
+          "type": "secondary_database",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
         }
       ],
-      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 公式の「1994年 NSC大阪校 14期生」はNSC入学の記載で、芸歴開始年としては扱わない。Wikipediaは学費未納による退学処分と記載。"
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。careerStartYear の根拠: 芸人の芸歴・所属事務所・年齢 - 芸歴 DATABASE。 参考: 公式の「1994年 NSC大阪校 14期生」はNSC入学の記載で、芸歴開始年としては扱わない。Wikipediaは学費未納による退学処分と記載。"
     },
     {
       "id": "person-0173",
@@ -3976,9 +4025,18 @@
             "school",
             "schoolGeneration"
           ]
+        },
+        {
+          "title": "芸歴まとめ大辞典",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
         }
       ],
-      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 芸歴開始年を明記した出典なし（Wikipediaインフォボックスの活動時期・芸歴まとめサイトは根拠にしない）。"
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。careerStartYear の根拠: 芸歴まとめ大辞典。 参考: 芸歴開始年を明記した出典なし（Wikipediaインフォボックスの活動時期・芸歴まとめサイトは根拠にしない）。"
     },
     {
       "id": "person-0174",
@@ -4006,9 +4064,18 @@
             "school",
             "schoolGeneration"
           ]
+        },
+        {
+          "title": "芸歴まとめ大辞典",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
         }
       ],
-      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 芸歴開始年を明記した出典なし（Wikipediaインフォボックスの活動時期・芸歴まとめサイトは根拠にしない）。"
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。careerStartYear の根拠: 芸歴まとめ大辞典。 参考: 芸歴開始年を明記した出典なし（Wikipediaインフォボックスの活動時期・芸歴まとめサイトは根拠にしない）。"
     },
     {
       "id": "person-0175",
@@ -4047,9 +4114,18 @@
           "fields": [
             "schoolEquivalent"
           ]
+        },
+        {
+          "title": "「よしもとCA」所属の芸人の芸歴等 - 芸歴 DATABASE",
+          "url": "https://geireki.tvshowdatabase.com/geinin/jimusyoyoshimoto",
+          "type": "secondary_database",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
         }
       ],
-      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 公式は「2001年 入社」（事務所所属）のみで芸歴開始年は記載なし。"
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。careerStartYear の根拠: 「よしもとCA」所属の芸人の芸歴等 - 芸歴 DATABASE。 参考: 公式は「2001年 入社」（事務所所属）のみで芸歴開始年は記載なし。"
     },
     {
       "id": "person-0176",
@@ -4077,9 +4153,18 @@
             "school",
             "schoolGeneration"
           ]
+        },
+        {
+          "title": "「よしもとCA」所属の芸人の芸歴等 - 芸歴 DATABASE",
+          "url": "https://geireki.tvshowdatabase.com/geinin/jimusyoyoshimoto",
+          "type": "secondary_database",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
         }
       ],
-      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 公式の「1995年 NSC大阪校 15期生」はNSC入学の記載。Wikipediaは自主退学と記載。"
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。careerStartYear の根拠: 「よしもとCA」所属の芸人の芸歴等 - 芸歴 DATABASE。 参考: 公式の「1995年 NSC大阪校 15期生」はNSC入学の記載。Wikipediaは自主退学と記載。"
     },
     {
       "id": "person-0177",
@@ -4269,9 +4354,18 @@
             "school",
             "schoolGeneration"
           ]
+        },
+        {
+          "title": "結成20年、トータルテンボスが語った「モヤモヤ」からの脱出",
+          "url": "https://www.excite.co.jp/news/article/RollingStone_28720/",
+          "type": "interview",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
         }
       ],
-      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 公式の「1997年 NSC東京校 3期生」はNSC入学の記載で、芸歴開始年としては扱わない。"
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。careerStartYear の根拠: 結成20年、トータルテンボスが語った「モヤモヤ」からの脱出。 参考: 公式の「1997年 NSC東京校 3期生」はNSC入学の記載で、芸歴開始年としては扱わない。"
     },
     {
       "id": "person-0182",
@@ -4299,9 +4393,18 @@
             "school",
             "schoolGeneration"
           ]
+        },
+        {
+          "title": "結成20年、トータルテンボスが語った「モヤモヤ」からの脱出",
+          "url": "https://www.excite.co.jp/news/article/RollingStone_28720/",
+          "type": "interview",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
         }
       ],
-      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 公式の「1997年 NSC東京校 3期生」はNSC入学の記載で、芸歴開始年としては扱わない。"
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。careerStartYear の根拠: 結成20年、トータルテンボスが語った「モヤモヤ」からの脱出。 参考: 公式の「1997年 NSC東京校 3期生」はNSC入学の記載で、芸歴開始年としては扱わない。"
     },
     {
       "id": "person-0183",
@@ -4329,9 +4432,18 @@
             "school",
             "schoolGeneration"
           ]
+        },
+        {
+          "title": "芸人の芸歴・所属事務所・年齢 - 芸歴 DATABASE",
+          "url": "https://geireki.tvshowdatabase.com/geinin/geirekigeininasc",
+          "type": "secondary_database",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
         }
       ],
-      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 芸歴開始年を明記した出典なし（Wikipediaは「浅草お兄さん会で活動開始」と年の記載なし）。"
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。careerStartYear の根拠: 芸人の芸歴・所属事務所・年齢 - 芸歴 DATABASE。 参考: 芸歴開始年を明記した出典なし（Wikipediaは「浅草お兄さん会で活動開始」と年の記載なし）。"
     },
     {
       "id": "person-0184",
@@ -4517,6 +4629,15 @@
             "agency",
             "status"
           ]
+        },
+        {
+          "title": "バカリズムのプロフィール - ORICON NEWS",
+          "url": "https://www.oricon.co.jp/prof/126517/",
+          "type": "secondary_database",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
         }
       ],
       "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典（マセキ芸能社）には careerStartYear の記載なし。旧コンビ「バカリズム」（1995年結成・2005年解散）の経歴は現行データモデルで表現できない。"
@@ -4641,7 +4762,17 @@
       "schoolGeneration": null,
       "schoolEquivalent": null,
       "verificationStatus": "candidate_unverified",
-      "sources": [],
+      "sources": [
+        {
+          "title": "芸人の芸歴・所属事務所・年齢 - 芸歴 DATABASE",
+          "url": "https://geireki.tvshowdatabase.com/geinin/geirekigeininasc",
+          "type": "secondary_database",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
+        }
+      ],
       "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。指示により追加した最小限のメンバーレコード（元メンバー: 2026年脱退）。生年月日・出典は pending に保存されていなかったため未登録。吉本公式の東京ダイナマイトのページは「2026年松田大輔が脱退」と記載。"
     }
   ],
