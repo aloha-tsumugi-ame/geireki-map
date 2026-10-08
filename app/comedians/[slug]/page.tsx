@@ -14,6 +14,11 @@ import {
 } from "@/lib/careerStart"
 import { formatMemberSchool, formatSchool } from "@/lib/formatSchool"
 import CareerPosition from "@/components/CareerPosition"
+import {
+  formatFormerMember,
+  getCurrentMembers,
+  getFormerMembers,
+} from "@/lib/members"
 
 export function generateStaticParams() {
   return getAllComedians().map((comedian) => ({
@@ -57,7 +62,9 @@ export default async function ComedianDetailPage({
   }
 
   const isGroup = Boolean(comedian.members)
-  const datedMembers = (comedian.members ?? []).filter(
+  const currentMembers = getCurrentMembers(comedian)
+  const formerMembers = getFormerMembers(comedian)
+  const datedMembers = currentMembers.filter(
     (m) => m.careerStartYear != null
   )
   const timelineYear = comedian.careerStartYear ?? datedMembers[0]?.careerStartYear
@@ -121,12 +128,12 @@ export default async function ComedianDetailPage({
           </>
         )}
 
-        {comedian.members && comedian.members.length > 0 && (
+        {currentMembers.length > 0 && (
           <>
             <dt className="text-neutral-500">メンバー</dt>
             <dd>
               <ul className="space-y-0.5">
-                {comedian.members.map((m) => (
+                {currentMembers.map((m) => (
                   <li key={m.id ?? m.name}>
                     {m.name}
                     <span className="text-xs text-neutral-500">
@@ -140,6 +147,25 @@ export default async function ComedianDetailPage({
                         ` ・ 養成所 ${formatMemberSchool(m)}`}
                       {m.schoolEquivalent && !comedian.schoolEquivalent &&
                         ` ・ ${m.schoolEquivalent}相当`}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </dd>
+          </>
+        )}
+
+        {formerMembers.length > 0 && (
+          <>
+            <dt className="text-neutral-500">元メンバー</dt>
+            <dd>
+              <ul className="space-y-0.5">
+                {formerMembers.map((m) => (
+                  <li key={m.id ?? m.name}>
+                    {formatFormerMember(m)}
+                    <span className="text-xs text-neutral-500">
+                      {" "}
+                      芸歴開始 {formatMemberCareerStartYear(m)}
                     </span>
                   </li>
                 ))}
@@ -183,10 +209,10 @@ export default async function ComedianDetailPage({
         )}
 
         {comedian.careerStartYear === null &&
-          comedian.members?.some((m) => m.careerStartYear == null) && (
+          currentMembers.some((m) => m.careerStartYear == null) && (
             <p className="mt-4 text-xs text-neutral-400">
               ※
-              {comedian.members
+              {currentMembers
                 .filter((m) => m.careerStartYear == null)
                 .map((m) => m.name)
                 .join("、")}

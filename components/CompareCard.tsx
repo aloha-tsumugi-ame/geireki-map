@@ -2,6 +2,7 @@ import type { Comedian } from "@/types/comedian"
 import { compareComedians } from "@/lib/compareComedians"
 import { formatCareerStartYear, formatMemberCareerStartYear } from "@/lib/careerStart"
 import { formatSchool } from "@/lib/formatSchool"
+import { getCurrentMembers } from "@/lib/members"
 
 export default function CompareCard({
   a,
@@ -18,7 +19,7 @@ export default function CompareCard({
       "メンバー",
       (c) =>
         c.members
-          ? c.members
+          ? getCurrentMembers(c)
               .map((m) => `${m.name}（${formatMemberCareerStartYear(m)}）`)
               .join("、")
           : "-",

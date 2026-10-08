@@ -99,7 +99,13 @@ export type Member = {
   // メンバー個人の情報の確認状況と出典
   verificationStatus?: VerificationStatus
   sources?: Source[]
+
+  // 所属状態。未指定は "current"。元メンバーも個人の芸歴情報は保持する（脱退で芸歴はリセットしない）。
+  membershipStatus?: MembershipStatus
+  leftYear?: number | null
 }
+
+export type MembershipStatus = "current" | "former"
 
 // 出典の優先順位（docs/data-policy.md）
 // A 一次情報: agency_official, school_official, award_official, official_interview

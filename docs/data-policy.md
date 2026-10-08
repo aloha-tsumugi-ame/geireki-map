@@ -83,6 +83,13 @@ Next.js UI
   - 一部メンバーの年が不明な場合も `null`（`mixedMemberCareerStartYears: null`）。
 - UI では、こうしたグループをメンバーごとの年で年別一覧・前後の芸人に表示し、グループ単位での芸歴比較は行わない。
 
+## 元メンバー（membershipStatus）
+
+- グループの `members` には過去メンバーを保持できる。`membershipStatus: "current"` / `"former"` で区別する（未指定は `current`）。元メンバーは `leftYear`（脱退年）を記録する。
+- 芸歴はグループ脱退によってリセットしない。元メンバーも個人の `careerStartYear` を保持する。
+- グループ単位の `careerStartYear`・`mixedMemberCareerStartYears`・養成所などの判定には現在メンバー（`current`）のみを使用する。
+- UI では現在メンバーと元メンバーを分けて表示し、検索では元メンバー名からもグループに到達できるようにする。
+
 ## 「同期」と「芸歴開始年が同じ」
 
 - 芸歴開始年が同じだけの場合は **「芸歴開始年が同じ芸人」** と表記する（「同年デビュー」とは書かない）。

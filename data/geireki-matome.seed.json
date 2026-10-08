@@ -6,8 +6,8 @@
     "primarySource": "https://geireki-matome.net/",
     "sourceCareerRuleUrl": "https://geireki-matome.net/geireki-info/",
     "sourceCoverageObservedThroughDebutYear": 2016,
-    "recordCount": 164,
-    "groupCount": 74,
+    "recordCount": 190,
+    "groupCount": 83,
     "warning": "This is a seed dataset extracted from a secondary reference site. Debut years are the source site's editorial career-year values and are not independently verified. Verify against official/primary sources before production publication.",
     "designNote": "Person-level careerStartYear is canonical in this seed. Do not derive a single group careerStartYear without an explicit policy when members have different career start years.",
     "revisions": [
@@ -22,6 +22,14 @@
       {
         "date": "2026-10-08",
         "note": "schemaVersion 3 へ移行: debutYear / debutYearStatus / debutType を careerStartYear / careerStartYearStatus / careerStartBasis に改名（値は変更なし）。既存レコードは従来の生成値（geireki-matome 由来は secondary_source_editorial、それ以外は unknown）を明記。groups の memberDebutYears 等と sources[].fields の debutYear も改名。"
+      },
+      {
+        "date": "2026-10-08",
+        "note": "パイロット追加: 15組（グループ9・ピン6）を出典付きで追加（group-0075〜0083 / person-0165〜0190）。careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値。"
+      },
+      {
+        "date": "2026-10-08",
+        "note": "Member に membershipStatus（current / former）と leftYear を追加。東京ダイナマイトの松田大輔を元メンバー（2026年脱退）とした。未指定のメンバーは current として扱う。"
       }
     ],
     "legacyRecords": {
@@ -3678,6 +3686,941 @@
       "verificationStatus": "candidate_unverified",
       "sources": [],
       "note": "メンバー構成の補完として追加。芸歴開始年・生年月日・養成所・出典は未調査のため null（推測で補完しない）。"
+    },
+    {
+      "id": "person-0165",
+      "slug": null,
+      "name": "名倉潤",
+      "nameKana": "ナグラジュン",
+      "careerStartYear": 1990,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "professional_activity",
+      "birthDate": "1968-11-04",
+      "group": "ネプチューン",
+      "school": null,
+      "schoolGeneration": null,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "名倉潤 | ワタナベエンターテインメント",
+          "url": "https://www.watanabepro.co.jp/mypage/30000002/",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 芸歴開始年を明記した出典なし（Wikipediaの前コンビ結成年・オーディション合格年は芸歴開始年として扱わない）。"
+    },
+    {
+      "id": "person-0166",
+      "slug": null,
+      "name": "原田泰造",
+      "nameKana": "ハラダタイゾウ",
+      "careerStartYear": 1990,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "professional_activity",
+      "birthDate": "1970-03-24",
+      "group": "ネプチューン",
+      "school": null,
+      "schoolGeneration": null,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "原田泰造 | ワタナベエンターテインメント",
+          "url": "https://www.watanabepro.co.jp/mypage/30000001/",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 芸歴開始年を明記した出典なし（Wikipediaの前コンビ結成年・オーディション合格年は芸歴開始年として扱わない）。"
+    },
+    {
+      "id": "person-0167",
+      "slug": null,
+      "name": "堀内健",
+      "nameKana": "ホリウチケン",
+      "careerStartYear": 1990,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "professional_activity",
+      "birthDate": "1969-11-28",
+      "group": "ネプチューン",
+      "school": null,
+      "schoolGeneration": null,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "堀内健 | ワタナベエンターテインメント",
+          "url": "https://www.watanabepro.co.jp/mypage/30000003/",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 芸歴開始年を明記した出典なし（Wikipediaの前コンビ結成年・オーディション合格年は芸歴開始年として扱わない）。"
+    },
+    {
+      "id": "person-0168",
+      "slug": null,
+      "name": "飯塚悟志",
+      "nameKana": "いいづかさとし",
+      "careerStartYear": 1995,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "professional_activity",
+      "birthDate": "1973-05-27",
+      "group": "東京03",
+      "school": "スクールJCA",
+      "schoolGeneration": 2,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "東京03 : JINRIKISHA OFFICIAL WEBSITE プロダクション人力舎オフィシャルウェブサイト",
+          "url": "https://www.p-jinriki.com/talent/tokyo03/",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate",
+            "school",
+            "schoolGeneration"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: アルファルファ（1995年）以前にも別コンビ歴があり、個人の芸歴開始年を明記した出典なし。"
+    },
+    {
+      "id": "person-0169",
+      "slug": null,
+      "name": "豊本明長",
+      "nameKana": "とよもとあきなが",
+      "careerStartYear": 1995,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "professional_activity",
+      "birthDate": "1975-06-06",
+      "group": "東京03",
+      "school": "スクールJCA",
+      "schoolGeneration": 3,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "東京03 : JINRIKISHA OFFICIAL WEBSITE プロダクション人力舎オフィシャルウェブサイト",
+          "url": "https://www.p-jinriki.com/talent/tokyo03/",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate",
+            "school",
+            "schoolGeneration"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: アルファルファ（1995年）以前にも別コンビ歴があり、個人の芸歴開始年を明記した出典なし。"
+    },
+    {
+      "id": "person-0170",
+      "slug": null,
+      "name": "角田晃広",
+      "nameKana": "かくたあきひろ",
+      "careerStartYear": 1996,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "professional_activity",
+      "birthDate": "1973-12-13",
+      "group": "東京03",
+      "school": null,
+      "schoolGeneration": null,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "東京03 : JINRIKISHA OFFICIAL WEBSITE プロダクション人力舎オフィシャルウェブサイト",
+          "url": "https://www.p-jinriki.com/talent/tokyo03/",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate"
+          ]
+        },
+        {
+          "title": "角田晃広 - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/角田晃広",
+          "type": "wikipedia",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。Wikipedia本文「角田の『プラスドライバー』は1996年デビュー」。"
+    },
+    {
+      "id": "person-0171",
+      "slug": null,
+      "name": "岩尾望",
+      "nameKana": "いわおのぞむ",
+      "careerStartYear": 1995,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "school_graduation",
+      "birthDate": "1975-12-19",
+      "group": "フットボールアワー",
+      "school": "大阪NSC",
+      "schoolGeneration": 14,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "岩尾望 プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=38",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate",
+            "school",
+            "schoolGeneration"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 公式の「1994年 NSC大阪校 14期生」はNSC入学の記載で、芸歴開始年としては扱わない。"
+    },
+    {
+      "id": "person-0172",
+      "slug": null,
+      "name": "後藤輝基",
+      "nameKana": "ごとうてるもと",
+      "careerStartYear": 1995,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "school_graduation",
+      "birthDate": "1974-06-18",
+      "group": "フットボールアワー",
+      "school": "大阪NSC",
+      "schoolGeneration": 14,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "後藤輝基 プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=39",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate",
+            "school",
+            "schoolGeneration"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 公式の「1994年 NSC大阪校 14期生」はNSC入学の記載で、芸歴開始年としては扱わない。Wikipediaは学費未納による退学処分と記載。"
+    },
+    {
+      "id": "person-0173",
+      "slug": null,
+      "name": "川島明",
+      "nameKana": "かわしまあきら",
+      "careerStartYear": 1998,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "school_graduation",
+      "birthDate": "1979-02-03",
+      "group": "麒麟",
+      "school": "大阪NSC",
+      "schoolGeneration": 20,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "川島明 プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=94",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate",
+            "school",
+            "schoolGeneration"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 芸歴開始年を明記した出典なし（Wikipediaインフォボックスの活動時期・芸歴まとめサイトは根拠にしない）。"
+    },
+    {
+      "id": "person-0174",
+      "slug": null,
+      "name": "田村裕",
+      "nameKana": "たむらひろし",
+      "careerStartYear": 1998,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "school_graduation",
+      "birthDate": "1979-09-03",
+      "group": "麒麟",
+      "school": "大阪NSC",
+      "schoolGeneration": 20,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "田村裕 プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=93",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate",
+            "school",
+            "schoolGeneration"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 芸歴開始年を明記した出典なし（Wikipediaインフォボックスの活動時期・芸歴まとめサイトは根拠にしない）。"
+    },
+    {
+      "id": "person-0175",
+      "slug": null,
+      "name": "哲夫",
+      "nameKana": "てつお",
+      "careerStartYear": 1996,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "indie_activity",
+      "birthDate": "1974-12-25",
+      "group": "笑い飯",
+      "school": null,
+      "schoolGeneration": null,
+      "schoolEquivalent": {
+        "school": "大阪NSC",
+        "generation": 18,
+        "relation": "同期扱い"
+      },
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "哲夫 プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=97",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate"
+          ]
+        },
+        {
+          "title": "哲夫 - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/哲夫",
+          "type": "wikipedia",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "schoolEquivalent"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 公式は「2001年 入社」（事務所所属）のみで芸歴開始年は記載なし。"
+    },
+    {
+      "id": "person-0176",
+      "slug": null,
+      "name": "西田幸治",
+      "nameKana": "にしだこうじ",
+      "careerStartYear": 1996,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "indie_activity",
+      "birthDate": "1974-05-28",
+      "group": "笑い飯",
+      "school": "大阪NSC",
+      "schoolGeneration": 15,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "西田幸治 プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=96",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate",
+            "school",
+            "schoolGeneration"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 公式の「1995年 NSC大阪校 15期生」はNSC入学の記載。Wikipediaは自主退学と記載。"
+    },
+    {
+      "id": "person-0177",
+      "slug": null,
+      "name": "伊達みきお",
+      "careerStartYear": 1998,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "first_stage",
+      "birthDate": "1974-09-05",
+      "group": "サンドウィッチマン",
+      "school": null,
+      "schoolGeneration": null,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "サンドウィッチマン｜GRAPE COMPANY- 株式会社グレープカンパニー",
+          "url": "https://grapecom.jp/talent_writer/sandwichman/",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "birthDate"
+          ]
+        },
+        {
+          "title": "サンドウィッチマン_(お笑いコンビ) - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/サンドウィッチマン_(お笑いコンビ)",
+          "type": "wikipedia",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
+        },
+        {
+          "title": "サンドウィッチマンが仙台で「もう辞めます」と告白した夜《先輩芸人が明かした苦悩》 | 文春オンライン",
+          "url": "https://bunshun.jp/articles/-/39424?page=2",
+          "type": "news",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。1998年7月12日の初舞台（Wikipedia・文春オンライン）。"
+    },
+    {
+      "id": "person-0178",
+      "slug": null,
+      "name": "富澤たけし",
+      "careerStartYear": 1998,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "first_stage",
+      "birthDate": "1974-04-30",
+      "group": "サンドウィッチマン",
+      "school": null,
+      "schoolGeneration": null,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "サンドウィッチマン｜GRAPE COMPANY- 株式会社グレープカンパニー",
+          "url": "https://grapecom.jp/talent_writer/sandwichman/",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "birthDate"
+          ]
+        },
+        {
+          "title": "サンドウィッチマン_(お笑いコンビ) - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/サンドウィッチマン_(お笑いコンビ)",
+          "type": "wikipedia",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
+        },
+        {
+          "title": "サンドウィッチマンが仙台で「もう辞めます」と告白した夜《先輩芸人が明かした苦悩》 | 文春オンライン",
+          "url": "https://bunshun.jp/articles/-/39424?page=2",
+          "type": "news",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。1998年7月12日の初舞台（Wikipedia・文春オンライン）。"
+    },
+    {
+      "id": "person-0179",
+      "slug": null,
+      "name": "タカ",
+      "nameKana": "たか",
+      "careerStartYear": 1995,
+      "careerStartYearStatus": "confirmed",
+      "careerStartBasis": "professional_debut",
+      "birthDate": "1976-04-03",
+      "group": "タカアンドトシ",
+      "school": null,
+      "schoolGeneration": null,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "タカ プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=201",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate"
+          ]
+        },
+        {
+          "title": "タカアンドトシ - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/タカアンドトシ",
+          "type": "wikipedia",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。Wikipedia「1995年4月 - 高校卒業後、吉本興業札幌事務所に入りプロとして活動を始め」。公式の「1994年 オーディション」は入社の記載。"
+    },
+    {
+      "id": "person-0180",
+      "slug": null,
+      "name": "トシ",
+      "nameKana": "とし",
+      "careerStartYear": 1995,
+      "careerStartYearStatus": "confirmed",
+      "careerStartBasis": "professional_debut",
+      "birthDate": "1976-07-17",
+      "group": "タカアンドトシ",
+      "school": null,
+      "schoolGeneration": null,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "トシ プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=202",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate"
+          ]
+        },
+        {
+          "title": "タカアンドトシ - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/タカアンドトシ",
+          "type": "wikipedia",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。Wikipedia「タカアンドトシ」の 1995年4月 プロとして活動開始 を採用（人間レビュー）。Wikipedia「トシ」の1994年オーディション合格の記載は採用しない。"
+    },
+    {
+      "id": "person-0181",
+      "slug": null,
+      "name": "藤田憲右",
+      "nameKana": "ふじたけんすけ",
+      "careerStartYear": 1998,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "school_graduation",
+      "birthDate": "1975-12-30",
+      "group": "トータルテンボス",
+      "school": "東京NSC",
+      "schoolGeneration": 3,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "藤田憲右 プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=204",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate",
+            "school",
+            "schoolGeneration"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 公式の「1997年 NSC東京校 3期生」はNSC入学の記載で、芸歴開始年としては扱わない。"
+    },
+    {
+      "id": "person-0182",
+      "slug": null,
+      "name": "大村朋宏",
+      "nameKana": "おおむらともひろ",
+      "careerStartYear": 1998,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "school_graduation",
+      "birthDate": "1975-04-03",
+      "group": "トータルテンボス",
+      "school": "東京NSC",
+      "schoolGeneration": 3,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "大村朋宏 プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=205",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate",
+            "school",
+            "schoolGeneration"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 公式の「1997年 NSC東京校 3期生」はNSC入学の記載で、芸歴開始年としては扱わない。"
+    },
+    {
+      "id": "person-0183",
+      "slug": null,
+      "name": "ハチミツ二郎",
+      "nameKana": "はちみつじろう",
+      "careerStartYear": 1996,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "professional_activity",
+      "birthDate": "1974-11-20",
+      "group": "東京ダイナマイト",
+      "school": "東京NSC",
+      "schoolGeneration": 1,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "ハチミツ二郎 プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=2805",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate",
+            "school",
+            "schoolGeneration"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: 芸歴開始年を明記した出典なし（Wikipediaは「浅草お兄さん会で活動開始」と年の記載なし）。"
+    },
+    {
+      "id": "person-0184",
+      "slug": "beat-takeshi",
+      "name": "ビートたけし",
+      "aliases": [
+        "北野武"
+      ],
+      "careerStartYear": 1972,
+      "careerStartYearStatus": "confirmed",
+      "careerStartBasis": "apprenticeship",
+      "birthDate": "1947-01-18",
+      "group": null,
+      "school": null,
+      "schoolGeneration": null,
+      "schoolEquivalent": null,
+      "agency": "T.Nゴン",
+      "status": "unknown",
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "ビートたけし - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/ビートたけし",
+          "type": "wikipedia",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "aliases",
+            "birthDate",
+            "agency",
+            "careerStartYear"
+          ]
+        },
+        {
+          "title": "ビートたけし - コトバンク（講談社 デジタル版 日本人名大辞典+Plus）",
+          "url": "https://kotobank.jp/word/%E3%81%B3%E3%83%BC%E3%81%A8%E3%81%9F%E3%81%91%E3%81%97-3216733",
+          "type": "news",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "birthDate",
+            "aliases"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。careerStartYear の根拠: Wikipedia「1972年夏、浅草フランス座で芸人見習い志願として…」（弟子入り＝師事の年そのものの明記はなし）。agency は Wikipedia（2018年4月以降 T.Nゴン）。公式プロフィール本文は未確認。"
+    },
+    {
+      "id": "person-0185",
+      "slug": "akashiya-sanma",
+      "name": "明石家さんま",
+      "nameKana": "あかしやさんま",
+      "aliases": [
+        "笑福亭さんま"
+      ],
+      "careerStartYear": 1974,
+      "careerStartYearStatus": "confirmed",
+      "careerStartBasis": "apprenticeship",
+      "birthDate": "1955-07-01",
+      "group": null,
+      "school": null,
+      "schoolGeneration": null,
+      "schoolEquivalent": null,
+      "agency": "吉本興業",
+      "status": "active",
+      "verificationStatus": "verified_multi_source",
+      "sources": [
+        {
+          "title": "明石家さんま プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=873",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate",
+            "careerStartYear",
+            "agency",
+            "status"
+          ]
+        },
+        {
+          "title": "明石家さんま - コトバンク（講談社 デジタル版 日本人名大辞典+Plus）",
+          "url": "https://kotobank.jp/word/%E6%98%8E%E7%9F%B3%E5%AE%B6%E3%81%95%E3%82%93%E3%81%BE-1048806",
+          "type": "news",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "birthDate",
+            "careerStartYear"
+          ]
+        },
+        {
+          "title": "明石家さんま - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/明石家さんま",
+          "type": "wikipedia",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "aliases",
+            "careerStartYear"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。1974年 二代目笑福亭松之助に入門（吉本公式・コトバンク・Wikipedia一致）。1976年の「落語家笑福亭さんまとしてデビュー」（コトバンク）は別の出来事。"
+    },
+    {
+      "id": "person-0186",
+      "slug": "shofukutei-tsurube",
+      "name": "笑福亭鶴瓶",
+      "nameKana": "しょうふくてい つるべ",
+      "careerStartYear": 1972,
+      "careerStartYearStatus": "confirmed",
+      "careerStartBasis": "apprenticeship",
+      "birthDate": "1951-12-23",
+      "group": null,
+      "school": null,
+      "schoolGeneration": null,
+      "schoolEquivalent": null,
+      "agency": "デンナーシステムズ / 松竹芸能",
+      "status": "active",
+      "verificationStatus": "verified_multi_source",
+      "sources": [
+        {
+          "title": "笑福亭鶴瓶 ｜松竹芸能株式会社",
+          "url": "https://www.shochikugeino.co.jp/talents/shoufukuteitsurube/",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate",
+            "careerStartYear",
+            "agency",
+            "status"
+          ]
+        },
+        {
+          "title": "笑福亭鶴瓶 | 株式会社デンナー",
+          "url": "https://denner.co.jp/artist/shofukutei-tsurube/",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "birthDate",
+            "careerStartYear",
+            "agency",
+            "status"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。1972年2月14日 六代目笑福亭松鶴に入門（松竹芸能・デンナー両公式）。所属はデンナーシステムズと松竹芸能の両方に公式プロフィールあり。"
+    },
+    {
+      "id": "person-0187",
+      "slug": "bakarhythm",
+      "name": "バカリズム",
+      "aliases": [
+        "升野英知"
+      ],
+      "careerStartYear": 1995,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "professional_debut",
+      "birthDate": "1975-11-28",
+      "group": null,
+      "school": "日本映画学校 俳優科",
+      "schoolGeneration": null,
+      "schoolEquivalent": null,
+      "agency": "マセキ芸能社",
+      "status": "active",
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "バカリズム プロフィール（マセキ芸能社）",
+          "url": "https://www.maseki.co.jp/talent/prof_print/profile_printout_url_7_938.pdf",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "aliases",
+            "birthDate",
+            "school"
+          ]
+        },
+        {
+          "title": "バカリズム | マセキ芸能社",
+          "url": "https://www.maseki.co.jp/talent/bakarhythm",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "agency",
+            "status"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典（マセキ芸能社）には careerStartYear の記載なし。旧コンビ「バカリズム」（1995年結成・2005年解散）の経歴は現行データモデルで表現できない。"
+    },
+    {
+      "id": "person-0188",
+      "slug": "gekidan-hitori",
+      "name": "劇団ひとり",
+      "nameKana": "げきだん ひとり",
+      "aliases": [
+        "川島省吾"
+      ],
+      "careerStartYear": 1993,
+      "careerStartYearStatus": "confirmed",
+      "careerStartBasis": "professional_debut",
+      "birthDate": "1977-02-02",
+      "group": null,
+      "school": null,
+      "schoolGeneration": null,
+      "schoolEquivalent": null,
+      "agency": "太田プロダクション",
+      "status": "active",
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "劇団ひとり | 太田プロダクション",
+          "url": "https://www.ohtapro.co.jp/talent/gekidanhitori.html",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "birthDate",
+            "careerStartYear",
+            "agency",
+            "status"
+          ]
+        },
+        {
+          "title": "川島省吾 | 太田プロダクション（2000年12月時点のアーカイブ）",
+          "url": "https://web.archive.org/web/20001213001800/http://www.ohtapro.co.jp/ohta_pro/talent/ka_syo/profile.html",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "aliases"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。太田プロ公式「1993年 デビュー」を採用（人間レビュー）。Wikipedia の「1996年、太田プロダクションに所属しデビュー」は採用しない。2000年に劇団ひとりとしてピン芸人に（公式）。"
+    },
+    {
+      "id": "person-0189",
+      "slug": "ito-asako",
+      "name": "いとうあさこ",
+      "aliases": [
+        "伊藤麻子"
+      ],
+      "careerStartYear": 1997,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "professional_debut",
+      "birthDate": "1970-06-10",
+      "group": null,
+      "school": null,
+      "schoolGeneration": null,
+      "schoolEquivalent": null,
+      "agency": "マセキ芸能社",
+      "status": "active",
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "いとうあさこ プロフィール（マセキ芸能社）",
+          "url": "https://www.maseki.co.jp/talent/prof_print/itohasako_prof.pdf",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "aliases",
+            "birthDate"
+          ]
+        },
+        {
+          "title": "タレント一覧 | マセキ芸能社",
+          "url": "https://www.maseki.co.jp/talent/",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "agency",
+            "status"
+          ]
+        },
+        {
+          "title": "えっ！この人がデビュー25周年？ | 神戸新聞NEXT",
+          "url": "https://www.kobe-np.co.jp/rentoku/omoshiro/202205/0015325370.shtml",
+          "type": "news",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
+        },
+        {
+          "title": "いとうあさこ - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/いとうあさこ",
+          "type": "wikipedia",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
+        }
+      ],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。1997年にコンビ「ネギねこ調査隊」のメンバーとしてデビュー（神戸新聞NEXT・Wikipedia）。2003年にコンビ解散後ピン芸人。"
+    },
+    {
+      "id": "person-0190",
+      "slug": null,
+      "name": "松田大輔",
+      "careerStartYear": 1996,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "professional_activity",
+      "birthDate": null,
+      "group": "東京ダイナマイト",
+      "membershipStatus": "former",
+      "leftYear": 2026,
+      "school": null,
+      "schoolGeneration": null,
+      "schoolEquivalent": null,
+      "verificationStatus": "candidate_unverified",
+      "sources": [],
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。指示により追加した最小限のメンバーレコード（元メンバー: 2026年脱退）。生年月日・出典は pending に保存されていなかったため未登録。吉本公式の東京ダイナマイトのページは「2026年松田大輔が脱退」と記載。"
     }
   ],
   "groups": [
@@ -5020,6 +5963,392 @@
       "derivedLatestCareerStartYear": 2011,
       "groupCareerYearPolicy": "same_as_members",
       "verificationStatus": "extracted_secondary"
+    },
+    {
+      "id": "group-0075",
+      "slug": "neptune",
+      "name": "ネプチューン",
+      "aliases": [
+        "ネプ"
+      ],
+      "members": [
+        "名倉潤",
+        "原田泰造",
+        "堀内健"
+      ],
+      "formationYear": null,
+      "agency": "ワタナベエンターテインメント",
+      "status": "active",
+      "verificationStatus": "conflict_needs_review",
+      "sources": [
+        {
+          "title": "ネプチューン | ワタナベエンターテインメント",
+          "url": "https://www.watanabepro.co.jp/mypage/3000002/",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "members",
+            "agency",
+            "status"
+          ]
+        },
+        {
+          "title": "ネプチューン_(お笑いトリオ) - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/ネプチューン_(お笑いトリオ)",
+          "type": "wikipedia",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "aliases",
+            "formationYear"
+          ]
+        },
+        {
+          "title": "90年代「ネプチューン」の快進撃を裏で支えた意外な人物 | FRIDAYデジタル",
+          "url": "https://friday.kodansha.co.jp/article/149266",
+          "type": "news",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "formationYear"
+          ]
+        },
+        {
+          "title": "ネプチューン | モデルプレス",
+          "url": "https://mdpr.jp/model/detail/2577",
+          "type": "news",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "formationYear"
+          ]
+        }
+      ],
+      "note": "formationYear: Wikipedia・FRIDAY等は1993年、モデルプレスは1994年で食い違うため未登録（多数決しない）。事務所公式に結成年の記載なし。"
+    },
+    {
+      "id": "group-0076",
+      "slug": "tokyo-03",
+      "name": "東京03",
+      "nameKana": "とうきょうゼロサン",
+      "members": [
+        "飯塚悟志",
+        "豊本明長",
+        "角田晃広"
+      ],
+      "formationYear": 2003,
+      "agency": "プロダクション人力舎",
+      "status": "active",
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "東京03 : JINRIKISHA OFFICIAL WEBSITE プロダクション人力舎オフィシャルウェブサイト",
+          "url": "https://www.p-jinriki.com/talent/tokyo03/",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "members",
+            "agency",
+            "status"
+          ]
+        },
+        {
+          "title": "東京03 - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/東京03",
+          "type": "wikipedia",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "formationYear"
+          ]
+        },
+        {
+          "title": "東京03 | モデルプレス",
+          "url": "https://mdpr.jp/model/detail/3003",
+          "type": "news",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "formationYear"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "group-0077",
+      "slug": "football-hour",
+      "name": "フットボールアワー",
+      "nameKana": "ふっとぼーるあわー",
+      "aliases": [
+        "フット"
+      ],
+      "members": [
+        "岩尾望",
+        "後藤輝基"
+      ],
+      "formationYear": 1999,
+      "agency": "吉本興業",
+      "status": "active",
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "フットボールアワー プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=037",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "members",
+            "formationYear",
+            "agency",
+            "status"
+          ]
+        },
+        {
+          "title": "フットボールアワー - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/フットボールアワー",
+          "type": "wikipedia",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "aliases"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "group-0078",
+      "slug": "kirin",
+      "name": "麒麟",
+      "nameKana": "きりん",
+      "aliases": [
+        "田村川島"
+      ],
+      "members": [
+        "川島明",
+        "田村裕"
+      ],
+      "formationYear": 1999,
+      "agency": "吉本興業",
+      "status": "active",
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "麒麟 プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=92",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "members",
+            "formationYear",
+            "agency",
+            "status"
+          ]
+        },
+        {
+          "title": "二十歳のとき、何をしていたか？／川島明 | POPEYE Web | ポパイウェブ",
+          "url": "https://popeyemagazine.jp/post-142335/",
+          "type": "interview",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "aliases"
+          ]
+        }
+      ],
+      "note": "吉本のグループページは「NSC大阪20期(1999年)」、メンバー個人ページは「1997年 NSC大阪校 20期生」と年が異なる（NSC年はデータに保持しない）。"
+    },
+    {
+      "id": "group-0079",
+      "slug": "waraimeshi",
+      "name": "笑い飯",
+      "nameKana": "わらいめし",
+      "members": [
+        "哲夫",
+        "西田幸治"
+      ],
+      "formationYear": 2000,
+      "agency": "吉本興業",
+      "status": "active",
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "笑い飯 プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=95",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "members",
+            "formationYear",
+            "agency",
+            "status"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "group-0080",
+      "slug": "sandwichman",
+      "name": "サンドウィッチマン",
+      "aliases": [
+        "親不孝",
+        "銭と拳"
+      ],
+      "members": [
+        "伊達みきお",
+        "富澤たけし"
+      ],
+      "formationYear": 1998,
+      "agency": "グレープカンパニー",
+      "status": "unknown",
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "サンドウィッチマン｜GRAPE COMPANY- 株式会社グレープカンパニー",
+          "url": "https://grapecom.jp/talent_writer/sandwichman/",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "members",
+            "agency"
+          ]
+        },
+        {
+          "title": "【サンドウィッチマン伊達みきおに関するご報告】｜GRAPE COMPANY- 株式会社グレープカンパニー",
+          "url": "https://grapecom.jp/information/news/sand-date-info20260828/",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "members",
+            "agency"
+          ]
+        },
+        {
+          "title": "サンドウィッチマン_(お笑いコンビ) - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/サンドウィッチマン_(お笑いコンビ)",
+          "type": "wikipedia",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "formationYear",
+            "aliases"
+          ]
+        }
+      ],
+      "note": "status: 2026-08-28 の事務所発表は伊達みきおの休養（当面は富澤たけし個人での活動）で、グループ全体の活動状態の根拠としては不十分なため unknown。"
+    },
+    {
+      "id": "group-0081",
+      "slug": "taka-and-toshi",
+      "name": "タカアンドトシ",
+      "nameKana": "たかあんどとし",
+      "aliases": [
+        "タカ&トシ"
+      ],
+      "members": [
+        "タカ",
+        "トシ"
+      ],
+      "formationYear": 1994,
+      "agency": "吉本興業",
+      "status": "active",
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "タカアンドトシ プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=200",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "members",
+            "formationYear",
+            "agency",
+            "status"
+          ]
+        },
+        {
+          "title": "タカアンドトシ - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/タカアンドトシ",
+          "type": "wikipedia",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "aliases",
+            "careerStartYear"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "group-0082",
+      "slug": "total-tenbosch",
+      "name": "トータルテンボス",
+      "nameKana": "とーたるてんぼす",
+      "members": [
+        "藤田憲右",
+        "大村朋宏"
+      ],
+      "formationYear": 1997,
+      "agency": "吉本興業",
+      "status": "active",
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "トータルテンボス プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=203",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "members",
+            "formationYear",
+            "agency",
+            "status"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "group-0083",
+      "slug": "tokyo-dynamite",
+      "name": "東京ダイナマイト",
+      "nameKana": "とうきょうだいなまいと",
+      "members": [
+        "ハチミツ二郎",
+        "松田大輔"
+      ],
+      "formationYear": 2001,
+      "agency": "吉本興業",
+      "status": "inactive",
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "東京ダイナマイト プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=2803",
+          "type": "agency_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "nameKana",
+            "members",
+            "formationYear",
+            "agency"
+          ]
+        },
+        {
+          "title": "東京ダイナマイト | コンビ情報 | M-1グランプリ 公式サイト",
+          "url": "https://www.m-1gp.com/combi/841.html",
+          "type": "award_official",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "formationYear"
+          ]
+        },
+        {
+          "title": "「東京ダイナマイト」3・24で活動休止していた | 日刊スポーツ",
+          "url": "https://www.nikkansports.com/entertainment/news/202404060000480.html",
+          "type": "news",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "status"
+          ]
+        }
+      ],
+      "note": "formationYear は二代目（ハチミツ二郎・松田大輔）の結成。松田大輔は2026年に脱退（吉本公式）のため membershipStatus: former。グループの芸歴開始年は現在メンバー（ハチミツ二郎）から求める。status: 2024年3月24日をもって漫才師としての活動休止（日刊スポーツ）。"
     }
   ]
 }

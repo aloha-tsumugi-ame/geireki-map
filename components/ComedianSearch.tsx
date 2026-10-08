@@ -4,6 +4,7 @@ import { useMemo, useState } from "react"
 import Link from "next/link"
 import { searchComedians } from "@/lib/searchComedians"
 import { formatCareerStartYear } from "@/lib/careerStart"
+import { getCurrentMembers, getFormerMembers } from "@/lib/members"
 
 export default function ComedianSearch() {
   const [keyword, setKeyword] = useState("")
@@ -41,7 +42,10 @@ export default function ComedianSearch() {
                 </span>
                 {comedian.members && comedian.members.length > 0 && (
                   <span className="block text-neutral-400 text-xs mt-0.5">
-                    {comedian.members.map((m) => m.name).join("、")}
+                    {[
+                      ...getCurrentMembers(comedian).map((m) => m.name),
+                      ...getFormerMembers(comedian).map((m) => `${m.name}（元メンバー）`),
+                    ].join("、")}
                   </span>
                 )}
               </Link>

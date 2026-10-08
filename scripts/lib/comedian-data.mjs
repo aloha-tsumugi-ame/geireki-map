@@ -63,6 +63,10 @@ export const SOURCE_TYPES = Object.keys(SOURCE_TIERS)
 
 export const STATUSES = ["active", "inactive", "disbanded", "unknown"]
 
+// グループメンバーの所属状態。未指定は current として扱う。
+export const MEMBERSHIP_STATUSES = ["current", "former"]
+export const isCurrentMember = (member) => member.membershipStatus !== "former"
+
 // 新規レコードの slug: 小文字ASCII・kebab-case
 export const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 // 自動採番風の slug（既存 id 形式）は新規レコードでは使わない
@@ -173,6 +177,9 @@ function buildMember(person) {
     schoolEquivalent: formatSchoolEquivalent(person.schoolEquivalent),
     verificationStatus: person.verificationStatus ?? undefined,
     sources: (person.sources ?? []).map(toSource),
+    // seed に明示がある場合のみ出力（未指定は current 扱い）
+    membershipStatus: person.membershipStatus ?? undefined,
+    leftYear: person.leftYear ?? undefined,
   }
 }
 
@@ -188,23 +195,25 @@ export function buildComedians(seed) {
       .filter(Boolean)
       .map(buildMember)
 
-    const { careerStartYear, mixed } = deriveGroupCareerStart(members.map((m) => m.careerStartYear))
+    // グループ単位の値（芸歴開始年・養成所など）は現在メンバーのみから求める。元メンバーは人物情報として保持する。
+    const current = members.filter(isCurrentMember)
+    const { careerStartYear, mixed } = deriveGroupCareerStart(current.map((m) => m.careerStartYear))
 
-    const schoolKeys = members.map((m) => [m.school, m.schoolGeneration])
+    const schoolKeys = current.map((m) => [m.school, m.schoolGeneration])
     const sameSchool = allSame(schoolKeys)
-    const equivalents = members.map((m) => m.schoolEquivalent)
+    const equivalents = current.map((m) => m.schoolEquivalent)
     const sameEquivalent = allSame(equivalents)
 
     let careerStartYearStatus = "unknown"
     let careerStartBasis
     if (careerStartYear != null) {
-      const statuses = members.map((m) => m.careerStartYearStatus)
+      const statuses = current.map((m) => m.careerStartYearStatus)
       careerStartYearStatus = statuses.every((s) => s === "confirmed")
         ? "confirmed"
         : statuses.includes("estimated")
           ? "estimated"
           : "secondary_source"
-      const bases = members.map((m) => m.careerStartBasis)
+      const bases = current.map((m) => m.careerStartBasis)
       careerStartBasis = allSame(bases) ? bases[0] : "unknown"
     }
 
@@ -508,6 +517,12 @@ export function validateSeed(seed, report) {
       report.error("seed-legacy-source-field", `${p.name}（${p.id}）: 旧形式の source がある（sources[] を使う）`, opts)
     }
     checkLegacyFieldNames(report, `${p.name}（${p.id}）`, p, opts)
+    if (p.membershipStatus != null && !MEMBERSHIP_STATUSES.includes(p.membershipStatus)) {
+      report.error("membership-status-invalid", `${p.name}（${p.id}）: membershipStatus が定義外: ${p.membershipStatus}`, opts)
+    }
+    if (p.membershipStatus != null && !p.group) {
+      report.error("membership-status-without-group", `${p.name}（${p.id}）: グループに属さない人物に membershipStatus がある`, opts)
+    }
     if (p.status != null && !STATUSES.includes(p.status)) {
       report.error("status-invalid", `${p.name}: status が定義外: ${p.status}`, opts)
     }
@@ -550,7 +565,9 @@ export function validateSeed(seed, report) {
       }
     }
     if (g.mixedMemberCareerStartYears !== undefined) {
-      const { mixed } = deriveGroupCareerStart(groupPeople.map((p) => p.careerStartYear ?? null))
+      const { mixed } = deriveGroupCareerStart(
+        groupPeople.filter(isCurrentMember).map((p) => p.careerStartYear ?? null)
+      )
       if ((g.mixedMemberCareerStartYears ?? null) !== mixed) {
         report.error(
           "seed-mixed-flag-mismatch",
@@ -637,24 +654,38 @@ export function validateComedians(entries, report, metadata) {
       report.error("group-members-empty", `${label}: members が0件`, opts)
       continue
     }
-    if (c.members.length === 1) {
-      report.warn("group-single-member", `${label}: members が1件のみ（コンビ・グループのメンバー欠落の可能性）`, opts)
+    const currentMembers = c.members.filter(isCurrentMember)
+    if (currentMembers.length === 0) {
+      report.error("group-no-current-member", `${label}: 現在メンバー（membershipStatus が former 以外）が0人`, opts)
+    }
+    if (currentMembers.length === 1) {
+      report.warn("group-single-member", `${label}: 現在メンバーが1人のみ（コンビ・グループのメンバー欠落の可能性）`, opts)
     }
     if (c.mixedMemberCareerStartYears === true && c.careerStartYear !== null) {
       report.error("mixed-group-has-career-start-year", `${label}: メンバー間で芸歴開始年が異なるのに group careerStartYear=${c.careerStartYear}`, opts)
     }
-    const derived = deriveGroupCareerStart(c.members.map((m) => m.careerStartYear ?? null))
+    // グループ単位の値は現在メンバーのみから求める（元メンバーを含めて計算していたら ERROR）
+    const derived = deriveGroupCareerStart(currentMembers.map((m) => m.careerStartYear ?? null))
+    const derivedWithFormer = deriveGroupCareerStart(c.members.map((m) => m.careerStartYear ?? null))
+    if (
+      currentMembers.length !== c.members.length &&
+      (c.careerStartYear !== derived.careerStartYear || (c.mixedMemberCareerStartYears ?? null) !== derived.mixed) &&
+      c.careerStartYear === derivedWithFormer.careerStartYear &&
+      (c.mixedMemberCareerStartYears ?? null) === derivedWithFormer.mixed
+    ) {
+      report.error("former-member-in-group-calculation", `${label}: グループの芸歴開始年の計算に元メンバーが含まれている`, opts)
+    }
     if ((c.mixedMemberCareerStartYears ?? null) !== derived.mixed) {
       report.error(
         "mixed-flag-inconsistent",
-        `${label}: mixedMemberCareerStartYears=${c.mixedMemberCareerStartYears} がメンバーの年から求めた値 ${derived.mixed} と不一致`,
+        `${label}: mixedMemberCareerStartYears=${c.mixedMemberCareerStartYears} が現在メンバーの年から求めた値 ${derived.mixed} と不一致`,
         opts
       )
     }
     if (c.careerStartYear !== derived.careerStartYear) {
       report.error(
         "group-career-start-year-inconsistent",
-        `${label}: group careerStartYear=${c.careerStartYear} がメンバーの年から求めた値 ${derived.careerStartYear} と不一致`,
+        `${label}: group careerStartYear=${c.careerStartYear} が現在メンバーの年から求めた値 ${derived.careerStartYear} と不一致`,
         opts
       )
     }
@@ -664,6 +695,18 @@ export function validateComedians(entries, report, metadata) {
 
     // メンバー個人
     for (const m of c.members) {
+      if (m.membershipStatus != null && !MEMBERSHIP_STATUSES.includes(m.membershipStatus)) {
+        report.error("membership-status-invalid", `${label} / ${m.name}: membershipStatus が定義外: ${m.membershipStatus}`, { legacy: isLegacy(m.id) })
+      }
+      if (m.membershipStatus === "former" && m.leftYear == null) {
+        report.warn("former-left-year-missing", `${label} / ${m.name}: 元メンバーだが leftYear がない`, { legacy: isLegacy(m.id) })
+      }
+      if (m.leftYear != null && !isValidYear(m.leftYear)) {
+        report.warn("left-year-invalid", `${label} / ${m.name}: leftYear が未来年または異常値: ${m.leftYear}`, { legacy: isLegacy(m.id) })
+      }
+      if (m.leftYear != null && isCurrentMember(m)) {
+        report.warn("left-year-on-current-member", `${label} / ${m.name}: 現在メンバーに leftYear がある`, { legacy: isLegacy(m.id) })
+      }
       const memberLabel = `${label} / ${m.name}`
       const memberOpts = { legacy: isLegacy(m.id) }
       if (!m.name?.trim()) report.error("member-name-missing", `${label}: メンバー名が空`, memberOpts)

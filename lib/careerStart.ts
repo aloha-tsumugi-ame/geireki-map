@@ -5,6 +5,7 @@ import type {
   Comedian,
   Member,
 } from "@/types/comedian"
+import { getCurrentMembers } from "@/lib/members"
 
 // 芸歴開始年 = プロの芸人としてのキャリアが始まった年（docs/data-policy.md「芸歴の定義」）
 
@@ -43,7 +44,7 @@ export function formatMemberCareerStartYear(member: Member) {
 
 // 芸歴開始年ごとの一覧・前後の芸人・芸歴開始年が同じ芸人で使う単位。
 // careerStartYear を持つ芸人はそのまま1件、careerStartYear が null のグループは
-// 芸歴開始年が判明しているメンバーごとに1件（グループへのリンク）として扱う。
+// 芸歴開始年が判明している現在メンバーごとに1件（グループへのリンク）として扱う。
 export type YearEntry = {
   comedian: Comedian
   member?: Member
@@ -54,7 +55,7 @@ const yearEntries: YearEntry[] = comedians.flatMap((comedian): YearEntry[] => {
   if (comedian.careerStartYear !== null) {
     return [{ comedian, year: comedian.careerStartYear }]
   }
-  return (comedian.members ?? []).flatMap((member) =>
+  return getCurrentMembers(comedian).flatMap((member) =>
     member.careerStartYear != null
       ? [{ comedian, member, year: member.careerStartYear }]
       : []
