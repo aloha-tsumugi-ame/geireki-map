@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { notFound, permanentRedirect } from "next/navigation"
+import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import type { Member } from "@/types/comedian"
 import {
@@ -22,10 +22,20 @@ import {
   getFormerMembers,
 } from "@/lib/members"
 
+// 静的書き出し（GitHub Pages）のため、ビルド時に全ページを生成し、それ以外は404にする
+export const dynamicParams = false
+
 export function generateStaticParams() {
-  return getAllComedians().map((comedian) => ({
-    slug: comedian.slug,
-  }))
+  const comedians = getAllComedians()
+  return [
+    ...comedians.map((comedian) => ({ slug: comedian.slug })),
+    // 旧来メンバー個人単位で登録していた芸人のURL（/comedians/person-xxxx）→ グループへ転送するページ
+    ...comedians.flatMap((comedian) =>
+      (comedian.members ?? []).flatMap((member) =>
+        member.id ? [{ slug: member.id }] : []
+      )
+    ),
+  ]
 }
 
 export async function generateMetadata({
@@ -37,7 +47,10 @@ export async function generateMetadata({
   const comedian = getComedian(slug)
 
   if (!comedian) {
-    return {}
+    const group = getComedianByMemberId(slug)
+    return group
+      ? { title: `${group.name}へ移動しました`, robots: { index: false } }
+      : {}
   }
 
   return {
@@ -56,9 +69,10 @@ export default async function ComedianDetailPage({
 
   if (!comedian) {
     // 旧来メンバー個人単位で登録していた芸人のURL（/comedians/person-xxxx）はグループへ
+    // 静的ホスティングではサーバーで転送できないため、meta refresh で転送する
     const group = getComedianByMemberId(slug)
     if (group) {
-      permanentRedirect(`/comedians/${group.slug}`)
+      return <LegacyRedirect to={`/comedians/${group.slug}/`} name={group.name} />
     }
     notFound()
   }
@@ -335,6 +349,19 @@ function MemberCard({
         {showSchool && <p>養成所 {formatMemberSchool(member)}</p>}
         {showEquivalent && <p>{member.schoolEquivalent}相当</p>}
       </div>
+    </div>
+  )
+}
+
+function LegacyRedirect({ to, name }: { to: string; name: string }) {
+  const href = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${to}`
+  return (
+    <div className="mx-auto max-w-5xl px-4 py-24 text-center">
+      <meta httpEquiv="refresh" content={`0;url=${href}`} />
+      <p className="text-sm text-muted">このページは移動しました。</p>
+      <Link href={to} className="mt-4 inline-block font-bold text-shu underline">
+        {name}のページへ
+      </Link>
     </div>
   )
 }

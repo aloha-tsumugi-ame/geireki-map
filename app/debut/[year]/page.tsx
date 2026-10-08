@@ -12,6 +12,9 @@ function getYears() {
   )
 }
 
+// 静的書き出し（GitHub Pages）のため、ビルド時に全ページを生成し、それ以外は404にする
+export const dynamicParams = false
+
 export function generateStaticParams() {
   return getYears().map((year) => ({ year: String(year) }))
 }
