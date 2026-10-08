@@ -10,12 +10,14 @@ function labelForOffset(offset: number) {
 
 export default function CareerNeighbors({
   groups,
+  baseYear,
 }: {
   groups: CareerNeighborGroup[]
+  baseYear: number
 }) {
   if (groups.length === 0) {
     return (
-      <p className="text-sm text-neutral-500">
+      <p className="rounded-2xl border border-dashed border-line px-4 py-6 text-center text-sm text-muted">
         前後2年以内に登録されている芸人はいません。
       </p>
     )
@@ -24,10 +26,19 @@ export default function CareerNeighbors({
   return (
     <div className="space-y-6">
       {groups.map((group) => (
-        <div key={group.offset}>
-          <h3 className="text-sm font-semibold text-neutral-600 mb-2">
-            {labelForOffset(group.offset)}
-          </h3>
+        <div key={group.offset} className="grid gap-3 sm:grid-cols-[8rem_1fr]">
+          <div className="flex items-baseline gap-2 sm:flex-col sm:gap-0.5">
+            <span
+              className={`inline-flex w-fit rounded-full px-2.5 py-0.5 text-xs font-bold ${
+                group.offset < 0 ? "bg-ink text-paper" : "bg-paper-deep text-ink-soft"
+              }`}
+            >
+              {labelForOffset(group.offset)}
+            </span>
+            <span className="font-display text-lg text-ink-soft">
+              {baseYear + group.offset}
+            </span>
+          </div>
           <div className="grid gap-2 sm:grid-cols-2">
             {group.entries.map((entry) => (
               <ComedianCard

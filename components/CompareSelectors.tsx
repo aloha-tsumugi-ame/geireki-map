@@ -21,35 +21,44 @@ export default function CompareSelectors({
     router.push(`/compare?${params.toString()}`)
   }
 
+  const sorted = [...comedians].sort((x, y) => x.name.localeCompare(y.name, "ja"))
+
   return (
-    <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
-      <select
-        value={first ?? ""}
-        onChange={(e) => updateParam("first", e.target.value)}
-        className="rounded-lg border border-black/20 px-4 py-2.5 text-sm min-w-48"
-      >
-        <option value="">芸人を選択</option>
-        {comedians.map((c) => (
-          <option key={c.id} value={c.slug}>
-            {c.name}
-          </option>
-        ))}
-      </select>
-
-      <span className="text-sm text-neutral-400 font-medium">VS</span>
-
-      <select
-        value={second ?? ""}
-        onChange={(e) => updateParam("second", e.target.value)}
-        className="rounded-lg border border-black/20 px-4 py-2.5 text-sm min-w-48"
-      >
-        <option value="">芸人を選択</option>
-        {comedians.map((c) => (
-          <option key={c.id} value={c.slug}>
-            {c.name}
-          </option>
-        ))}
-      </select>
+    <div className="grid items-center gap-3 rounded-3xl border border-line bg-card p-4 sm:grid-cols-[1fr_auto_1fr] sm:p-5">
+      <Select label="1組目" value={first} options={sorted} onChange={(v) => updateParam("first", v)} />
+      <span className="text-center font-display text-sm text-muted">VS</span>
+      <Select label="2組目" value={second} options={sorted} onChange={(v) => updateParam("second", v)} />
     </div>
+  )
+}
+
+function Select({
+  label,
+  value,
+  options,
+  onChange,
+}: {
+  label: string
+  value?: string
+  options: Comedian[]
+  onChange: (value: string) => void
+}) {
+  return (
+    <label className="block">
+      <span className="text-[11px] font-bold text-muted">{label}</span>
+      <select
+        value={value ?? ""}
+        onChange={(e) => onChange(e.target.value)}
+        className="mt-1 w-full cursor-pointer rounded-xl border-2 border-ink bg-paper px-4 py-3 text-sm font-bold outline-none focus:border-shu"
+      >
+        <option value="">芸人を選択</option>
+        {options.map((c) => (
+          <option key={c.id} value={c.slug}>
+            {c.name}
+            {c.careerStartYear ? `（${c.careerStartYear}）` : ""}
+          </option>
+        ))}
+      </select>
+    </label>
   )
 }

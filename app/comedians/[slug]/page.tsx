@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { notFound, permanentRedirect } from "next/navigation"
 import type { Metadata } from "next"
+import type { Member } from "@/types/comedian"
 import {
   getAllComedians,
   getComedian,
@@ -8,12 +9,13 @@ import {
 } from "@/lib/getComedian"
 import {
   CAREER_START_BASIS_LABELS,
-  CAREER_START_YEAR_STATUS_LABELS,
   formatMemberCareerStartYear,
   getNullCareerStartReason,
 } from "@/lib/careerStart"
 import { formatMemberSchool, formatSchool } from "@/lib/formatSchool"
+import { getCareerYears } from "@/lib/display"
 import CareerPosition from "@/components/CareerPosition"
+import { KindBadge, StatusBadge } from "@/components/Badges"
 import {
   formatFormerMember,
   getCurrentMembers,
@@ -68,207 +70,271 @@ export default async function ComedianDetailPage({
     (m) => m.careerStartYear != null
   )
   const timelineYear = comedian.careerStartYear ?? datedMembers[0]?.careerStartYear
+  const memberYearGroups = Array.from(
+    new Set(datedMembers.map((m) => m.careerStartYear as number))
+  ).map((year) => ({
+    year,
+    names: datedMembers.filter((m) => m.careerStartYear === year).map((m) => m.name),
+  }))
   const hasUnverifiedCareerStart =
     comedian.careerStartYearStatus === "secondary_source" ||
     comedian.careerStartYearStatus === "estimated" ||
     (comedian.careerStartYear === null && datedMembers.length > 0)
 
+  const facts: { label: string; value: string }[] = [
+    ...(isGroup
+      ? [{ label: "結成", value: comedian.formationYear ? `${comedian.formationYear}年` : "不明" }]
+      : []),
+    { label: "所属", value: comedian.agency ?? "不明" },
+    { label: "養成所", value: formatSchool(comedian) },
+    ...(comedian.schoolEquivalent
+      ? [{ label: "養成所の期相当", value: comedian.schoolEquivalent }]
+      : []),
+  ]
+
   return (
-    <div className="mx-auto max-w-4xl px-4 py-12">
-      <h1 className="text-2xl font-bold">{comedian.name}</h1>
-      {comedian.nameKana && (
-        <p className="text-sm text-neutral-500 mt-0.5">{comedian.nameKana}</p>
-      )}
+    <div>
+      {/* ヘッダー */}
+      <section className="bg-washi border-b border-line">
+        <div className="mx-auto grid max-w-5xl gap-8 px-4 py-12 md:grid-cols-[1fr_auto] md:items-end">
+          <div>
+            <Link href="/timeline" className="text-xs text-muted hover:text-shu">
+              ← タイムライン
+            </Link>
+            <div className="mt-4 flex items-center gap-2">
+              <KindBadge comedian={comedian} />
+            </div>
+            <h1 className="mt-3 font-display text-4xl leading-tight sm:text-5xl">
+              {comedian.name}
+            </h1>
+            {comedian.nameKana && (
+              <p className="mt-2 text-sm tracking-widest text-muted">{comedian.nameKana}</p>
+            )}
+          </div>
 
-      <dl className="mt-6 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 text-sm max-w-lg">
-        <dt className="text-neutral-500">芸歴開始</dt>
-        <dd>
-          {comedian.careerStartYear !== null ? (
-            <>
-              {comedian.careerStartYear}年
-              <span className="text-xs text-neutral-500">
-                （
-                {comedian.careerStartYearStatus
-                  ? CAREER_START_YEAR_STATUS_LABELS[comedian.careerStartYearStatus]
-                  : "未確認"}
-                ）
-              </span>
-            </>
-          ) : getNullCareerStartReason(comedian) === "mixed" ? (
-            "メンバーにより異なる"
-          ) : (
-            "不明"
-          )}
-        </dd>
-
-        {comedian.careerStartYear !== null && comedian.careerStartBasis && (
-          <>
-            <dt className="text-neutral-500">芸歴開始基準</dt>
-            <dd>{CAREER_START_BASIS_LABELS[comedian.careerStartBasis]}</dd>
-          </>
-        )}
-
-        {isGroup && (
-          <>
-            <dt className="text-neutral-500">結成</dt>
-            <dd>{comedian.formationYear ? `${comedian.formationYear}年` : "不明"}</dd>
-          </>
-        )}
-
-        <dt className="text-neutral-500">所属</dt>
-        <dd>{comedian.agency ?? "不明"}</dd>
-
-        <dt className="text-neutral-500">養成所</dt>
-        <dd>{formatSchool(comedian)}</dd>
-
-        {comedian.schoolEquivalent && (
-          <>
-            <dt className="text-neutral-500">養成所の期相当</dt>
-            <dd>{comedian.schoolEquivalent}</dd>
-          </>
-        )}
-
-        {currentMembers.length > 0 && (
-          <>
-            <dt className="text-neutral-500">メンバー</dt>
-            <dd>
-              <ul className="space-y-0.5">
-                {currentMembers.map((m) => (
-                  <li key={m.id ?? m.name}>
-                    {m.name}
-                    <span className="text-xs text-neutral-500">
-                      {" "}
-                      芸歴開始 {formatMemberCareerStartYear(m)}
-                      {m.careerStartYear != null &&
-                        m.careerStartBasis &&
-                        m.careerStartBasis !== "unknown" &&
-                        `（${CAREER_START_BASIS_LABELS[m.careerStartBasis]}）`}
-                      {(m.school || !comedian.school) &&
-                        ` ・ 養成所 ${formatMemberSchool(m)}`}
-                      {m.schoolEquivalent && !comedian.schoolEquivalent &&
-                        ` ・ ${m.schoolEquivalent}相当`}
+          <div className="w-full rounded-3xl border-2 border-ink bg-card p-6 shadow-[6px_6px_0_0_var(--color-ink)] md:w-72">
+            <p className="text-xs font-bold text-muted">芸歴開始</p>
+            {comedian.careerStartYear !== null ? (
+              <>
+                <p className="mt-1 font-display text-5xl text-shu">
+                  {comedian.careerStartYear}
+                  <span className="ml-1 font-sans text-base font-bold text-ink">年</span>
+                </p>
+                <p className="mt-2 text-sm font-bold">
+                  芸歴 {getCareerYears(comedian.careerStartYear)} 年目
+                  <span className="ml-1 text-xs font-normal text-muted">（目安）</span>
+                </p>
+                <div className="mt-3 flex flex-wrap items-center gap-2">
+                  <StatusBadge status={comedian.careerStartYearStatus} />
+                  {comedian.careerStartBasis && (
+                    <span className="text-xs text-muted">
+                      基準：{CAREER_START_BASIS_LABELS[comedian.careerStartBasis]}
                     </span>
-                  </li>
-                ))}
-              </ul>
-            </dd>
-          </>
-        )}
+                  )}
+                </div>
+              </>
+            ) : (
+              <>
+                <p className="mt-2 font-display text-xl">
+                  {getNullCareerStartReason(comedian) === "mixed"
+                    ? "メンバーにより異なる"
+                    : "不明"}
+                </p>
+                {isGroup && (
+                  <p className="mt-3 text-xs leading-relaxed text-muted">
+                    {getNullCareerStartReason(comedian) === "mixed"
+                      ? "メンバーごとに芸歴開始年が異なるため、グループとしての芸歴開始年は設定していません。"
+                      : "芸歴開始年が確認できていないメンバーがいるため、グループとしての芸歴開始年は設定していません。"}
+                  </p>
+                )}
+              </>
+            )}
+          </div>
+        </div>
+      </section>
 
-        {formerMembers.length > 0 && (
-          <>
-            <dt className="text-neutral-500">元メンバー</dt>
-            <dd>
-              <ul className="space-y-0.5">
-                {formerMembers.map((m) => (
-                  <li key={m.id ?? m.name}>
-                    {formatFormerMember(m)}
-                    <span className="text-xs text-neutral-500">
-                      {" "}
-                      芸歴開始 {formatMemberCareerStartYear(m)}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </dd>
-          </>
-        )}
-      </dl>
-
-      {comedian.careerStartYear === null && isGroup && (
-        <p className="mt-2 text-xs text-neutral-400 max-w-lg">
-          {getNullCareerStartReason(comedian) === "mixed"
-            ? "※メンバーごとに芸歴開始年が異なるため、グループとしての芸歴開始年は設定していません。"
-            : "※芸歴開始年が確認できていないメンバーがいるため、グループとしての芸歴開始年は設定していません。"}
-        </p>
-      )}
-
-      <section className="mt-12">
-        <h2 className="text-lg font-semibold mb-4">芸歴上の位置</h2>
-
-        {comedian.careerStartYear !== null ? (
-          <CareerPosition year={comedian.careerStartYear} excludeId={comedian.id} />
-        ) : datedMembers.length > 0 ? (
-          <div className="space-y-10">
-            {datedMembers.map((member) => (
-              <div key={member.id ?? member.name}>
-                <h3 className="text-base font-semibold mb-3">
-                  {member.name}（芸歴開始 {member.careerStartYear}年）を基準にした場合
-                </h3>
-                <CareerPosition
-                  year={member.careerStartYear as number}
-                  excludeId={comedian.id}
-                />
+      <div className="mx-auto max-w-5xl space-y-14 px-4 pt-10">
+        {/* 基本情報 */}
+        <section>
+          <dl className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {facts.map((fact) => (
+              <div key={fact.label} className="rounded-2xl border border-line bg-card px-4 py-3">
+                <dt className="text-[11px] font-bold text-muted">{fact.label}</dt>
+                <dd className="mt-1 font-bold">{fact.value}</dd>
               </div>
             ))}
-          </div>
-        ) : (
-          <p className="text-sm text-neutral-500">
-            芸歴開始年が不明なため表示できません。
-          </p>
+          </dl>
+        </section>
+
+        {/* メンバー */}
+        {(currentMembers.length > 0 || formerMembers.length > 0) && (
+          <section>
+            <SectionHeading title="メンバー" />
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {currentMembers.map((m) => (
+                <MemberCard
+                  key={m.id ?? m.name}
+                  member={m}
+                  showSchool={Boolean(m.school) || !comedian.school}
+                  showEquivalent={Boolean(m.schoolEquivalent) && !comedian.schoolEquivalent}
+                />
+              ))}
+            </div>
+            {formerMembers.length > 0 && (
+              <div className="mt-6">
+                <h3 className="text-xs font-bold text-muted">元メンバー</h3>
+                <ul className="mt-2 flex flex-wrap gap-2">
+                  {formerMembers.map((m) => (
+                    <li
+                      key={m.id ?? m.name}
+                      className="rounded-full border border-dashed border-ink/25 px-3 py-1.5 text-sm text-ink-soft"
+                    >
+                      {formatFormerMember(m)}
+                      <span className="ml-2 text-xs text-muted">
+                        芸歴開始 {formatMemberCareerStartYear(m)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </section>
         )}
 
-        {comedian.careerStartYear === null &&
-          currentMembers.some((m) => m.careerStartYear == null) && (
-            <p className="mt-4 text-xs text-neutral-400">
-              ※
-              {currentMembers
-                .filter((m) => m.careerStartYear == null)
-                .map((m) => m.name)
-                .join("、")}
-              は芸歴開始年が不明のため表示していません。
+        {/* 芸歴上の位置 */}
+        <section>
+          <SectionHeading title="芸歴上の位置" note="芸歴開始年が前後2年以内の芸人" />
+          <div className="mt-5">
+            {comedian.careerStartYear !== null ? (
+              <CareerPosition year={comedian.careerStartYear} excludeId={comedian.id} />
+            ) : memberYearGroups.length > 0 ? (
+              <div className="space-y-12">
+                {memberYearGroups.map((group) => (
+                  <div key={group.year}>
+                    <h3 className="mb-4 inline-flex flex-wrap items-center gap-x-2 rounded-2xl bg-ink px-4 py-1.5 text-sm font-bold text-paper">
+                      {group.names.join("・")}
+                      <span className="font-display text-kin">{group.year}</span>
+                      を基準にした場合
+                    </h3>
+                    <CareerPosition year={group.year} excludeId={comedian.id} />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="rounded-2xl border border-dashed border-line px-4 py-6 text-center text-sm text-muted">
+                芸歴開始年が不明なため表示できません。
+              </p>
+            )}
+
+            {comedian.careerStartYear === null &&
+              currentMembers.some((m) => m.careerStartYear == null) && (
+                <p className="mt-4 text-xs text-muted">
+                  ※
+                  {currentMembers
+                    .filter((m) => m.careerStartYear == null)
+                    .map((m) => m.name)
+                    .join("、")}
+                  は芸歴開始年が不明のため表示していません。
+                </p>
+              )}
+          </div>
+        </section>
+
+        {/* 操作 */}
+        <section className="flex flex-wrap gap-3">
+          <Link
+            href={timelineYear ? `/timeline#year-${timelineYear}` : "/timeline#year-unknown"}
+            className="inline-flex items-center gap-2 rounded-full border-2 border-ink bg-card px-5 py-2.5 text-sm font-bold transition-colors hover:bg-ink hover:text-paper"
+          >
+            タイムラインで見る
+          </Link>
+          <Link
+            href={`/compare?first=${comedian.slug}`}
+            className="inline-flex items-center gap-2 rounded-full bg-shu px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-shu-deep"
+          >
+            別の芸人と比較する <span aria-hidden="true">→</span>
+          </Link>
+        </section>
+
+        {/* 出典 */}
+        <section className="rounded-3xl border border-line bg-paper-deep/60 p-6">
+          <h2 className="text-sm font-bold">出典・芸歴の定義</h2>
+          {comedian.sources.length === 0 ? (
+            <p className="mt-3 text-xs text-muted">出典は未登録です。</p>
+          ) : (
+            <ul className="mt-3 space-y-1.5 text-xs text-ink-soft">
+              {comedian.sources.map((source, i) => (
+                <li key={i} className="flex gap-2">
+                  <span aria-hidden="true" className="text-shu">●</span>
+                  <span>
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline decoration-line underline-offset-2 hover:text-shu"
+                    >
+                      {source.title}
+                    </a>
+                    {source.checkedAt && (
+                      <span className="text-muted">（参照日: {source.checkedAt}）</span>
+                    )}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
+          {hasUnverifiedCareerStart && (
+            <p className="mt-4 text-xs leading-relaxed text-muted">
+              芸歴開始年は二次情報源の値で、公式情報による確認は済んでいません。
             </p>
           )}
-      </section>
-
-      <section className="mt-12 flex flex-wrap gap-3">
-        <Link
-          href={timelineYear ? `/timeline#year-${timelineYear}` : "/timeline#year-unknown"}
-          className="text-sm rounded-lg border border-black/15 px-4 py-2 hover:bg-neutral-50"
-        >
-          タイムラインを見る
-        </Link>
-        <Link
-          href={`/compare?first=${comedian.slug}`}
-          className="text-sm rounded-lg border border-black/15 px-4 py-2 hover:bg-neutral-50"
-        >
-          別の芸人と比較する
-        </Link>
-      </section>
-
-      <section className="mt-12 border-t border-black/10 pt-6">
-        <h2 className="text-sm font-semibold text-neutral-600">
-          出典・芸歴の定義
-        </h2>
-        {comedian.sources.length === 0 ? (
-          <p className="mt-2 text-xs text-neutral-500">出典は未登録です。</p>
-        ) : (
-          <ul className="mt-2 text-xs text-neutral-500 space-y-1">
-            {comedian.sources.map((source, i) => (
-              <li key={i}>
-                <a
-                  href={source.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:text-black"
-                >
-                  {source.title}
-                </a>
-                {source.checkedAt && `（参照日: ${source.checkedAt}）`}
-              </li>
-            ))}
-          </ul>
-        )}
-        {hasUnverifiedCareerStart && (
-          <p className="mt-3 text-xs text-neutral-400 leading-relaxed">
-            芸歴開始年は二次情報源の値で、公式情報による確認は済んでいません。
+          <p className="mt-2 text-xs leading-relaxed text-muted">
+            本サイトの芸歴の前後関係は芸歴開始年の差を示す独自の目安です。
+            実際の芸能界上の先輩後輩関係を断定するものではありません。
           </p>
-        )}
-        <p className="mt-3 text-xs text-neutral-400 leading-relaxed">
-          本サイトの芸歴の前後関係は芸歴開始年の差を示す独自の目安です。
-          実際の芸能界上の先輩後輩関係を断定するものではありません。
+        </section>
+      </div>
+    </div>
+  )
+}
+
+function SectionHeading({ title, note }: { title: string; note?: string }) {
+  return (
+    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b-2 border-ink pb-2">
+      <h2 className="font-display text-2xl">{title}</h2>
+      {note && <span className="text-xs text-muted">{note}</span>}
+    </div>
+  )
+}
+
+function MemberCard({
+  member,
+  showSchool,
+  showEquivalent,
+}: {
+  member: Member
+  showSchool: boolean
+  showEquivalent: boolean
+}) {
+  return (
+    <div className="rounded-2xl border border-line bg-card p-4">
+      <div className="flex items-start justify-between gap-3">
+        <span className="font-bold">{member.name}</span>
+        <span className="font-display text-xl text-shu">
+          {member.careerStartYear ?? "—"}
+        </span>
+      </div>
+      <div className="mt-2 space-y-0.5 text-xs text-muted">
+        <p>
+          芸歴開始 {formatMemberCareerStartYear(member)}
+          {member.careerStartYear != null &&
+            member.careerStartBasis &&
+            member.careerStartBasis !== "unknown" &&
+            `（${CAREER_START_BASIS_LABELS[member.careerStartBasis]}）`}
         </p>
-      </section>
+        {showSchool && <p>養成所 {formatMemberSchool(member)}</p>}
+        {showEquivalent && <p>{member.schoolEquivalent}相当</p>}
+      </div>
     </div>
   )
 }

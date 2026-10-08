@@ -5,6 +5,7 @@ import Link from "next/link"
 import { searchComedians } from "@/lib/searchComedians"
 import { formatCareerStartYear } from "@/lib/careerStart"
 import { getCurrentMembers, getFormerMembers } from "@/lib/members"
+import { KindBadge } from "@/components/Badges"
 
 export default function ComedianSearch() {
   const [keyword, setKeyword] = useState("")
@@ -13,18 +14,33 @@ export default function ComedianSearch() {
 
   return (
     <div className="relative">
-      <input
-        type="text"
-        value={keyword}
-        onChange={(event) => setKeyword(event.target.value)}
-        placeholder="芸人名を検索（例：千鳥）"
-        className="w-full rounded-lg border border-black/20 px-4 py-3 text-base outline-none focus:border-black/50"
-      />
+      <div className="relative">
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          className="pointer-events-none absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-muted"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+        >
+          <circle cx="11" cy="11" r="7" />
+          <path d="m20 20-3.5-3.5" />
+        </svg>
+        <input
+          type="text"
+          value={keyword}
+          onChange={(event) => setKeyword(event.target.value)}
+          placeholder="芸人名・メンバー名で検索（例：千鳥、岩井勇気）"
+          aria-label="芸人を検索"
+          className="w-full rounded-2xl border-2 border-ink bg-card py-4 pl-13 pr-5 text-base shadow-[4px_4px_0_0_var(--color-ink)] outline-none transition-shadow placeholder:text-muted focus:shadow-[6px_6px_0_0_var(--color-shu)]"
+        />
+      </div>
 
       {keyword.trim() && (
-        <div className="absolute z-20 mt-1 w-full rounded-lg border border-black/10 bg-white shadow-lg overflow-hidden">
+        <div className="absolute z-20 mt-3 w-full overflow-hidden rounded-2xl border border-line bg-card text-left shadow-xl">
           {results.length === 0 ? (
-            <div className="px-4 py-3 text-sm text-neutral-500">
+            <div className="px-5 py-4 text-sm text-muted">
               該当する芸人が見つかりませんでした
             </div>
           ) : (
@@ -32,22 +48,27 @@ export default function ComedianSearch() {
               <Link
                 key={comedian.id}
                 href={`/comedians/${comedian.slug}`}
-                className="block px-4 py-2.5 text-sm hover:bg-neutral-50 border-b border-black/5 last:border-b-0"
+                className="flex items-center gap-4 border-b border-line px-5 py-3 last:border-b-0 hover:bg-shu-soft/60"
               >
-                <span className="font-medium">{comedian.name}</span>
-                <span className="text-neutral-500 ml-2 text-xs">
-                  {comedian.careerStartYear !== null
-                    ? `芸歴開始 ${comedian.careerStartYear}年`
-                    : `芸歴開始 ${formatCareerStartYear(comedian)}`}
+                <span className="w-12 shrink-0 text-center font-display text-base text-shu">
+                  {comedian.careerStartYear ?? "—"}
                 </span>
-                {comedian.members && comedian.members.length > 0 && (
-                  <span className="block text-neutral-400 text-xs mt-0.5">
-                    {[
-                      ...getCurrentMembers(comedian).map((m) => m.name),
-                      ...getFormerMembers(comedian).map((m) => `${m.name}（元メンバー）`),
-                    ].join("、")}
+                <span className="min-w-0 flex-1">
+                  <span className="flex items-center gap-2">
+                    <span className="truncate font-bold">{comedian.name}</span>
+                    <KindBadge comedian={comedian} />
                   </span>
-                )}
+                  <span className="mt-0.5 block truncate text-xs text-muted">
+                    {comedian.members && comedian.members.length > 0
+                      ? [
+                          ...getCurrentMembers(comedian).map((m) => m.name),
+                          ...getFormerMembers(comedian).map((m) => `${m.name}（元メンバー）`),
+                        ].join("、")
+                      : comedian.careerStartYear !== null
+                        ? `芸歴開始 ${comedian.careerStartYear}年`
+                        : `芸歴開始 ${formatCareerStartYear(comedian)}`}
+                  </span>
+                </span>
               </Link>
             ))
           )}

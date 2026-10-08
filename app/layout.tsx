@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Dela_Gothic_One, Noto_Sans_JP } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// 本文: Noto Sans JP（可変フォント）。日本語グリフは unicode-range で必要な分だけ読み込まれる。
+const notoSansJp = Noto_Sans_JP({
+  variable: "--font-noto-sans-jp",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// 見出し・年号: Dela Gothic One（太い見出し用フォント）
+const delaGothic = Dela_Gothic_One({
+  variable: "--font-dela-gothic",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -27,7 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="ja"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${notoSansJp.variable} ${delaGothic.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Header />

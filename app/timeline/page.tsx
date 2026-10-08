@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { getUndatedComedians, getYearEntries } from "@/lib/careerStart"
 import CareerTimeline from "@/components/CareerTimeline"
+import PageHeader from "@/components/PageHeader"
 
 export const metadata: Metadata = {
   title: "芸歴タイムライン",
@@ -8,21 +9,40 @@ export const metadata: Metadata = {
 }
 
 export default function TimelinePage() {
-  return (
-    <div className="mx-auto max-w-2xl px-4 py-12">
-      <h1 className="text-2xl font-bold">芸歴タイムライン</h1>
-      <p className="mt-2 text-sm text-neutral-500">
-        芸歴開始年ごとに芸人を一覧できます
-      </p>
-      <p className="mt-1 text-xs text-neutral-400">
-        ※メンバーごとに芸歴開始年が異なるグループは、メンバー名を添えてそれぞれの年に表示しています
-      </p>
+  const entries = getYearEntries()
+  const decades = Array.from(
+    new Set(entries.map((e) => Math.floor(e.year / 10) * 10))
+  ).sort((a, b) => a - b)
 
-      <div className="mt-8">
-        <CareerTimeline
-          entries={getYearEntries()}
-          undated={getUndatedComedians()}
-        />
+  return (
+    <div>
+      <PageHeader
+        eyebrow="TIMELINE"
+        title="芸歴タイムライン"
+        description={
+          <>
+            <p>芸歴開始年ごとに芸人を一覧できます。年をクリックすると、その年に芸歴を始めた芸人の一覧へ移動します。</p>
+            <p className="mt-1 text-xs text-muted">
+              ※メンバーごとに芸歴開始年が異なるグループは、メンバー名を添えてそれぞれの年に表示しています
+            </p>
+          </>
+        }
+      >
+        <nav className="mt-6 flex flex-wrap gap-2">
+          {decades.map((decade) => (
+            <a
+              key={decade}
+              href={`#decade-${decade}`}
+              className="rounded-full border-2 border-ink bg-card px-3.5 py-1.5 font-display text-xs transition-colors hover:bg-ink hover:text-paper"
+            >
+              {decade}年代
+            </a>
+          ))}
+        </nav>
+      </PageHeader>
+
+      <div className="mx-auto max-w-5xl px-4 pt-10">
+        <CareerTimeline entries={entries} undated={getUndatedComedians()} />
       </div>
     </div>
   )
