@@ -6,8 +6,8 @@
     "primarySource": "https://geireki-matome.net/",
     "sourceCareerRuleUrl": "https://geireki-matome.net/geireki-info/",
     "sourceCoverageObservedThroughDebutYear": 2016,
-    "recordCount": 246,
-    "groupCount": 107,
+    "recordCount": 248,
+    "groupCount": 108,
     "warning": "This is a seed dataset extracted from a secondary reference site. Debut years are the source site's editorial career-year values and are not independently verified. Verify against official/primary sources before production publication.",
     "designNote": "Person-level careerStartYear is canonical in this seed. Do not derive a single group careerStartYear without an explicit policy when members have different career start years.",
     "revisions": [
@@ -46,6 +46,10 @@
       {
         "date": "2026-10-09",
         "note": "紅しょうが（group-0107 / person-0245〜0246）を人間レビュー済み確定データで追加。受賞歴の出典（THE W 2023）は現行スキーマに awards が無いため未追加。"
+      },
+      {
+        "date": "2026-10-09",
+        "note": "東京ホテイソン（group-0108 / person-0247〜0248）を人間レビュー済み確定データで追加。出典URLの utm_source パラメータは除去。"
       }
     ],
     "legacyRecords": {
@@ -7283,6 +7287,126 @@
         }
       ],
       "note": "careerStartYear: 吉本興業公式プロフィールの経歴に「2011年 稲田NSC大阪33期卒業」と明記（人間レビュー）。"
+    },
+    {
+      "id": "person-0247",
+      "slug": null,
+      "name": "たける",
+      "nameKana": "たける",
+      "careerStartYear": 2014,
+      "careerStartYearStatus": "confirmed",
+      "careerStartBasis": "first_stage",
+      "birthDate": "1995-03-24",
+      "group": "東京ホテイソン",
+      "membershipStatus": "current",
+      "leftYear": null,
+      "school": null,
+      "schoolGeneration": null,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "東京ホテイソン「たけるの声で絶対に売れる」確信を得た初舞台｜logirl",
+          "url": "https://tvablog.tv-asahi.co.jp/reading/logirl/649/",
+          "type": "interview",
+          "checkedAt": "2026-10-09",
+          "fields": [
+            "careerStartYear",
+            "careerStartBasis",
+            "members",
+            "careerHistory"
+          ]
+        },
+        {
+          "title": "東京ホテイソン｜M-1グランプリ公式サイト",
+          "url": "https://www.m-1gp.com/combi/357.html",
+          "type": "award_official",
+          "checkedAt": "2026-10-09",
+          "fields": [
+            "birthDate"
+          ]
+        },
+        {
+          "title": "東京ホテイソン｜GRAPE COMPANY",
+          "url": "https://grapecom.jp/talent_writer/tokyo-hoteison/",
+          "type": "agency_official",
+          "checkedAt": "2026-10-09",
+          "fields": [
+            "birthDate"
+          ]
+        }
+      ],
+      "note": "careerStartYear: 東京ホテイソンとしての初舞台（2014年9月21日、logirl インタビューで本人が明言）を採用（人間レビュー）。"
+    },
+    {
+      "id": "person-0248",
+      "slug": null,
+      "name": "ショーゴ",
+      "nameKana": "しょーご",
+      "careerStartYear": 2014,
+      "careerStartYearStatus": "confirmed",
+      "careerStartBasis": "first_stage",
+      "birthDate": "1994-02-01",
+      "group": "東京ホテイソン",
+      "membershipStatus": "current",
+      "leftYear": null,
+      "school": "NSC東京校",
+      "schoolGeneration": 20,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "東京ホテイソン「たけるの声で絶対に売れる」確信を得た初舞台｜logirl",
+          "url": "https://tvablog.tv-asahi.co.jp/reading/logirl/649/",
+          "type": "interview",
+          "checkedAt": "2026-10-09",
+          "fields": [
+            "careerStartYear",
+            "careerStartBasis",
+            "members",
+            "careerHistory"
+          ]
+        },
+        {
+          "title": "東京ホテイソン｜M-1グランプリ公式サイト",
+          "url": "https://www.m-1gp.com/combi/357.html",
+          "type": "award_official",
+          "checkedAt": "2026-10-09",
+          "fields": [
+            "birthDate"
+          ]
+        },
+        {
+          "title": "東京ホテイソン｜GRAPE COMPANY",
+          "url": "https://grapecom.jp/talent_writer/tokyo-hoteison/",
+          "type": "agency_official",
+          "checkedAt": "2026-10-09",
+          "fields": [
+            "birthDate"
+          ]
+        },
+        {
+          "title": "東京ホテイソン、極楽とんぼと“岡山旅”｜ORICON NEWS",
+          "url": "https://www.oricon.co.jp/news/2248898/full/",
+          "type": "news",
+          "checkedAt": "2026-10-09",
+          "fields": [
+            "school",
+            "schoolGeneration",
+            "careerHistory"
+          ]
+        },
+        {
+          "title": "卒業生の紹介｜NSC吉本総合芸能学院",
+          "url": "https://nsc.yoshimoto.co.jp/graduate/",
+          "type": "school_official",
+          "checkedAt": "2026-10-09",
+          "fields": [
+            "schoolGeneration"
+          ]
+        }
+      ],
+      "note": "careerStartYear: 東京ホテイソンとしての初舞台（2014年9月21日、logirl インタビューで本人が明言）を採用（人間レビュー）。NSC東京校20期に在籍したが約3カ月で退学しており卒業していない（期は本人の同期証言とNSC公式の20期掲載者からの判断）。芸歴開始の根拠は養成所卒業ではなく初舞台。"
     }
   ],
   "groups": [
@@ -10152,6 +10276,50 @@
         }
       ],
       "note": "メンバー間で芸歴開始年が異なる（稲田 2011・熊元 2013）ため、グループの careerStartYear は設定しない。結成年（2014年10月）は芸歴開始年とは別。"
+    },
+    {
+      "id": "group-0108",
+      "slug": "tokyo-hoteison",
+      "name": "東京ホテイソン",
+      "nameKana": "とうきょうほていそん",
+      "members": [
+        "たける",
+        "ショーゴ"
+      ],
+      "formationYear": 2015,
+      "agency": "グレープカンパニー",
+      "status": "active",
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "東京ホテイソン｜M-1グランプリ公式サイト",
+          "url": "https://www.m-1gp.com/combi/357.html",
+          "type": "award_official",
+          "checkedAt": "2026-10-09",
+          "fields": [
+            "name",
+            "nameKana",
+            "formationYear",
+            "agency",
+            "members",
+            "birthDate"
+          ]
+        },
+        {
+          "title": "東京ホテイソン｜GRAPE COMPANY",
+          "url": "https://grapecom.jp/talent_writer/tokyo-hoteison/",
+          "type": "agency_official",
+          "checkedAt": "2026-10-09",
+          "fields": [
+            "name",
+            "agency",
+            "members",
+            "birthDate",
+            "status"
+          ]
+        }
+      ],
+      "note": "2014年: 2人でライブ活動開始・初舞台（芸歴開始）／2015年: 公式上の結成年（M-1公式 2015年4月1日）。formationYear と careerStartYear は別概念。"
     }
   ]
 }
