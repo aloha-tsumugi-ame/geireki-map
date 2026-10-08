@@ -6,8 +6,8 @@
     "primarySource": "https://geireki-matome.net/",
     "sourceCareerRuleUrl": "https://geireki-matome.net/geireki-info/",
     "sourceCoverageObservedThroughDebutYear": 2016,
-    "recordCount": 244,
-    "groupCount": 106,
+    "recordCount": 246,
+    "groupCount": 107,
     "warning": "This is a seed dataset extracted from a secondary reference site. Debut years are the source site's editorial career-year values and are not independently verified. Verify against official/primary sources before production publication.",
     "designNote": "Person-level careerStartYear is canonical in this seed. Do not derive a single group careerStartYear without an explicit policy when members have different career start years.",
     "revisions": [
@@ -42,6 +42,10 @@
       {
         "date": "2026-10-08",
         "note": "Batch 1: 30組（ピン7・グループ23）を人間レビュー済み確定データで追加（person-0191〜person-0244 / group-0084〜group-0106）。出典タイトルは媒体名と対象の説明ラベル。"
+      },
+      {
+        "date": "2026-10-09",
+        "note": "紅しょうが（group-0107 / person-0245〜0246）を人間レビュー済み確定データで追加。受賞歴の出典（THE W 2023）は現行スキーマに awards が無いため未追加。"
       }
     ],
     "legacyRecords": {
@@ -7183,6 +7187,102 @@
           ]
         }
       ]
+    },
+    {
+      "id": "person-0245",
+      "slug": null,
+      "name": "熊元プロレス",
+      "nameKana": "くまもとぷろれす",
+      "careerStartYear": 2013,
+      "careerStartYearStatus": "confirmed",
+      "careerStartBasis": "school_graduation",
+      "birthDate": "1990-11-30",
+      "group": "紅しょうが",
+      "membershipStatus": "current",
+      "leftYear": null,
+      "school": "NSC大阪校",
+      "schoolGeneration": 35,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "紅しょうが プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=6365",
+          "type": "agency_official",
+          "checkedAt": "2026-10-09",
+          "fields": [
+            "birthDate",
+            "school",
+            "schoolGeneration",
+            "careerStartYear",
+            "careerStartBasis"
+          ]
+        },
+        {
+          "title": "熊元プロレス プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=6366",
+          "type": "agency_official",
+          "checkedAt": "2026-10-09",
+          "fields": [
+            "name",
+            "nameKana",
+            "birthDate",
+            "agency",
+            "school",
+            "schoolGeneration",
+            "status"
+          ]
+        }
+      ],
+      "note": "careerStartYear: 吉本興業公式プロフィールの経歴に「2013年 熊元NSC大阪35期卒業」と明記（人間レビュー）。"
+    },
+    {
+      "id": "person-0246",
+      "slug": null,
+      "name": "稲田美紀",
+      "nameKana": "いなだみき",
+      "careerStartYear": 2011,
+      "careerStartYearStatus": "confirmed",
+      "careerStartBasis": "school_graduation",
+      "birthDate": "1989-01-30",
+      "group": "紅しょうが",
+      "membershipStatus": "current",
+      "leftYear": null,
+      "school": "NSC大阪校",
+      "schoolGeneration": 33,
+      "schoolEquivalent": null,
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "紅しょうが プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=6365",
+          "type": "agency_official",
+          "checkedAt": "2026-10-09",
+          "fields": [
+            "birthDate",
+            "school",
+            "schoolGeneration",
+            "careerStartYear",
+            "careerStartBasis"
+          ]
+        },
+        {
+          "title": "稲田美紀 プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=6367",
+          "type": "agency_official",
+          "checkedAt": "2026-10-09",
+          "fields": [
+            "name",
+            "nameKana",
+            "birthDate",
+            "agency",
+            "school",
+            "schoolGeneration",
+            "status"
+          ]
+        }
+      ],
+      "note": "careerStartYear: 吉本興業公式プロフィールの経歴に「2011年 稲田NSC大阪33期卒業」と明記（人間レビュー）。"
     }
   ],
   "groups": [
@@ -10016,6 +10116,42 @@
         }
       ],
       "note": "formationYear は公式プロフィールの2012年5月結成を採用。学生時代（2011年〜）から同じ2人で活動していた履歴あり。学生時代の旧コンビは元メンバーとして登録しない。"
+    },
+    {
+      "id": "group-0107",
+      "slug": "beni-shoga",
+      "name": "紅しょうが",
+      "nameKana": "べにしょうが",
+      "members": [
+        "熊元プロレス",
+        "稲田美紀"
+      ],
+      "formationYear": 2014,
+      "agency": "吉本興業",
+      "status": "active",
+      "verificationStatus": "official_single_source",
+      "sources": [
+        {
+          "title": "紅しょうが プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=6365",
+          "type": "agency_official",
+          "checkedAt": "2026-10-09",
+          "fields": [
+            "name",
+            "nameKana",
+            "formationYear",
+            "agency",
+            "members",
+            "birthDate",
+            "school",
+            "schoolGeneration",
+            "careerStartYear",
+            "careerStartBasis",
+            "status"
+          ]
+        }
+      ],
+      "note": "メンバー間で芸歴開始年が異なる（稲田 2011・熊元 2013）ため、グループの careerStartYear は設定しない。結成年（2014年10月）は芸歴開始年とは別。"
     }
   ]
 }
