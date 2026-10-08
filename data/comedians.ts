@@ -2415,6 +2415,15 @@ export const comedians: Comedian[] = [
               "schoolGeneration",
             ],
           },
+          {
+            title: "角田晃広 - Wikipedia",
+            url: "https://ja.wikipedia.org/wiki/角田晃広",
+            checkedAt: "2026-10-08",
+            type: "wikipedia",
+            fields: [
+              "careerStartYear",
+            ],
+          },
         ],
       },
       {
@@ -2440,6 +2449,15 @@ export const comedians: Comedian[] = [
               "birthDate",
               "school",
               "schoolGeneration",
+            ],
+          },
+          {
+            title: "角田晃広 - Wikipedia",
+            url: "https://ja.wikipedia.org/wiki/角田晃広",
+            checkedAt: "2026-10-08",
+            type: "wikipedia",
+            fields: [
+              "careerStartYear",
             ],
           },
         ],

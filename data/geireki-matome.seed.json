@@ -30,6 +30,10 @@
       {
         "date": "2026-10-08",
         "note": "Member に membershipStatus（current / former）と leftYear を追加。東京ダイナマイトの松田大輔を元メンバー（2026年脱退）とした。未指定のメンバーは current として扱う。"
+      },
+      {
+        "date": "2026-10-08",
+        "note": "パイロット15組の careerStartYear 出典補完: seed 既存の Wikipedia「角田晃広」（本文に飯塚・豊本の1995年デビューの記載）を飯塚悟志・豊本明長の出典に追加。値の変更なし。"
       }
     ],
     "legacyRecords": {
@@ -3797,9 +3801,18 @@
             "school",
             "schoolGeneration"
           ]
+        },
+        {
+          "title": "角田晃広 - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/角田晃広",
+          "type": "wikipedia",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
         }
       ],
-      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: アルファルファ（1995年）以前にも別コンビ歴があり、個人の芸歴開始年を明記した出典なし。"
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。careerStartYear の根拠: Wikipedia「角田晃広」本文「飯塚と豊本は『アルファルファ』として1995年にデビュー」。 参考: アルファルファ（1995年）以前にも別コンビ歴があり、個人の芸歴開始年を明記した出典なし。"
     },
     {
       "id": "person-0169",
@@ -3827,9 +3840,18 @@
             "school",
             "schoolGeneration"
           ]
+        },
+        {
+          "title": "角田晃広 - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/角田晃広",
+          "type": "wikipedia",
+          "checkedAt": "2026-10-08",
+          "fields": [
+            "careerStartYear"
+          ]
         }
       ],
-      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。保存済みの出典には careerStartYear の根拠となる記載なし。 参考: アルファルファ（1995年）以前にも別コンビ歴があり、個人の芸歴開始年を明記した出典なし。"
+      "note": "careerStartYear / careerStartBasis / careerStartYearStatus は人間レビューによる確定値（2026-10-08 指示）。careerStartYear の根拠: Wikipedia「角田晃広」本文「飯塚と豊本は『アルファルファ』として1995年にデビュー」。 参考: アルファルファ（1995年）以前にも別コンビ歴があり、個人の芸歴開始年を明記した出典なし。"
     },
     {
       "id": "person-0170",
