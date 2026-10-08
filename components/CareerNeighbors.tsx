@@ -1,6 +1,6 @@
 import ComedianCard from "@/components/ComedianCard"
 import type { CareerNeighborGroup } from "@/lib/getCareerNeighbors"
-import { yearEntryKey } from "@/lib/debut"
+import { yearEntryKey } from "@/lib/careerStart"
 
 // 「先輩・後輩」とは断定せず、芸歴開始年の差として表示する
 function labelForOffset(offset: number) {

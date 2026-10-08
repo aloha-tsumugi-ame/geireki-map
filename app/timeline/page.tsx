@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { getUndatedComedians, getYearEntries } from "@/lib/debut"
+import { getUndatedComedians, getYearEntries } from "@/lib/careerStart"
 import CareerTimeline from "@/components/CareerTimeline"
 
 export const metadata: Metadata = {

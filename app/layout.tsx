@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "芸歴DB｜芸人の芸歴・同年デビュー・先輩後輩探索サービス",
+    default: "芸歴DB｜芸人の芸歴開始年・先輩後輩探索サービス",
     template: "%s｜芸歴DB",
   },
   description:
-    "芸人名を検索して、芸歴開始年・同年デビュー・芸歴上の前後関係を一目で確認できるサービスです。",
+    "芸人名を検索して、芸歴開始年・芸歴開始年が同じ芸人・芸歴上の前後関係を一目で確認できるサービスです。",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

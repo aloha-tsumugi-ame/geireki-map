@@ -23,7 +23,7 @@ export default function Home() {
           芸人の「先輩・後輩」が一目でわかる
         </h1>
         <p className="mt-2 text-sm text-neutral-500">
-          芸人名を検索して、芸歴・同年デビュー・前後の芸人を探索しましょう
+          芸人名を検索して、芸歴開始年や芸歴上の前後の芸人を探索しましょう
         </p>
 
         <div className="mt-6 max-w-md mx-auto">

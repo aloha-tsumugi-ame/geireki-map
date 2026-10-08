@@ -1,12 +1,12 @@
 import type { Comedian } from "@/types/comedian"
-import { getNullDebutReason } from "@/lib/debut"
+import { getNullCareerStartReason } from "@/lib/careerStart"
 
 function notComparableReason(comedian: Comedian) {
-  if (getNullDebutReason(comedian) === "mixed") {
+  if (getNullCareerStartReason(comedian) === "mixed") {
     return `${comedian.name}はメンバーごとに芸歴開始年が異なるため、グループ単位では芸歴を比較できません。`
   }
   return comedian.members
-    ? `${comedian.name}は一部メンバーの芸歴開始年が不明なため、グループ単位では芸歴を比較できません。`
+    ? `${comedian.name}は芸歴開始年が確認できていないメンバーがいるため、グループ単位では芸歴を比較できません。`
     : `${comedian.name}は芸歴開始年が不明なため、芸歴を比較できません。`
 }
 
@@ -16,17 +16,17 @@ export function compareComedians(a: Comedian, b: Comedian) {
     return "同じ芸人が選択されています"
   }
 
-  if (a.debutYear === null || b.debutYear === null) {
+  if (a.careerStartYear === null || b.careerStartYear === null) {
     return [a, b]
-      .filter((c) => c.debutYear === null)
+      .filter((c) => c.careerStartYear === null)
       .map(notComparableReason)
       .join("")
   }
 
-  const diff = b.debutYear - a.debutYear
+  const diff = b.careerStartYear - a.careerStartYear
 
   if (diff === 0) {
-    return "芸歴開始年が同じです（同年デビュー）"
+    return "芸歴開始年が同じです"
   }
 
   if (diff > 0) {

@@ -1,6 +1,6 @@
 import Link from "next/link"
 import type { Comedian } from "@/types/comedian"
-import { yearEntryKey, type YearEntry } from "@/lib/debut"
+import { yearEntryKey, type YearEntry } from "@/lib/careerStart"
 
 export default function CareerTimeline({
   entries,

@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react"
 import Link from "next/link"
 import { searchComedians } from "@/lib/searchComedians"
-import { formatDebutYear } from "@/lib/debut"
+import { formatCareerStartYear } from "@/lib/careerStart"
 
 export default function ComedianSearch() {
   const [keyword, setKeyword] = useState("")
@@ -35,9 +35,9 @@ export default function ComedianSearch() {
               >
                 <span className="font-medium">{comedian.name}</span>
                 <span className="text-neutral-500 ml-2 text-xs">
-                  {comedian.debutYear !== null
-                    ? `${comedian.debutYear}年〜`
-                    : `芸歴開始 ${formatDebutYear(comedian)}`}
+                  {comedian.careerStartYear !== null
+                    ? `芸歴開始 ${comedian.careerStartYear}年`
+                    : `芸歴開始 ${formatCareerStartYear(comedian)}`}
                 </span>
                 {comedian.members && comedian.members.length > 0 && (
                   <span className="block text-neutral-400 text-xs mt-0.5">

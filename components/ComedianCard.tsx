@@ -1,6 +1,6 @@
 import Link from "next/link"
 import type { Comedian, Member } from "@/types/comedian"
-import { formatDebutYear } from "@/lib/debut"
+import { formatCareerStartYear } from "@/lib/careerStart"
 
 // member を渡すと、芸歴開始年が null のグループをそのメンバーの年で表示する
 export default function ComedianCard({
@@ -10,10 +10,10 @@ export default function ComedianCard({
   comedian: Comedian
   member?: Member
 }) {
-  const debutLabel =
-    member?.debutYear != null
-      ? `${member.debutYear}年（${member.name}）`
-      : formatDebutYear(comedian)
+  const careerStartLabel =
+    member?.careerStartYear != null
+      ? `${member.careerStartYear}年（${member.name}）`
+      : formatCareerStartYear(comedian)
 
   return (
     <Link
@@ -22,7 +22,7 @@ export default function ComedianCard({
     >
       <div className="font-medium">{comedian.name}</div>
       <div className="text-xs text-neutral-500 mt-0.5">
-        芸歴開始 {debutLabel}
+        芸歴開始 {careerStartLabel}
         {comedian.agency ? ` ・ ${comedian.agency}` : ""}
       </div>
     </Link>

@@ -1,4 +1,4 @@
-import { getYearEntriesByYear, type YearEntry } from "@/lib/debut"
+import { getYearEntriesByYear, type YearEntry } from "@/lib/careerStart"
 
 export type CareerNeighborGroup = {
   offset: number

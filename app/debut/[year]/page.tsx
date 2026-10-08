@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
-import { getYearEntries, getYearEntriesByYear, yearEntryKey } from "@/lib/debut"
+import { getYearEntries, getYearEntriesByYear, yearEntryKey } from "@/lib/careerStart"
 import ComedianCard from "@/components/ComedianCard"
 
 export function generateStaticParams() {
@@ -18,12 +18,12 @@ export async function generateMetadata({
     return {}
   }
   return {
-    title: `${year}年デビューの芸人一覧`,
+    title: `芸歴開始年が${year}年の芸人一覧`,
     description: `芸歴開始年が${year}年の芸人を一覧で確認できます。`,
   }
 }
 
-export default async function DebutYearPage({
+export default async function CareerStartYearPage({
   params,
 }: {
   params: Promise<{ year: string }>
@@ -37,9 +37,9 @@ export default async function DebutYearPage({
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-12">
-      <h1 className="text-2xl font-bold">{year}年デビューの芸人</h1>
+      <h1 className="text-2xl font-bold">芸歴開始年が{year}年の芸人</h1>
       <p className="mt-2 text-xs text-neutral-400">
-        ※芸歴開始年が{year}年の芸人（同年デビュー）です。養成所の同期などを意味するものではありません。
+        ※芸歴開始年が同じ芸人です。養成所の同期などを意味するものではありません。
       </p>
 
       {entries.length === 0 ? (

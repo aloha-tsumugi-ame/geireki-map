@@ -1,6 +1,7 @@
 {
   "metadata": {
     "datasetName": "geireki-map MVP seed",
+    "schemaVersion": 3,
     "createdAt": "2026-08-22",
     "primarySource": "https://geireki-matome.net/",
     "sourceCareerRuleUrl": "https://geireki-matome.net/geireki-info/",
@@ -8,516 +9,717 @@
     "recordCount": 164,
     "groupCount": 74,
     "warning": "This is a seed dataset extracted from a secondary reference site. Debut years are the source site's editorial career-year values and are not independently verified. Verify against official/primary sources before production publication.",
-    "designNote": "Person-level debutYear is canonical in this seed. Do not derive a single group debutYear without an explicit policy when members have different debut years.",
+    "designNote": "Person-level careerStartYear is canonical in this seed. Do not derive a single group careerStartYear without an explicit policy when members have different career start years.",
     "revisions": [
       {
         "date": "2026-10-08",
         "note": "ハライチ（岩井勇気）・相席スタート（山﨑ケイ）の欠落メンバーを追加。値が不明な項目は null。mixedMemberDebutYears: null は一部メンバーの芸歴開始年が不明で判定できないことを表す。"
+      },
+      {
+        "date": "2026-10-08",
+        "note": "schemaVersion 2 へ移行: people[].verificationStatus の旧値 unverified_secondary_source を extracted_secondary に置換（162件）。people[].source を sources[]（title/url/type/checkedAt）に置換し、checkedAt には従来暗黙に使っていた metadata.createdAt を明記。groups[] に verificationStatus を明記（従来の生成値を維持）。"
+      },
+      {
+        "date": "2026-10-08",
+        "note": "schemaVersion 3 へ移行: debutYear / debutYearStatus / debutType を careerStartYear / careerStartYearStatus / careerStartBasis に改名（値は変更なし）。既存レコードは従来の生成値（geireki-matome 由来は secondary_source_editorial、それ以外は unknown）を明記。groups の memberDebutYears 等と sources[].fields の debutYear も改名。"
       }
-    ]
+    ],
+    "legacyRecords": {
+      "groupIdMax": 74,
+      "personIdMax": 164,
+      "note": "group-0001〜group-0074 / person-0001〜person-0164 は schemaVersion 2 以前から存在するレガシーレコード。slug は id のまま維持し、新規レコード向けの必須ルール（明示slug等）を免除する。新規レコードはこの範囲外の id を使い、slug を明示する。"
+    }
   },
   "people": [
     {
       "id": "person-0001",
       "slug": null,
       "name": "石橋貴明",
-      "debutYear": 1980,
+      "careerStartYear": 1980,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1961-10-22",
       "group": "とんねるず",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0002",
       "slug": null,
       "name": "木梨憲武",
-      "debutYear": 1980,
+      "careerStartYear": 1980,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1962-03-09",
       "group": "とんねるず",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0003",
       "slug": null,
       "name": "松本人志",
-      "debutYear": 1983,
+      "careerStartYear": 1983,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1963-09-08",
       "group": "ダウンタウン",
       "school": "大阪NSC",
       "schoolGeneration": 1,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0004",
       "slug": null,
       "name": "浜田雅功",
-      "debutYear": 1983,
+      "careerStartYear": 1983,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1963-05-11",
       "group": "ダウンタウン",
       "school": "大阪NSC",
       "schoolGeneration": 1,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0005",
       "slug": null,
       "name": "リンゴ",
-      "debutYear": 1983,
+      "careerStartYear": 1983,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1961-08-09",
       "group": "ハイヒール",
       "school": "大阪NSC",
       "schoolGeneration": 1,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0006",
       "slug": null,
       "name": "モモコ",
-      "debutYear": 1983,
+      "careerStartYear": 1983,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1964-02-21",
       "group": "ハイヒール",
       "school": "大阪NSC",
       "schoolGeneration": 1,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0007",
       "slug": null,
       "name": "内村光良",
-      "debutYear": 1985,
+      "careerStartYear": 1985,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1964-07-22",
       "group": "ウッチャンナンチャン",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0008",
       "slug": null,
       "name": "南原清隆",
-      "debutYear": 1985,
+      "careerStartYear": 1985,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1965-02-13",
       "group": "ウッチャンナンチャン",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0009",
       "slug": null,
       "name": "出川哲朗",
-      "debutYear": 1985,
+      "careerStartYear": 1985,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1964-02-13",
       "group": null,
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0010",
       "slug": null,
       "name": "今田耕司",
-      "debutYear": 1986,
+      "careerStartYear": 1986,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1966-03-13",
       "group": null,
       "school": "大阪NSC",
       "schoolGeneration": 4,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0011",
       "slug": null,
       "name": "東野幸治",
-      "debutYear": 1986,
+      "careerStartYear": 1986,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1967-08-08",
       "group": null,
       "school": "大阪NSC",
       "schoolGeneration": 4,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0012",
       "slug": null,
       "name": "田中裕二",
-      "debutYear": 1988,
+      "careerStartYear": 1988,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1965-01-10",
       "group": "爆笑問題",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0013",
       "slug": null,
       "name": "太田光",
-      "debutYear": 1988,
+      "careerStartYear": 1988,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1965-05-13",
       "group": "爆笑問題",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0014",
       "slug": null,
       "name": "大竹一樹",
-      "debutYear": 1988,
+      "careerStartYear": 1988,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1967-12-08",
       "group": "さまぁ～ず",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0015",
       "slug": null,
       "name": "三村マサカズ",
-      "debutYear": 1988,
+      "careerStartYear": 1988,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1967-06-08",
       "group": "さまぁ～ず",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0016",
       "slug": null,
       "name": "蛍原徹",
-      "debutYear": 1989,
+      "careerStartYear": 1989,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1968-01-08",
       "group": "雨上がり決死隊",
       "school": "大阪NSC",
       "schoolGeneration": 7,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0017",
       "slug": null,
       "name": "宮迫博之",
-      "debutYear": 1989,
+      "careerStartYear": 1989,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1970-03-31",
       "group": "雨上がり決死隊",
       "school": "大阪NSC",
       "schoolGeneration": 7,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0018",
       "slug": null,
       "name": "加藤浩次",
-      "debutYear": 1989,
+      "careerStartYear": 1989,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1969-04-26",
       "group": "極楽とんぼ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0019",
       "slug": null,
       "name": "山本圭壱",
-      "debutYear": 1989,
+      "careerStartYear": 1989,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1968-02-23",
       "group": "極楽とんぼ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0020",
       "slug": null,
       "name": "千原ジュニア",
-      "debutYear": 1990,
+      "careerStartYear": 1990,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1974-03-30",
       "group": "千原兄弟",
       "school": "大阪NSC",
       "schoolGeneration": 8,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0021",
       "slug": null,
       "name": "千原せいじ",
-      "debutYear": 1990,
+      "careerStartYear": 1990,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1970-01-25",
       "group": "千原兄弟",
       "school": "大阪NSC",
       "schoolGeneration": 8,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0022",
       "slug": null,
       "name": "原西孝幸",
-      "debutYear": 1990,
+      "careerStartYear": 1990,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1971-03-05",
       "group": "FUJIWARA",
       "school": "大阪NSC",
       "schoolGeneration": 8,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0023",
       "slug": null,
       "name": "藤本敏史",
-      "debutYear": 1990,
+      "careerStartYear": 1990,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1970-12-18",
       "group": "FUJIWARA",
       "school": "大阪NSC",
       "schoolGeneration": 8,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0024",
       "slug": null,
       "name": "上田晋也",
-      "debutYear": 1991,
+      "careerStartYear": 1991,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1970-05-07",
       "group": "くりぃむしちゅー",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0025",
       "slug": null,
       "name": "有田哲平",
-      "debutYear": 1991,
+      "careerStartYear": 1991,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1971-02-23",
       "group": "くりぃむしちゅー",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0026",
       "slug": null,
       "name": "岡村隆史",
-      "debutYear": 1991,
+      "careerStartYear": 1991,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1970-07-03",
       "group": "ナインティナイン",
       "school": "大阪NSC",
       "schoolGeneration": 9,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0027",
       "slug": null,
       "name": "矢部浩之",
-      "debutYear": 1991,
+      "careerStartYear": 1991,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1971-10-23",
       "group": "ナインティナイン",
       "school": "大阪NSC",
       "schoolGeneration": 9,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0028",
       "slug": null,
       "name": "博多華丸",
-      "debutYear": 1991,
+      "careerStartYear": 1991,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1970-04-08",
       "group": "博多華丸・大吉",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0029",
       "slug": null,
       "name": "博多大吉",
-      "debutYear": 1991,
+      "careerStartYear": 1991,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1971-03-10",
       "group": "博多華丸・大吉",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0030",
       "slug": null,
       "name": "有野晋哉",
-      "debutYear": 1991,
+      "careerStartYear": 1991,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1972-02-25",
       "group": "よゐこ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0031",
       "slug": null,
       "name": "濱口優",
-      "debutYear": 1991,
+      "careerStartYear": 1991,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1972-01-29",
       "group": "よゐこ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0032",
       "slug": null,
       "name": "遠藤章造",
-      "debutYear": 1992,
+      "careerStartYear": 1992,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1971-07-13",
       "group": "ココリコ",
       "school": null,
@@ -527,17 +729,23 @@
         "generation": 11,
         "relation": "ほぼ同期扱い"
       },
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0033",
       "slug": null,
       "name": "田中直樹",
-      "debutYear": 1992,
+      "careerStartYear": 1992,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1971-04-26",
       "group": "ココリコ",
       "school": null,
@@ -547,177 +755,243 @@
         "generation": 11,
         "relation": "ほぼ同期扱い"
       },
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0034",
       "slug": null,
       "name": "光浦靖子",
-      "debutYear": 1992,
+      "careerStartYear": 1992,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1971-05-20",
       "group": "オアシズ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0035",
       "slug": null,
       "name": "大久保佳代子",
-      "debutYear": 1992,
+      "careerStartYear": 1992,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1971-05-21",
       "group": "オアシズ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0036",
       "slug": null,
       "name": "中川剛",
-      "debutYear": 1993,
+      "careerStartYear": 1993,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1970-12-04",
       "group": "中川家",
       "school": "大阪NSC",
       "schoolGeneration": 11,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0037",
       "slug": null,
       "name": "中川礼二",
-      "debutYear": 1993,
+      "careerStartYear": 1993,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1972-01-19",
       "group": "中川家",
       "school": "大阪NSC",
       "schoolGeneration": 11,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0038",
       "slug": null,
       "name": "陣内智則",
-      "debutYear": 1993,
+      "careerStartYear": 1993,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1974-02-22",
       "group": null,
       "school": "大阪NSC",
       "schoolGeneration": 11,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0039",
       "slug": null,
       "name": "ケンドー コバヤシ",
-      "debutYear": 1993,
+      "careerStartYear": 1993,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1972-07-04",
       "group": null,
       "school": "大阪NSC",
       "schoolGeneration": 11,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0040",
       "slug": null,
       "name": "岡田圭右",
-      "debutYear": 1993,
+      "careerStartYear": 1993,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1968-11-17",
       "group": "ますだおかだ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0041",
       "slug": null,
       "name": "増田英彦",
-      "debutYear": 1993,
+      "careerStartYear": 1993,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1970-02-09",
       "group": "ますだおかだ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0042",
       "slug": null,
       "name": "児嶋一哉",
-      "debutYear": 1993,
+      "careerStartYear": 1993,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1972-07-16",
       "group": "アンジャッシュ",
       "school": "スクールJCA",
       "schoolGeneration": 1,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0043",
       "slug": null,
       "name": "渡部建",
-      "debutYear": 1994,
+      "careerStartYear": 1994,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1972-09-23",
       "group": "アンジャッシュ",
       "school": "スクールJCA",
       "schoolGeneration": 2,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0044",
       "slug": null,
       "name": "田村淳",
-      "debutYear": 1994,
+      "careerStartYear": 1994,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1973-12-04",
       "group": "ロンドンブーツ1号2号",
       "school": null,
@@ -727,17 +1001,23 @@
         "generation": 12,
         "relation": "同期扱い"
       },
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0045",
       "slug": null,
       "name": "田村亮",
-      "debutYear": 1994,
+      "careerStartYear": 1994,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1972-01-08",
       "group": "ロンドンブーツ1号2号",
       "school": null,
@@ -747,33 +1027,45 @@
         "generation": 12,
         "relation": "同期扱い"
       },
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0046",
       "slug": null,
       "name": "小籔千豊",
-      "debutYear": 1994,
+      "careerStartYear": 1994,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1973-09-11",
       "group": null,
       "school": "大阪NSC",
       "schoolGeneration": 12,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0047",
       "slug": null,
       "name": "八木真澄",
-      "debutYear": 1994,
+      "careerStartYear": 1994,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1974-08-04",
       "group": "サバンナ",
       "school": null,
@@ -783,17 +1075,23 @@
         "generation": 12,
         "relation": "12期より後・13期より前"
       },
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0048",
       "slug": null,
       "name": "高橋茂雄",
-      "debutYear": 1994,
+      "careerStartYear": 1994,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1976-01-28",
       "group": "サバンナ",
       "school": null,
@@ -803,113 +1101,155 @@
         "generation": 12,
         "relation": "12期より後・13期より前"
       },
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0049",
       "slug": null,
       "name": "設楽統",
-      "debutYear": 1994,
+      "careerStartYear": 1994,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1973-04-23",
       "group": "バナナマン",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0050",
       "slug": null,
       "name": "日村勇紀",
-      "debutYear": 1991,
+      "careerStartYear": 1991,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1972-05-14",
       "group": "バナナマン",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0051",
       "slug": null,
       "name": "有吉弘行",
-      "debutYear": 1995,
+      "careerStartYear": 1995,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1974-05-31",
       "group": null,
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0052",
       "slug": null,
       "name": "小杉竜一",
-      "debutYear": 1995,
+      "careerStartYear": 1995,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1973-07-05",
       "group": "ブラックマヨネーズ",
       "school": "大阪NSC",
       "schoolGeneration": 13,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0053",
       "slug": null,
       "name": "吉田敬",
-      "debutYear": 1995,
+      "careerStartYear": 1995,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1973-06-27",
       "group": "ブラックマヨネーズ",
       "school": "大阪NSC",
       "schoolGeneration": 13,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0054",
       "slug": null,
       "name": "徳井義実",
-      "debutYear": 1995,
+      "careerStartYear": 1995,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1975-04-16",
       "group": "チュートリアル",
       "school": "大阪NSC",
       "schoolGeneration": 13,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0055",
       "slug": null,
       "name": "福田充徳",
-      "debutYear": 1998,
+      "careerStartYear": 1998,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1975-08-11",
       "group": "チュートリアル",
       "school": null,
@@ -919,177 +1259,243 @@
         "generation": 20,
         "relation": "同期扱い"
       },
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0056",
       "slug": null,
       "name": "くっきー!",
-      "debutYear": 1995,
+      "careerStartYear": 1995,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1976-03-12",
       "group": "野性爆弾",
       "school": "大阪NSC",
       "schoolGeneration": 13,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0057",
       "slug": null,
       "name": "ロッシー",
-      "debutYear": 1995,
+      "careerStartYear": 1995,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1975-04-06",
       "group": "野性爆弾",
       "school": "大阪NSC",
       "schoolGeneration": 13,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0058",
       "slug": null,
       "name": "山崎弘也",
-      "debutYear": 1995,
+      "careerStartYear": 1995,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1976-01-14",
       "group": "アンタッチャブル",
       "school": "スクールJCA",
       "schoolGeneration": 3,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0059",
       "slug": null,
       "name": "柴田英嗣",
-      "debutYear": 1995,
+      "careerStartYear": 1995,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1975-07-15",
       "group": "アンタッチャブル",
       "school": "スクールJCA",
       "schoolGeneration": 3,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0060",
       "slug": null,
       "name": "小木博明",
-      "debutYear": 1995,
+      "careerStartYear": 1995,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1971-08-16",
       "group": "おぎやはぎ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0061",
       "slug": null,
       "name": "矢作兼",
-      "debutYear": 1995,
+      "careerStartYear": 1995,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1971-09-11",
       "group": "おぎやはぎ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0062",
       "slug": null,
       "name": "小峠英二",
-      "debutYear": 1997,
+      "careerStartYear": 1997,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1976-06-06",
       "group": "バイきんぐ",
       "school": "大阪NSC",
       "schoolGeneration": 17,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0063",
       "slug": null,
       "name": "西村瑞樹",
-      "debutYear": 1997,
+      "careerStartYear": 1997,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1977-04-23",
       "group": "バイきんぐ",
       "school": "大阪NSC",
       "schoolGeneration": 17,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0064",
       "slug": null,
       "name": "鈴木拓",
-      "debutYear": 1997,
+      "careerStartYear": 1997,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1975-12-07",
       "group": "ドランクドラゴン",
       "school": "スクールJCA",
       "schoolGeneration": 5,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0065",
       "slug": null,
       "name": "塚地武雅",
-      "debutYear": 1997,
+      "careerStartYear": 1997,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1971-11-25",
       "group": "ドランクドラゴン",
       "school": "スクールJCA",
       "schoolGeneration": 5,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0066",
       "slug": null,
       "name": "大悟",
-      "debutYear": 1999,
+      "careerStartYear": 1999,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1980-03-25",
       "group": "千鳥",
       "school": null,
@@ -1099,17 +1505,23 @@
         "generation": 21,
         "relation": "同期扱い"
       },
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0067",
       "slug": null,
       "name": "ノブ",
-      "debutYear": 1999,
+      "careerStartYear": 1999,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1979-12-30",
       "group": "千鳥",
       "school": null,
@@ -1119,433 +1531,595 @@
         "generation": 21,
         "relation": "同期扱い"
       },
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0068",
       "slug": null,
       "name": "山本博",
-      "debutYear": 1999,
+      "careerStartYear": 1999,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1978-09-05",
       "group": "ロバート",
       "school": "東京NSC",
       "schoolGeneration": 4,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0069",
       "slug": null,
       "name": "秋山竜次",
-      "debutYear": 1999,
+      "careerStartYear": 1999,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1978-08-15",
       "group": "ロバート",
       "school": "東京NSC",
       "schoolGeneration": 4,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0070",
       "slug": null,
       "name": "馬場裕之",
-      "debutYear": 1999,
+      "careerStartYear": 1999,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1979-03-22",
       "group": "ロバート",
       "school": "東京NSC",
       "schoolGeneration": 4,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0071",
       "slug": null,
       "name": "西野亮廣",
-      "debutYear": 2000,
+      "careerStartYear": 2000,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1980-07-03",
       "group": "キングコング",
       "school": "大阪NSC",
       "schoolGeneration": 22,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0072",
       "slug": null,
       "name": "梶原雄太",
-      "debutYear": 2000,
+      "careerStartYear": 2000,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1980-08-07",
       "group": "キングコング",
       "school": "大阪NSC",
       "schoolGeneration": 22,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0073",
       "slug": null,
       "name": "石田明",
-      "debutYear": 2000,
+      "careerStartYear": 2000,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1980-02-20",
       "group": "NON STYLE",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0074",
       "slug": null,
       "name": "井上裕介",
-      "debutYear": 2000,
+      "careerStartYear": 2000,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1980-03-01",
       "group": "NON STYLE",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0075",
       "slug": null,
       "name": "ユースケ",
-      "debutYear": 2000,
+      "careerStartYear": 2000,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1977-03-14",
       "group": "ダイアン",
       "school": "大阪NSC",
       "schoolGeneration": 22,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0076",
       "slug": null,
       "name": "津田篤宏",
-      "debutYear": 2000,
+      "careerStartYear": 2000,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1976-05-27",
       "group": "ダイアン",
       "school": "大阪NSC",
       "schoolGeneration": 22,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0077",
       "slug": null,
       "name": "山里亮太",
-      "debutYear": 2000,
+      "careerStartYear": 2000,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1977-04-14",
       "group": "南海キャンディーズ",
       "school": "大阪NSC",
       "schoolGeneration": 22,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0078",
       "slug": null,
       "name": "山崎静代",
-      "debutYear": 2000,
+      "careerStartYear": 2000,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1979-02-04",
       "group": "南海キャンディーズ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0079",
       "slug": null,
       "name": "吉村崇",
-      "debutYear": 2000,
+      "careerStartYear": 2000,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1980-07-09",
       "group": "平成ノブシコブシ",
       "school": "東京NSC",
       "schoolGeneration": 5,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0080",
       "slug": null,
       "name": "徳井健太",
-      "debutYear": 2000,
+      "careerStartYear": 2000,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1980-09-16",
       "group": "平成ノブシコブシ",
       "school": "東京NSC",
       "schoolGeneration": 5,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0081",
       "slug": null,
       "name": "又吉直樹",
-      "debutYear": 2000,
+      "careerStartYear": 2000,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1980-06-02",
       "group": "ピース",
       "school": "東京NSC",
       "schoolGeneration": 5,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0082",
       "slug": null,
       "name": "綾部祐二",
-      "debutYear": 2000,
+      "careerStartYear": 2000,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1977-12-13",
       "group": "ピース",
       "school": "東京NSC",
       "schoolGeneration": 5,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0083",
       "slug": null,
       "name": "若林正恭",
-      "debutYear": 2000,
+      "careerStartYear": 2000,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1978-09-20",
       "group": "オードリー",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0084",
       "slug": null,
       "name": "春日俊彰",
-      "debutYear": 2000,
+      "careerStartYear": 2000,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1979-02-09",
       "group": "オードリー",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0085",
       "slug": null,
       "name": "田中卓志",
-      "debutYear": 2000,
+      "careerStartYear": 2000,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1976-02-08",
       "group": "アンガールズ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0086",
       "slug": null,
       "name": "山根良顕",
-      "debutYear": 2000,
+      "careerStartYear": 2000,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1976-05-27",
       "group": "アンガールズ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0087",
       "slug": null,
       "name": "塙宣之",
-      "debutYear": 2000,
+      "careerStartYear": 2000,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1978-03-27",
       "group": "ナイツ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0088",
       "slug": null,
       "name": "土屋伸之",
-      "debutYear": 2000,
+      "careerStartYear": 2000,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1978-10-12",
       "group": "ナイツ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0089",
       "slug": null,
       "name": "おいでやす小田",
-      "debutYear": 2001,
+      "careerStartYear": 2001,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1978-07-25",
       "group": null,
       "school": "大阪NSC",
       "schoolGeneration": 23,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0090",
       "slug": null,
       "name": "後藤淳平",
-      "debutYear": 2003,
+      "careerStartYear": 2003,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1984-03-20",
       "group": "ジャルジャル",
       "school": "大阪NSC",
       "schoolGeneration": 25,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0091",
       "slug": null,
       "name": "福徳秀介",
-      "debutYear": 2003,
+      "careerStartYear": 2003,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1983-10-05",
       "group": "ジャルジャル",
       "school": "大阪NSC",
       "schoolGeneration": 25,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0092",
       "slug": null,
       "name": "鰻和弘",
-      "debutYear": 2003,
+      "careerStartYear": 2003,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1983-08-31",
       "group": "銀シャリ",
       "school": "大阪NSC",
       "schoolGeneration": 25,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0093",
       "slug": null,
       "name": "橋本直",
-      "debutYear": 2003,
+      "careerStartYear": 2003,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1980-09-27",
       "group": "銀シャリ",
       "school": "大阪NSC",
       "schoolGeneration": 25,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0094",
       "slug": null,
       "name": "野田クリスタル",
-      "debutYear": 2003,
+      "careerStartYear": 2003,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1986-11-28",
       "group": "マヂカルラブリー",
       "school": null,
@@ -1555,17 +2129,23 @@
         "generation": 8,
         "relation": "8期より半年後"
       },
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0095",
       "slug": null,
       "name": "村上",
-      "debutYear": 2007,
+      "careerStartYear": 2007,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1984-10-15",
       "group": "マヂカルラブリー",
       "school": null,
@@ -1575,577 +2155,793 @@
         "generation": 12,
         "relation": "同期扱い"
       },
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0096",
       "slug": null,
       "name": "山内健司",
-      "debutYear": 2004,
+      "careerStartYear": 2004,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1981-01-17",
       "group": "かまいたち",
       "school": "大阪NSC",
       "schoolGeneration": 26,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0097",
       "slug": null,
       "name": "濱家隆一",
-      "debutYear": 2004,
+      "careerStartYear": 2004,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1983-11-06",
       "group": "かまいたち",
       "school": "大阪NSC",
       "schoolGeneration": 26,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0098",
       "slug": null,
       "name": "水田信二",
-      "debutYear": 2004,
+      "careerStartYear": 2004,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1980-04-15",
       "group": "和牛",
       "school": "大阪NSC",
       "schoolGeneration": 26,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0099",
       "slug": null,
       "name": "川西賢志郎",
-      "debutYear": 2004,
+      "careerStartYear": 2004,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1984-01-29",
       "group": "和牛",
       "school": "大阪NSC",
       "schoolGeneration": 26,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0100",
       "slug": null,
       "name": "近藤春菜",
-      "debutYear": 2004,
+      "careerStartYear": 2004,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1983-02-23",
       "group": "ハリセンボン",
       "school": "東京NSC",
       "schoolGeneration": 9,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0101",
       "slug": null,
       "name": "箕輪はるか",
-      "debutYear": 2004,
+      "careerStartYear": 2004,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1980-01-01",
       "group": "ハリセンボン",
       "school": "東京NSC",
       "schoolGeneration": 9,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0102",
       "slug": null,
       "name": "狩野英孝",
-      "debutYear": 2004,
+      "careerStartYear": 2004,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1982-02-22",
       "group": null,
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0103",
       "slug": null,
       "name": "芝大輔",
-      "debutYear": 2004,
+      "careerStartYear": 2004,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1983-07-25",
       "group": "モグライダー",
       "school": "東京NSC",
       "schoolGeneration": 9,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0104",
       "slug": null,
       "name": "ともしげ",
-      "debutYear": 2005,
+      "careerStartYear": 2005,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1982-05-31",
       "group": "モグライダー",
       "school": "スクールJCA",
       "schoolGeneration": 13,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0105",
       "slug": null,
       "name": "中田敦彦",
-      "debutYear": 2005,
+      "careerStartYear": 2005,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1982-09-27",
       "group": "オリエンタルラジオ",
       "school": "東京NSC",
       "schoolGeneration": 10,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0106",
       "slug": null,
       "name": "藤森慎吾",
-      "debutYear": 2005,
+      "careerStartYear": 2005,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1983-03-17",
       "group": "オリエンタルラジオ",
       "school": "東京NSC",
       "schoolGeneration": 10,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0107",
       "slug": null,
       "name": "澤部佑",
-      "debutYear": 2006,
+      "careerStartYear": 2006,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1986-05-19",
       "group": "ハライチ",
       "school": "ワタナベコメディスクール",
       "schoolGeneration": 2,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0108",
       "slug": null,
       "name": "長田庄平",
-      "debutYear": 2006,
+      "careerStartYear": 2006,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1980-01-28",
       "group": "チョコレートプラネット",
       "school": "東京NSC",
       "schoolGeneration": 11,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0109",
       "slug": null,
       "name": "松尾駿",
-      "debutYear": 2006,
+      "careerStartYear": 2006,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1982-08-18",
       "group": "チョコレートプラネット",
       "school": "東京NSC",
       "schoolGeneration": 11,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0110",
       "slug": null,
       "name": "じろう",
-      "debutYear": 2006,
+      "careerStartYear": 2006,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1978-07-14",
       "group": "シソンヌ",
       "school": "東京NSC",
       "schoolGeneration": 11,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0111",
       "slug": null,
       "name": "長谷川忍",
-      "debutYear": 2006,
+      "careerStartYear": 2006,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1978-08-06",
       "group": "シソンヌ",
       "school": "東京NSC",
       "schoolGeneration": 11,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0112",
       "slug": null,
       "name": "森田哲矢",
-      "debutYear": 2006,
+      "careerStartYear": 2006,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1981-08-23",
       "group": "さらば青春の光",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0113",
       "slug": null,
       "name": "東ブクロ",
-      "debutYear": 2007,
+      "careerStartYear": 2007,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1985-10-06",
       "group": "さらば青春の光",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0114",
       "slug": null,
       "name": "渡辺直美",
-      "debutYear": 2007,
+      "careerStartYear": 2007,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1987-10-23",
       "group": null,
       "school": "東京NSC",
       "schoolGeneration": 12,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0115",
       "slug": null,
       "name": "おたけ",
-      "debutYear": 2007,
+      "careerStartYear": 2007,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1982-12-02",
       "group": "ジャングルポケット",
       "school": "東京NSC",
       "schoolGeneration": 12,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0116",
       "slug": null,
       "name": "太田博久",
-      "debutYear": 2007,
+      "careerStartYear": 2007,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1983-12-10",
       "group": "ジャングルポケット",
       "school": "東京NSC",
       "schoolGeneration": 12,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0117",
       "slug": null,
       "name": "斉藤慎二",
-      "debutYear": 2007,
+      "careerStartYear": 2007,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1982-10-26",
       "group": "ジャングルポケット",
       "school": "東京NSC",
       "schoolGeneration": 12,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0118",
       "slug": null,
       "name": "小林圭輔",
-      "debutYear": 2007,
+      "careerStartYear": 2007,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1986-03-06",
       "group": "金属バット",
       "school": "大阪NSC",
       "schoolGeneration": 29,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0119",
       "slug": null,
       "name": "友保隼平",
-      "debutYear": 2007,
+      "careerStartYear": 2007,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1985-08-11",
       "group": "金属バット",
       "school": "大阪NSC",
       "schoolGeneration": 29,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0120",
       "slug": null,
       "name": "シュウペイ",
-      "debutYear": 2008,
+      "careerStartYear": 2008,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1987-07-16",
       "group": "ぺこぱ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0121",
       "slug": null,
       "name": "松陰寺太勇",
-      "debutYear": 2008,
+      "careerStartYear": 2008,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1983-11-09",
       "group": "ぺこぱ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0122",
       "slug": null,
       "name": "山添寛",
-      "debutYear": 2009,
+      "careerStartYear": 2009,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1985-06-11",
       "group": "相席スタート",
       "school": "東京NSC",
       "schoolGeneration": 14,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0123",
       "slug": null,
       "name": "りんたろー。",
-      "debutYear": 2009,
+      "careerStartYear": 2009,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1986-03-06",
       "group": "EXIT",
       "school": "東京NSC",
       "schoolGeneration": 14,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0124",
       "slug": null,
       "name": "兼近大樹",
-      "debutYear": 2014,
+      "careerStartYear": 2014,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1991-05-11",
       "group": "EXIT",
       "school": "東京NSC",
       "schoolGeneration": 19,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0125",
       "slug": null,
       "name": "堂前 透",
-      "debutYear": 2009,
+      "careerStartYear": 2009,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1990-01-16",
       "group": "ロングコートダディ",
       "school": "大阪NSC",
       "schoolGeneration": 31,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0126",
       "slug": null,
       "name": "兎",
-      "debutYear": 2009,
+      "careerStartYear": 2009,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1988-08-19",
       "group": "ロングコートダディ",
       "school": "大阪NSC",
       "schoolGeneration": 31,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0127",
       "slug": null,
       "name": "嶋佐和也",
-      "debutYear": 2010,
+      "careerStartYear": 2010,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1986-05-14",
       "group": "ニューヨーク",
       "school": "東京NSC",
       "schoolGeneration": 15,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0128",
       "slug": null,
       "name": "屋敷裕政",
-      "debutYear": 2010,
+      "careerStartYear": 2010,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1986-03-01",
       "group": "ニューヨーク",
       "school": "東京NSC",
       "schoolGeneration": 15,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0129",
       "slug": null,
       "name": "坂井良多",
-      "debutYear": 2010,
+      "careerStartYear": 2010,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1985-12-27",
       "group": "鬼越トマホーク",
       "school": "東京NSC",
       "schoolGeneration": 15,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0130",
       "slug": null,
       "name": "金ちゃん",
-      "debutYear": 2010,
+      "careerStartYear": 2010,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1985-11-06",
       "group": "鬼越トマホーク",
       "school": "東京NSC",
       "schoolGeneration": 15,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0131",
       "slug": null,
       "name": "せいや",
-      "debutYear": 2011,
+      "careerStartYear": 2011,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1992-09-13",
       "group": "霜降り明星",
       "school": null,
@@ -2155,17 +2951,23 @@
         "generation": 33,
         "relation": "同期扱い"
       },
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0132",
       "slug": null,
       "name": "粗品",
-      "debutYear": 2011,
+      "careerStartYear": 2011,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1993-01-07",
       "group": "霜降り明星",
       "school": null,
@@ -2175,518 +2977,706 @@
         "generation": 33,
         "relation": "同期扱い"
       },
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0133",
       "slug": null,
       "name": "菊田竜大",
-      "debutYear": 2011,
+      "careerStartYear": 2011,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1987-06-12",
       "group": "ハナコ",
       "school": "ワタナベコメディスクール",
       "schoolGeneration": 12,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0134",
       "slug": null,
       "name": "秋山寛貴",
-      "debutYear": 2011,
+      "careerStartYear": 2011,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1991-09-20",
       "group": "ハナコ",
       "school": "ワタナベコメディスクール",
       "schoolGeneration": 12,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0135",
       "slug": null,
       "name": "岡部大",
-      "debutYear": 2011,
+      "careerStartYear": 2011,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1989-05-30",
       "group": "ハナコ",
       "school": "ワタナベコメディスクール",
       "schoolGeneration": 12,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0136",
       "slug": null,
       "name": "鈴木もぐら",
-      "debutYear": 2012,
+      "careerStartYear": 2012,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1987-05-13",
       "group": "空気階段",
       "school": "東京NSC",
       "schoolGeneration": 17,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0137",
       "slug": null,
       "name": "水川かたまり",
-      "debutYear": 2012,
+      "careerStartYear": 2012,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1990-07-22",
       "group": "空気階段",
       "school": "東京NSC",
       "schoolGeneration": 17,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0138",
       "slug": null,
       "name": "畠中悠",
-      "debutYear": 2012,
+      "careerStartYear": 2012,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1987-12-07",
       "group": "オズワルド",
       "school": "東京NSC",
       "schoolGeneration": 17,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0139",
       "slug": null,
       "name": "伊藤俊介",
-      "debutYear": 2012,
+      "careerStartYear": 2012,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1989-08-08",
       "group": "オズワルド",
       "school": "東京NSC",
       "schoolGeneration": 17,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0140",
       "slug": null,
       "name": "ゆりやん レトリィバァ",
-      "debutYear": 2013,
+      "careerStartYear": 2013,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1990-11-01",
       "group": null,
       "school": "大阪NSC",
       "schoolGeneration": 35,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0141",
       "slug": null,
       "name": "よしこ",
-      "debutYear": 2013,
+      "careerStartYear": 2013,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1990-10-24",
       "group": "ガンバレルーヤ",
       "school": "大阪NSC",
       "schoolGeneration": 35,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0142",
       "slug": null,
       "name": "まひる",
-      "debutYear": 2013,
+      "careerStartYear": 2013,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1993-08-30",
       "group": "ガンバレルーヤ",
       "school": "大阪NSC",
       "schoolGeneration": 35,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0143",
       "slug": null,
       "name": "サーヤ",
-      "debutYear": 2014,
+      "careerStartYear": 2014,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1995-12-13",
       "group": "ラランド",
       "school": "上智大学お笑いサークルSCS",
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0144",
       "slug": null,
       "name": "ニシダ",
-      "debutYear": 2014,
+      "careerStartYear": 2014,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1994-07-24",
       "group": "ラランド",
       "school": "上智大学お笑いサークルSCS",
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0145",
       "slug": null,
       "name": "加賀翔",
-      "debutYear": 2015,
+      "careerStartYear": 2015,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1993-05-16",
       "group": "かが屋",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0146",
       "slug": null,
       "name": "賀屋壮也",
-      "debutYear": 2015,
+      "careerStartYear": 2015,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1993-02-19",
       "group": "かが屋",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0147",
       "slug": null,
       "name": "前田裕太",
-      "debutYear": 2015,
+      "careerStartYear": 2015,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1992-08-25",
       "group": "ティモンディ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0148",
       "slug": null,
       "name": "高岸宏行",
-      "debutYear": 2015,
+      "careerStartYear": 2015,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1992-10-08",
       "group": "ティモンディ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0149",
       "slug": null,
       "name": "都築拓紀",
-      "debutYear": 2016,
+      "careerStartYear": 2016,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1997-03-20",
       "group": "四千頭身",
       "school": "ワタナベコメディスクール",
       "schoolGeneration": 22,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0150",
       "slug": null,
       "name": "後藤拓実",
-      "debutYear": 2016,
+      "careerStartYear": 2016,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1997-02-06",
       "group": "四千頭身",
       "school": "ワタナベコメディスクール",
       "schoolGeneration": 22,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0151",
       "slug": null,
       "name": "石橋遼大",
-      "debutYear": 2016,
+      "careerStartYear": 2016,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1996-09-13",
       "group": "四千頭身",
       "school": "ワタナベコメディスクール",
       "schoolGeneration": 22,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0152",
       "slug": null,
       "name": "竹内知咲",
-      "debutYear": 2016,
+      "careerStartYear": 2016,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1992-01-28",
       "group": "天才ピアニスト",
       "school": "大阪NSC",
       "schoolGeneration": 38,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0153",
       "slug": null,
       "name": "ますみ",
-      "debutYear": 2016,
+      "careerStartYear": 2016,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "secondary_source_editorial",
       "birthDate": "1987-04-28",
       "group": "天才ピアニスト",
       "school": "大阪NSC",
       "schoolGeneration": 38,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://geireki-matome.net/",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0154",
       "slug": null,
       "name": "ナダル",
-      "debutYear": 2011,
+      "careerStartYear": 2011,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "unknown",
       "birthDate": "1984-12-23",
       "group": "コロコロチキチキペッパーズ",
       "school": "大阪NSC",
       "schoolGeneration": 33,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://profile.yoshimoto.co.jp/talent/detail?id=5093",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "吉本興業 公式プロフィール",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=5093",
+          "type": "agency_official",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0155",
       "slug": null,
       "name": "西野創人",
-      "debutYear": 2011,
+      "careerStartYear": 2011,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "unknown",
       "birthDate": "1991-09-21",
       "group": "コロコロチキチキペッパーズ",
       "school": "大阪NSC",
       "schoolGeneration": 33,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://profile.yoshimoto.co.jp/talent/detail?id=5093",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "吉本興業 公式プロフィール",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=5093",
+          "type": "agency_official",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0156",
       "slug": null,
       "name": "浦井のりひろ",
-      "debutYear": 2011,
+      "careerStartYear": 2011,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "unknown",
       "birthDate": "1987-12-03",
       "group": "男性ブランコ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://profile.yoshimoto.co.jp/talent/detail?id=5066",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "吉本興業 公式プロフィール",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=5066",
+          "type": "agency_official",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0157",
       "slug": null,
       "name": "平井まさあき",
-      "debutYear": 2011,
+      "careerStartYear": 2011,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "unknown",
       "birthDate": "1987-08-01",
       "group": "男性ブランコ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://profile.yoshimoto.co.jp/talent/detail?id=5066",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "吉本興業 公式プロフィール",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=5066",
+          "type": "agency_official",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0158",
       "slug": null,
       "name": "きん",
-      "debutYear": 2011,
+      "careerStartYear": 2011,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "unknown",
       "birthDate": "1991-04-27",
       "group": "ビスケットブラザーズ",
       "school": "大阪NSC",
       "schoolGeneration": 33,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://profile.yoshimoto.co.jp/talent/detail?id=5997",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "吉本興業 公式プロフィール",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=5997",
+          "type": "agency_official",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0159",
       "slug": null,
       "name": "原田泰雅",
-      "debutYear": 2011,
+      "careerStartYear": 2011,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "unknown",
       "birthDate": "1992-01-10",
       "group": "ビスケットブラザーズ",
       "school": "大阪NSC",
       "schoolGeneration": 33,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://profile.yoshimoto.co.jp/talent/detail?id=5997",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "吉本興業 公式プロフィール",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=5997",
+          "type": "agency_official",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0160",
       "slug": null,
       "name": "中谷",
-      "debutYear": 2011,
+      "careerStartYear": 2011,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "unknown",
       "birthDate": null,
       "group": "マユリカ",
       "school": "大阪NSC",
       "schoolGeneration": 33,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://profile.yoshimoto.co.jp/talent/detail?id=5114",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "吉本興業 公式プロフィール",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=5114",
+          "type": "agency_official",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0161",
       "slug": null,
       "name": "阪本",
-      "debutYear": 2011,
+      "careerStartYear": 2011,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "unknown",
       "birthDate": "1990-01-07",
       "group": "マユリカ",
       "school": "大阪NSC",
       "schoolGeneration": 33,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://profile.yoshimoto.co.jp/talent/detail?id=5114",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "吉本興業 公式プロフィール",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=5114",
+          "type": "agency_official",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0162",
       "slug": null,
       "name": "ZAZY",
-      "debutYear": 2011,
+      "careerStartYear": 2011,
+      "careerStartYearStatus": "secondary_source",
+      "careerStartBasis": "unknown",
       "birthDate": "1988-06-27",
       "group": null,
       "school": "大阪NSC",
       "schoolGeneration": 33,
       "schoolEquivalent": null,
-      "verificationStatus": "unverified_secondary_source",
-      "source": {
-        "url": "https://ja.wikipedia.org/wiki/ZAZY",
-        "type": "secondary_reference"
-      }
+      "verificationStatus": "extracted_secondary",
+      "sources": [
+        {
+          "title": "Wikipedia（二次情報源・要検証）",
+          "url": "https://ja.wikipedia.org/wiki/ZAZY",
+          "type": "wikipedia",
+          "checkedAt": "2026-08-22"
+        }
+      ]
     },
     {
       "id": "person-0163",
       "slug": null,
       "name": "岩井勇気",
-      "debutYear": null,
+      "careerStartYear": null,
+      "careerStartYearStatus": "unknown",
+      "careerStartBasis": "unknown",
       "birthDate": null,
       "group": "ハライチ",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
       "verificationStatus": "candidate_unverified",
-      "source": null,
+      "sources": [],
       "note": "メンバー構成の補完として追加。芸歴開始年・生年月日・養成所・出典は未調査のため null（推測で補完しない）。"
     },
     {
       "id": "person-0164",
       "slug": null,
       "name": "山﨑ケイ",
-      "debutYear": null,
+      "careerStartYear": null,
+      "careerStartYearStatus": "unknown",
+      "careerStartBasis": "unknown",
       "birthDate": null,
       "group": "相席スタート",
       "school": null,
       "schoolGeneration": null,
       "schoolEquivalent": null,
       "verificationStatus": "candidate_unverified",
-      "source": null,
+      "sources": [],
       "note": "メンバー構成の補完として追加。芸歴開始年・生年月日・養成所・出典は未調査のため null（推測で補完しない）。"
     }
   ],
@@ -2699,14 +3689,15 @@
         "りんたろー。",
         "兼近大樹"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "りんたろー。": 2009,
         "兼近大樹": 2014
       },
-      "mixedMemberDebutYears": true,
-      "derivedEarliestDebutYear": 2009,
-      "derivedLatestDebutYear": 2014,
-      "groupCareerYearPolicy": "UNDECIDED"
+      "mixedMemberCareerStartYears": true,
+      "derivedEarliestCareerStartYear": 2009,
+      "derivedLatestCareerStartYear": 2014,
+      "groupCareerYearPolicy": "UNDECIDED",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0002",
@@ -2716,14 +3707,15 @@
         "原西孝幸",
         "藤本敏史"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "原西孝幸": 1990,
         "藤本敏史": 1990
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1990,
-      "derivedLatestDebutYear": 1990,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1990,
+      "derivedLatestCareerStartYear": 1990,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0003",
@@ -2733,14 +3725,15 @@
         "石田明",
         "井上裕介"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "石田明": 2000,
         "井上裕介": 2000
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2000,
-      "derivedLatestDebutYear": 2000,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2000,
+      "derivedLatestCareerStartYear": 2000,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0004",
@@ -2750,14 +3743,15 @@
         "小木博明",
         "矢作兼"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "小木博明": 1995,
         "矢作兼": 1995
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1995,
-      "derivedLatestDebutYear": 1995,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1995,
+      "derivedLatestCareerStartYear": 1995,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0005",
@@ -2767,14 +3761,15 @@
         "加賀翔",
         "賀屋壮也"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "加賀翔": 2015,
         "賀屋壮也": 2015
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2015,
-      "derivedLatestDebutYear": 2015,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2015,
+      "derivedLatestCareerStartYear": 2015,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0006",
@@ -2784,14 +3779,15 @@
         "山内健司",
         "濱家隆一"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "山内健司": 2004,
         "濱家隆一": 2004
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2004,
-      "derivedLatestDebutYear": 2004,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2004,
+      "derivedLatestCareerStartYear": 2004,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0007",
@@ -2801,14 +3797,15 @@
         "上田晋也",
         "有田哲平"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "上田晋也": 1991,
         "有田哲平": 1991
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1991,
-      "derivedLatestDebutYear": 1991,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1991,
+      "derivedLatestCareerStartYear": 1991,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0008",
@@ -2818,14 +3815,15 @@
         "大竹一樹",
         "三村マサカズ"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "大竹一樹": 1988,
         "三村マサカズ": 1988
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1988,
-      "derivedLatestDebutYear": 1988,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1988,
+      "derivedLatestCareerStartYear": 1988,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0009",
@@ -2835,14 +3833,15 @@
         "森田哲矢",
         "東ブクロ"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "森田哲矢": 2006,
         "東ブクロ": 2007
       },
-      "mixedMemberDebutYears": true,
-      "derivedEarliestDebutYear": 2006,
-      "derivedLatestDebutYear": 2007,
-      "groupCareerYearPolicy": "UNDECIDED"
+      "mixedMemberCareerStartYears": true,
+      "derivedEarliestCareerStartYear": 2006,
+      "derivedLatestCareerStartYear": 2007,
+      "groupCareerYearPolicy": "UNDECIDED",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0010",
@@ -2852,14 +3851,15 @@
         "石橋貴明",
         "木梨憲武"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "石橋貴明": 1980,
         "木梨憲武": 1980
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1980,
-      "derivedLatestDebutYear": 1980,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1980,
+      "derivedLatestCareerStartYear": 1980,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0011",
@@ -2869,14 +3869,15 @@
         "シュウペイ",
         "松陰寺太勇"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "シュウペイ": 2008,
         "松陰寺太勇": 2008
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2008,
-      "derivedLatestDebutYear": 2008,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2008,
+      "derivedLatestCareerStartYear": 2008,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0012",
@@ -2886,14 +3887,15 @@
         "岡田圭右",
         "増田英彦"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "岡田圭右": 1993,
         "増田英彦": 1993
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1993,
-      "derivedLatestDebutYear": 1993,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1993,
+      "derivedLatestCareerStartYear": 1993,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0013",
@@ -2903,14 +3905,15 @@
         "有野晋哉",
         "濱口優"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "有野晋哉": 1991,
         "濱口優": 1991
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1991,
-      "derivedLatestDebutYear": 1991,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1991,
+      "derivedLatestCareerStartYear": 1991,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0014",
@@ -2920,14 +3923,15 @@
         "田中卓志",
         "山根良顕"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "田中卓志": 2000,
         "山根良顕": 2000
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2000,
-      "derivedLatestDebutYear": 2000,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2000,
+      "derivedLatestCareerStartYear": 2000,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0015",
@@ -2937,14 +3941,15 @@
         "児嶋一哉",
         "渡部建"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "児嶋一哉": 1993,
         "渡部建": 1994
       },
-      "mixedMemberDebutYears": true,
-      "derivedEarliestDebutYear": 1993,
-      "derivedLatestDebutYear": 1994,
-      "groupCareerYearPolicy": "UNDECIDED"
+      "mixedMemberCareerStartYears": true,
+      "derivedEarliestCareerStartYear": 1993,
+      "derivedLatestCareerStartYear": 1994,
+      "groupCareerYearPolicy": "UNDECIDED",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0016",
@@ -2954,14 +3959,15 @@
         "山崎弘也",
         "柴田英嗣"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "山崎弘也": 1995,
         "柴田英嗣": 1995
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1995,
-      "derivedLatestDebutYear": 1995,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1995,
+      "derivedLatestCareerStartYear": 1995,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0017",
@@ -2971,14 +3977,15 @@
         "内村光良",
         "南原清隆"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "内村光良": 1985,
         "南原清隆": 1985
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1985,
-      "derivedLatestDebutYear": 1985,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1985,
+      "derivedLatestCareerStartYear": 1985,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0018",
@@ -2988,14 +3995,15 @@
         "光浦靖子",
         "大久保佳代子"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "光浦靖子": 1992,
         "大久保佳代子": 1992
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1992,
-      "derivedLatestDebutYear": 1992,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1992,
+      "derivedLatestCareerStartYear": 1992,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0019",
@@ -3005,14 +4013,15 @@
         "畠中悠",
         "伊藤俊介"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "畠中悠": 2012,
         "伊藤俊介": 2012
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2012,
-      "derivedLatestDebutYear": 2012,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2012,
+      "derivedLatestCareerStartYear": 2012,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0020",
@@ -3022,14 +4031,15 @@
         "中田敦彦",
         "藤森慎吾"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "中田敦彦": 2005,
         "藤森慎吾": 2005
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2005,
-      "derivedLatestDebutYear": 2005,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2005,
+      "derivedLatestCareerStartYear": 2005,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0021",
@@ -3039,14 +4049,15 @@
         "若林正恭",
         "春日俊彰"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "若林正恭": 2000,
         "春日俊彰": 2000
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2000,
-      "derivedLatestDebutYear": 2000,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2000,
+      "derivedLatestCareerStartYear": 2000,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0022",
@@ -3056,14 +4067,15 @@
         "よしこ",
         "まひる"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "よしこ": 2013,
         "まひる": 2013
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2013,
-      "derivedLatestDebutYear": 2013,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2013,
+      "derivedLatestCareerStartYear": 2013,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0023",
@@ -3073,14 +4085,15 @@
         "西野亮廣",
         "梶原雄太"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "西野亮廣": 2000,
         "梶原雄太": 2000
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2000,
-      "derivedLatestDebutYear": 2000,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2000,
+      "derivedLatestCareerStartYear": 2000,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0024",
@@ -3090,14 +4103,15 @@
         "遠藤章造",
         "田中直樹"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "遠藤章造": 1992,
         "田中直樹": 1992
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1992,
-      "derivedLatestDebutYear": 1992,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1992,
+      "derivedLatestCareerStartYear": 1992,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0025",
@@ -3107,14 +4121,15 @@
         "八木真澄",
         "高橋茂雄"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "八木真澄": 1994,
         "高橋茂雄": 1994
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1994,
-      "derivedLatestDebutYear": 1994,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1994,
+      "derivedLatestCareerStartYear": 1994,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0026",
@@ -3124,14 +4139,15 @@
         "じろう",
         "長谷川忍"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "じろう": 2006,
         "長谷川忍": 2006
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2006,
-      "derivedLatestDebutYear": 2006,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2006,
+      "derivedLatestCareerStartYear": 2006,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0027",
@@ -3141,14 +4157,15 @@
         "後藤淳平",
         "福徳秀介"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "後藤淳平": 2003,
         "福徳秀介": 2003
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2003,
-      "derivedLatestDebutYear": 2003,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2003,
+      "derivedLatestCareerStartYear": 2003,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0028",
@@ -3159,15 +4176,16 @@
         "太田博久",
         "斉藤慎二"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "おたけ": 2007,
         "太田博久": 2007,
         "斉藤慎二": 2007
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2007,
-      "derivedLatestDebutYear": 2007,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2007,
+      "derivedLatestCareerStartYear": 2007,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0029",
@@ -3177,14 +4195,15 @@
         "ユースケ",
         "津田篤宏"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "ユースケ": 2000,
         "津田篤宏": 2000
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2000,
-      "derivedLatestDebutYear": 2000,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2000,
+      "derivedLatestCareerStartYear": 2000,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0030",
@@ -3194,14 +4213,15 @@
         "松本人志",
         "浜田雅功"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "松本人志": 1983,
         "浜田雅功": 1983
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1983,
-      "derivedLatestDebutYear": 1983,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1983,
+      "derivedLatestCareerStartYear": 1983,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0031",
@@ -3211,14 +4231,15 @@
         "徳井義実",
         "福田充徳"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "徳井義実": 1995,
         "福田充徳": 1998
       },
-      "mixedMemberDebutYears": true,
-      "derivedEarliestDebutYear": 1995,
-      "derivedLatestDebutYear": 1998,
-      "groupCareerYearPolicy": "UNDECIDED"
+      "mixedMemberCareerStartYears": true,
+      "derivedEarliestCareerStartYear": 1995,
+      "derivedLatestCareerStartYear": 1998,
+      "groupCareerYearPolicy": "UNDECIDED",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0032",
@@ -3228,14 +4249,15 @@
         "長田庄平",
         "松尾駿"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "長田庄平": 2006,
         "松尾駿": 2006
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2006,
-      "derivedLatestDebutYear": 2006,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2006,
+      "derivedLatestCareerStartYear": 2006,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0033",
@@ -3245,14 +4267,15 @@
         "前田裕太",
         "高岸宏行"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "前田裕太": 2015,
         "高岸宏行": 2015
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2015,
-      "derivedLatestDebutYear": 2015,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2015,
+      "derivedLatestCareerStartYear": 2015,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0034",
@@ -3262,14 +4285,15 @@
         "鈴木拓",
         "塚地武雅"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "鈴木拓": 1997,
         "塚地武雅": 1997
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1997,
-      "derivedLatestDebutYear": 1997,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1997,
+      "derivedLatestCareerStartYear": 1997,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0035",
@@ -3279,14 +4303,15 @@
         "塙宣之",
         "土屋伸之"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "塙宣之": 2000,
         "土屋伸之": 2000
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2000,
-      "derivedLatestDebutYear": 2000,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2000,
+      "derivedLatestCareerStartYear": 2000,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0036",
@@ -3296,14 +4321,15 @@
         "岡村隆史",
         "矢部浩之"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "岡村隆史": 1991,
         "矢部浩之": 1991
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1991,
-      "derivedLatestDebutYear": 1991,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1991,
+      "derivedLatestCareerStartYear": 1991,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0037",
@@ -3313,14 +4339,15 @@
         "嶋佐和也",
         "屋敷裕政"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "嶋佐和也": 2010,
         "屋敷裕政": 2010
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2010,
-      "derivedLatestDebutYear": 2010,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2010,
+      "derivedLatestCareerStartYear": 2010,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0038",
@@ -3330,14 +4357,15 @@
         "リンゴ",
         "モモコ"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "リンゴ": 1983,
         "モモコ": 1983
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1983,
-      "derivedLatestDebutYear": 1983,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1983,
+      "derivedLatestCareerStartYear": 1983,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0039",
@@ -3348,15 +4376,16 @@
         "秋山寛貴",
         "岡部大"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "菊田竜大": 2011,
         "秋山寛貴": 2011,
         "岡部大": 2011
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2011,
-      "derivedLatestDebutYear": 2011,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2011,
+      "derivedLatestCareerStartYear": 2011,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0040",
@@ -3366,14 +4395,15 @@
         "澤部佑",
         "岩井勇気"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "澤部佑": 2006,
         "岩井勇気": null
       },
-      "mixedMemberDebutYears": null,
-      "derivedEarliestDebutYear": 2006,
-      "derivedLatestDebutYear": 2006,
-      "groupCareerYearPolicy": "UNDECIDED"
+      "mixedMemberCareerStartYears": null,
+      "derivedEarliestCareerStartYear": 2006,
+      "derivedLatestCareerStartYear": 2006,
+      "groupCareerYearPolicy": "UNDECIDED",
+      "verificationStatus": "candidate_unverified"
     },
     {
       "id": "group-0041",
@@ -3383,14 +4413,15 @@
         "近藤春菜",
         "箕輪はるか"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "近藤春菜": 2004,
         "箕輪はるか": 2004
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2004,
-      "derivedLatestDebutYear": 2004,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2004,
+      "derivedLatestCareerStartYear": 2004,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0042",
@@ -3400,14 +4431,15 @@
         "小峠英二",
         "西村瑞樹"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "小峠英二": 1997,
         "西村瑞樹": 1997
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1997,
-      "derivedLatestDebutYear": 1997,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1997,
+      "derivedLatestCareerStartYear": 1997,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0043",
@@ -3417,14 +4449,15 @@
         "設楽統",
         "日村勇紀"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "設楽統": 1994,
         "日村勇紀": 1991
       },
-      "mixedMemberDebutYears": true,
-      "derivedEarliestDebutYear": 1991,
-      "derivedLatestDebutYear": 1994,
-      "groupCareerYearPolicy": "UNDECIDED"
+      "mixedMemberCareerStartYears": true,
+      "derivedEarliestCareerStartYear": 1991,
+      "derivedLatestCareerStartYear": 1994,
+      "groupCareerYearPolicy": "UNDECIDED",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0044",
@@ -3434,14 +4467,15 @@
         "又吉直樹",
         "綾部祐二"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "又吉直樹": 2000,
         "綾部祐二": 2000
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2000,
-      "derivedLatestDebutYear": 2000,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2000,
+      "derivedLatestCareerStartYear": 2000,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0045",
@@ -3451,14 +4485,15 @@
         "小杉竜一",
         "吉田敬"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "小杉竜一": 1995,
         "吉田敬": 1995
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1995,
-      "derivedLatestDebutYear": 1995,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1995,
+      "derivedLatestCareerStartYear": 1995,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0046",
@@ -3468,14 +4503,15 @@
         "野田クリスタル",
         "村上"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "野田クリスタル": 2003,
         "村上": 2007
       },
-      "mixedMemberDebutYears": true,
-      "derivedEarliestDebutYear": 2003,
-      "derivedLatestDebutYear": 2007,
-      "groupCareerYearPolicy": "UNDECIDED"
+      "mixedMemberCareerStartYears": true,
+      "derivedEarliestCareerStartYear": 2003,
+      "derivedLatestCareerStartYear": 2007,
+      "groupCareerYearPolicy": "UNDECIDED",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0047",
@@ -3485,14 +4521,15 @@
         "芝大輔",
         "ともしげ"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "芝大輔": 2004,
         "ともしげ": 2005
       },
-      "mixedMemberDebutYears": true,
-      "derivedEarliestDebutYear": 2004,
-      "derivedLatestDebutYear": 2005,
-      "groupCareerYearPolicy": "UNDECIDED"
+      "mixedMemberCareerStartYears": true,
+      "derivedEarliestCareerStartYear": 2004,
+      "derivedLatestCareerStartYear": 2005,
+      "groupCareerYearPolicy": "UNDECIDED",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0048",
@@ -3502,14 +4539,15 @@
         "サーヤ",
         "ニシダ"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "サーヤ": 2014,
         "ニシダ": 2014
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2014,
-      "derivedLatestDebutYear": 2014,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2014,
+      "derivedLatestCareerStartYear": 2014,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0049",
@@ -3520,15 +4558,16 @@
         "秋山竜次",
         "馬場裕之"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "山本博": 1999,
         "秋山竜次": 1999,
         "馬場裕之": 1999
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1999,
-      "derivedLatestDebutYear": 1999,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1999,
+      "derivedLatestCareerStartYear": 1999,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0050",
@@ -3538,14 +4577,15 @@
         "堂前 透",
         "兎"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "堂前 透": 2009,
         "兎": 2009
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2009,
-      "derivedLatestDebutYear": 2009,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2009,
+      "derivedLatestCareerStartYear": 2009,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0051",
@@ -3555,14 +4595,15 @@
         "田村淳",
         "田村亮"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "田村淳": 1994,
         "田村亮": 1994
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1994,
-      "derivedLatestDebutYear": 1994,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1994,
+      "derivedLatestCareerStartYear": 1994,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0052",
@@ -3572,14 +4613,15 @@
         "中川剛",
         "中川礼二"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "中川剛": 1993,
         "中川礼二": 1993
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1993,
-      "derivedLatestDebutYear": 1993,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1993,
+      "derivedLatestCareerStartYear": 1993,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0053",
@@ -3589,14 +4631,15 @@
         "千原ジュニア",
         "千原せいじ"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "千原ジュニア": 1990,
         "千原せいじ": 1990
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1990,
-      "derivedLatestDebutYear": 1990,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1990,
+      "derivedLatestCareerStartYear": 1990,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0054",
@@ -3606,14 +4649,15 @@
         "大悟",
         "ノブ"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "大悟": 1999,
         "ノブ": 1999
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1999,
-      "derivedLatestDebutYear": 1999,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1999,
+      "derivedLatestCareerStartYear": 1999,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0055",
@@ -3623,14 +4667,15 @@
         "山里亮太",
         "山崎静代"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "山里亮太": 2000,
         "山崎静代": 2000
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2000,
-      "derivedLatestDebutYear": 2000,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2000,
+      "derivedLatestCareerStartYear": 2000,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0056",
@@ -3640,14 +4685,15 @@
         "博多華丸",
         "博多大吉"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "博多華丸": 1991,
         "博多大吉": 1991
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1991,
-      "derivedLatestDebutYear": 1991,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1991,
+      "derivedLatestCareerStartYear": 1991,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0057",
@@ -3657,14 +4703,15 @@
         "水田信二",
         "川西賢志郎"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "水田信二": 2004,
         "川西賢志郎": 2004
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2004,
-      "derivedLatestDebutYear": 2004,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2004,
+      "derivedLatestCareerStartYear": 2004,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0058",
@@ -3675,15 +4722,16 @@
         "後藤拓実",
         "石橋遼大"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "都築拓紀": 2016,
         "後藤拓実": 2016,
         "石橋遼大": 2016
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2016,
-      "derivedLatestDebutYear": 2016,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2016,
+      "derivedLatestCareerStartYear": 2016,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0059",
@@ -3693,14 +4741,15 @@
         "竹内知咲",
         "ますみ"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "竹内知咲": 2016,
         "ますみ": 2016
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2016,
-      "derivedLatestDebutYear": 2016,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2016,
+      "derivedLatestCareerStartYear": 2016,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0060",
@@ -3710,14 +4759,15 @@
         "吉村崇",
         "徳井健太"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "吉村崇": 2000,
         "徳井健太": 2000
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2000,
-      "derivedLatestDebutYear": 2000,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2000,
+      "derivedLatestCareerStartYear": 2000,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0061",
@@ -3727,14 +4777,15 @@
         "加藤浩次",
         "山本圭壱"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "加藤浩次": 1989,
         "山本圭壱": 1989
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1989,
-      "derivedLatestDebutYear": 1989,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1989,
+      "derivedLatestCareerStartYear": 1989,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0062",
@@ -3744,14 +4795,15 @@
         "田中裕二",
         "太田光"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "田中裕二": 1988,
         "太田光": 1988
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1988,
-      "derivedLatestDebutYear": 1988,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1988,
+      "derivedLatestCareerStartYear": 1988,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0063",
@@ -3761,14 +4813,15 @@
         "山添寛",
         "山﨑ケイ"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "山添寛": 2009,
         "山﨑ケイ": null
       },
-      "mixedMemberDebutYears": null,
-      "derivedEarliestDebutYear": 2009,
-      "derivedLatestDebutYear": 2009,
-      "groupCareerYearPolicy": "UNDECIDED"
+      "mixedMemberCareerStartYears": null,
+      "derivedEarliestCareerStartYear": 2009,
+      "derivedLatestCareerStartYear": 2009,
+      "groupCareerYearPolicy": "UNDECIDED",
+      "verificationStatus": "candidate_unverified"
     },
     {
       "id": "group-0064",
@@ -3778,14 +4831,15 @@
         "鈴木もぐら",
         "水川かたまり"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "鈴木もぐら": 2012,
         "水川かたまり": 2012
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2012,
-      "derivedLatestDebutYear": 2012,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2012,
+      "derivedLatestCareerStartYear": 2012,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0065",
@@ -3795,14 +4849,15 @@
         "くっきー!",
         "ロッシー"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "くっきー!": 1995,
         "ロッシー": 1995
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1995,
-      "derivedLatestDebutYear": 1995,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1995,
+      "derivedLatestCareerStartYear": 1995,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0066",
@@ -3812,14 +4867,15 @@
         "小林圭輔",
         "友保隼平"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "小林圭輔": 2007,
         "友保隼平": 2007
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2007,
-      "derivedLatestDebutYear": 2007,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2007,
+      "derivedLatestCareerStartYear": 2007,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0067",
@@ -3829,14 +4885,15 @@
         "鰻和弘",
         "橋本直"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "鰻和弘": 2003,
         "橋本直": 2003
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2003,
-      "derivedLatestDebutYear": 2003,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2003,
+      "derivedLatestCareerStartYear": 2003,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0068",
@@ -3846,14 +4903,15 @@
         "蛍原徹",
         "宮迫博之"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "蛍原徹": 1989,
         "宮迫博之": 1989
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 1989,
-      "derivedLatestDebutYear": 1989,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 1989,
+      "derivedLatestCareerStartYear": 1989,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0069",
@@ -3863,14 +4921,15 @@
         "せいや",
         "粗品"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "せいや": 2011,
         "粗品": 2011
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2011,
-      "derivedLatestDebutYear": 2011,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2011,
+      "derivedLatestCareerStartYear": 2011,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0070",
@@ -3880,14 +4939,15 @@
         "坂井良多",
         "金ちゃん"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "坂井良多": 2010,
         "金ちゃん": 2010
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2010,
-      "derivedLatestDebutYear": 2010,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2010,
+      "derivedLatestCareerStartYear": 2010,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0071",
@@ -3897,14 +4957,15 @@
         "ナダル",
         "西野創人"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "ナダル": 2011,
         "西野創人": 2011
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2011,
-      "derivedLatestDebutYear": 2011,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2011,
+      "derivedLatestCareerStartYear": 2011,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0072",
@@ -3914,14 +4975,15 @@
         "浦井のりひろ",
         "平井まさあき"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "浦井のりひろ": 2011,
         "平井まさあき": 2011
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2011,
-      "derivedLatestDebutYear": 2011,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2011,
+      "derivedLatestCareerStartYear": 2011,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0073",
@@ -3931,14 +4993,15 @@
         "きん",
         "原田泰雅"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "きん": 2011,
         "原田泰雅": 2011
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2011,
-      "derivedLatestDebutYear": 2011,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2011,
+      "derivedLatestCareerStartYear": 2011,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     },
     {
       "id": "group-0074",
@@ -3948,14 +5011,15 @@
         "中谷",
         "阪本"
       ],
-      "memberDebutYears": {
+      "memberCareerStartYears": {
         "中谷": 2011,
         "阪本": 2011
       },
-      "mixedMemberDebutYears": false,
-      "derivedEarliestDebutYear": 2011,
-      "derivedLatestDebutYear": 2011,
-      "groupCareerYearPolicy": "same_as_members"
+      "mixedMemberCareerStartYears": false,
+      "derivedEarliestCareerStartYear": 2011,
+      "derivedLatestCareerStartYear": 2011,
+      "groupCareerYearPolicy": "same_as_members",
+      "verificationStatus": "extracted_secondary"
     }
   ]
 }

@@ -1,10 +1,10 @@
 import CareerNeighbors from "@/components/CareerNeighbors"
 import ComedianCard from "@/components/ComedianCard"
 import { getCareerNeighbors } from "@/lib/getCareerNeighbors"
-import { getSameYearDebut } from "@/lib/getSameYearDebut"
-import { yearEntryKey } from "@/lib/debut"
+import { getSameCareerStartYear } from "@/lib/getSameCareerStartYear"
+import { yearEntryKey } from "@/lib/careerStart"
 
-// 芸歴開始年 year を基準にした前後2年・同年デビューの一覧
+// 芸歴開始年 year を基準にした前後2年・芸歴開始年が同じ芸人の一覧
 export default function CareerPosition({
   year,
   excludeId,
@@ -13,7 +13,7 @@ export default function CareerPosition({
   excludeId: string
 }) {
   const neighbors = getCareerNeighbors(year, excludeId, 2)
-  const sameYear = getSameYearDebut(year, excludeId)
+  const sameYear = getSameCareerStartYear(year, excludeId)
 
   return (
     <>
@@ -21,7 +21,7 @@ export default function CareerPosition({
 
       <div className="mt-6">
         <h3 className="text-sm font-semibold text-neutral-600 mb-2">
-          同年デビュー（{year}年）
+          芸歴開始年が同じ芸人（{year}年）
         </h3>
         {sameYear.length === 0 ? (
           <p className="text-sm text-neutral-500">

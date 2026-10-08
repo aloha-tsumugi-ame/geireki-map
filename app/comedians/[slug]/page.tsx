@@ -7,11 +7,11 @@ import {
   getComedianByMemberId,
 } from "@/lib/getComedian"
 import {
-  DEBUT_TYPE_LABELS,
-  DEBUT_YEAR_STATUS_LABELS,
-  formatMemberDebutYear,
-  getNullDebutReason,
-} from "@/lib/debut"
+  CAREER_START_BASIS_LABELS,
+  CAREER_START_YEAR_STATUS_LABELS,
+  formatMemberCareerStartYear,
+  getNullCareerStartReason,
+} from "@/lib/careerStart"
 import { formatMemberSchool, formatSchool } from "@/lib/formatSchool"
 import CareerPosition from "@/components/CareerPosition"
 
@@ -34,8 +34,8 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${comedian.name}の芸歴・同年デビュー・前後の芸人`,
-    description: `${comedian.name}の芸歴開始年、同年デビュー、芸歴上1〜2年前後の芸人を一覧で確認できます。`,
+    title: `${comedian.name}の芸歴開始年・前後の芸人`,
+    description: `${comedian.name}の芸歴開始年、芸歴開始年が同じ芸人、芸歴上1〜2年前後の芸人を一覧で確認できます。`,
   }
 }
 
@@ -58,13 +58,13 @@ export default async function ComedianDetailPage({
 
   const isGroup = Boolean(comedian.members)
   const datedMembers = (comedian.members ?? []).filter(
-    (m) => m.debutYear != null
+    (m) => m.careerStartYear != null
   )
-  const timelineYear = comedian.debutYear ?? datedMembers[0]?.debutYear
-  const hasUnverifiedDebut =
-    comedian.debutYearStatus === "secondary_source" ||
-    comedian.debutYearStatus === "estimated" ||
-    (comedian.debutYear === null && datedMembers.length > 0)
+  const timelineYear = comedian.careerStartYear ?? datedMembers[0]?.careerStartYear
+  const hasUnverifiedCareerStart =
+    comedian.careerStartYearStatus === "secondary_source" ||
+    comedian.careerStartYearStatus === "estimated" ||
+    (comedian.careerStartYear === null && datedMembers.length > 0)
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12">
@@ -76,26 +76,30 @@ export default async function ComedianDetailPage({
       <dl className="mt-6 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 text-sm max-w-lg">
         <dt className="text-neutral-500">芸歴開始</dt>
         <dd>
-          {comedian.debutYear !== null ? (
+          {comedian.careerStartYear !== null ? (
             <>
-              {comedian.debutYear}年
+              {comedian.careerStartYear}年
               <span className="text-xs text-neutral-500">
                 （
-                {comedian.debutYearStatus
-                  ? DEBUT_YEAR_STATUS_LABELS[comedian.debutYearStatus]
+                {comedian.careerStartYearStatus
+                  ? CAREER_START_YEAR_STATUS_LABELS[comedian.careerStartYearStatus]
                   : "未確認"}
-                {comedian.debutType &&
-                  comedian.debutType !== "secondary_source_editorial" &&
-                  ` ・ 基準: ${DEBUT_TYPE_LABELS[comedian.debutType]}`}
                 ）
               </span>
             </>
-          ) : getNullDebutReason(comedian) === "mixed" ? (
+          ) : getNullCareerStartReason(comedian) === "mixed" ? (
             "メンバーにより異なる"
           ) : (
             "不明"
           )}
         </dd>
+
+        {comedian.careerStartYear !== null && comedian.careerStartBasis && (
+          <>
+            <dt className="text-neutral-500">芸歴開始基準</dt>
+            <dd>{CAREER_START_BASIS_LABELS[comedian.careerStartBasis]}</dd>
+          </>
+        )}
 
         {isGroup && (
           <>
@@ -127,7 +131,11 @@ export default async function ComedianDetailPage({
                     {m.name}
                     <span className="text-xs text-neutral-500">
                       {" "}
-                      芸歴開始 {formatMemberDebutYear(m)}
+                      芸歴開始 {formatMemberCareerStartYear(m)}
+                      {m.careerStartYear != null &&
+                        m.careerStartBasis &&
+                        m.careerStartBasis !== "unknown" &&
+                        `（${CAREER_START_BASIS_LABELS[m.careerStartBasis]}）`}
                       {(m.school || !comedian.school) &&
                         ` ・ 養成所 ${formatMemberSchool(m)}`}
                       {m.schoolEquivalent && !comedian.schoolEquivalent &&
@@ -141,28 +149,28 @@ export default async function ComedianDetailPage({
         )}
       </dl>
 
-      {comedian.debutYear === null && isGroup && (
+      {comedian.careerStartYear === null && isGroup && (
         <p className="mt-2 text-xs text-neutral-400 max-w-lg">
-          {getNullDebutReason(comedian) === "mixed"
+          {getNullCareerStartReason(comedian) === "mixed"
             ? "※メンバーごとに芸歴開始年が異なるため、グループとしての芸歴開始年は設定していません。"
-            : "※一部メンバーの芸歴開始年が未確認のため、グループとしての芸歴開始年は設定していません。"}
+            : "※芸歴開始年が確認できていないメンバーがいるため、グループとしての芸歴開始年は設定していません。"}
         </p>
       )}
 
       <section className="mt-12">
         <h2 className="text-lg font-semibold mb-4">芸歴上の位置</h2>
 
-        {comedian.debutYear !== null ? (
-          <CareerPosition year={comedian.debutYear} excludeId={comedian.id} />
+        {comedian.careerStartYear !== null ? (
+          <CareerPosition year={comedian.careerStartYear} excludeId={comedian.id} />
         ) : datedMembers.length > 0 ? (
           <div className="space-y-10">
             {datedMembers.map((member) => (
               <div key={member.id ?? member.name}>
                 <h3 className="text-base font-semibold mb-3">
-                  {member.name}（芸歴開始 {member.debutYear}年）を基準にした場合
+                  {member.name}（芸歴開始 {member.careerStartYear}年）を基準にした場合
                 </h3>
                 <CareerPosition
-                  year={member.debutYear as number}
+                  year={member.careerStartYear as number}
                   excludeId={comedian.id}
                 />
               </div>
@@ -174,12 +182,12 @@ export default async function ComedianDetailPage({
           </p>
         )}
 
-        {comedian.debutYear === null &&
-          comedian.members?.some((m) => m.debutYear == null) && (
+        {comedian.careerStartYear === null &&
+          comedian.members?.some((m) => m.careerStartYear == null) && (
             <p className="mt-4 text-xs text-neutral-400">
               ※
               {comedian.members
-                .filter((m) => m.debutYear == null)
+                .filter((m) => m.careerStartYear == null)
                 .map((m) => m.name)
                 .join("、")}
               は芸歴開始年が不明のため表示していません。
@@ -225,13 +233,13 @@ export default async function ComedianDetailPage({
             ))}
           </ul>
         )}
-        {hasUnverifiedDebut && (
+        {hasUnverifiedCareerStart && (
           <p className="mt-3 text-xs text-neutral-400 leading-relaxed">
             芸歴開始年は二次情報源の値で、公式情報による確認は済んでいません。
           </p>
         )}
         <p className="mt-3 text-xs text-neutral-400 leading-relaxed">
-          本サイトの芸歴の前後関係は芸歴開始年（debutYear）の差を示す独自の目安です。
+          本サイトの芸歴の前後関係は芸歴開始年の差を示す独自の目安です。
           実際の芸能界上の先輩後輩関係を断定するものではありません。
         </p>
       </section>
