@@ -44,6 +44,7 @@ UI（app/, components/, lib/）
 - 元メンバーは `membershipStatus: "former"` + `leftYear`。グループ単位の計算には現在メンバーだけを使う。
 - 確認状況: `careerStartYearStatus`（年そのもの）と `verificationStatus`（その人物・グループの情報全体）は別物。二次情報を `confirmed` に勝手に昇格させない。出典間で矛盾したら多数決せず `conflict_needs_review`。
 - 出典: `sources[].fields` には、そのページで実際に裏付けられる項目だけを書く。URL の追跡用パラメータ（`utm_*` など）は外す。
+- 養成所名は「NSC東京校」「NSC大阪校」の表記に統一する（「東京NSC」「大阪NSC」は使わない）。
 - 既存データを、別の依頼のついでに直さない。
 
 ## 新しい芸人を追加するとき
