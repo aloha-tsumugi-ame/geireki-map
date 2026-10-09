@@ -3,12 +3,13 @@
 import { useId, useMemo, useState } from "react"
 import {
   describeMemberTarget,
+  listCompareTargets,
   searchCompareTargets,
   type CompareTarget,
 } from "@/lib/compareTargets"
 import { getKindLabel } from "@/lib/display"
 
-// 比較対象を検索して選ぶ。グループ・ピン芸人だけでなくメンバー個人も選べる。
+// 比較対象を検索、またはプルダウンから選ぶ。グループ・ピン芸人だけでなくメンバー個人も選べる。
 export default function ComparePicker({
   label,
   value,
@@ -73,6 +74,23 @@ export default function ComparePicker({
         autoComplete="off"
         className="mt-1 w-full rounded-xl border-2 border-ink bg-paper px-4 py-3 text-sm font-bold outline-none placeholder:font-normal placeholder:text-muted focus:border-shu"
       />
+
+      <select
+        value=""
+        onChange={(e) => e.target.value && onSelect(e.target.value)}
+        aria-label={`${label}を一覧から選ぶ`}
+        className="mt-2 w-full cursor-pointer rounded-xl border border-line bg-card px-3 py-2 text-xs text-ink-soft outline-none focus:border-shu"
+      >
+        <option value="">または一覧から選ぶ</option>
+        {listCompareTargets().map((t) => (
+          <option key={t.key} value={t.key}>
+            {t.kind === "member"
+              ? `　└ ${t.name}${t.member && t.member.membershipStatus === "former" ? "（元メンバー）" : ""}`
+              : t.name}
+            {t.careerStartYear !== null ? `（${t.careerStartYear}）` : ""}
+          </option>
+        ))}
+      </select>
 
       {keyword.trim() && (
         <ul className="absolute z-20 mt-2 max-h-80 w-full overflow-y-auto rounded-2xl border border-line bg-card shadow-xl">

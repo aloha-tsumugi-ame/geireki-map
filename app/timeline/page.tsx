@@ -1,7 +1,9 @@
 import type { Metadata } from "next"
+import { Suspense } from "react"
 import { getUndatedComedians, getYearEntries } from "@/lib/careerStart"
 import CareerTimeline from "@/components/CareerTimeline"
 import PageHeader from "@/components/PageHeader"
+import TimelineExplorer from "@/components/TimelineExplorer"
 
 export const metadata: Metadata = {
   title: "芸歴タイムライン",
@@ -21,7 +23,7 @@ export default function TimelinePage() {
         title="芸歴タイムライン"
         description={
           <>
-            <p>芸歴開始年ごとに芸人を一覧できます。年をクリックすると、その年に芸歴を始めた芸人の一覧へ移動します。</p>
+            <p>芸歴開始年ごとに芸人を一覧できます。検索すると、その芸人がタイムラインのどこにいるかを強調表示します。</p>
             <p className="mt-1 text-xs text-muted">
               ※メンバーごとに芸歴開始年が異なるグループは、メンバー名を添えてそれぞれの年に表示しています
             </p>
@@ -41,8 +43,17 @@ export default function TimelinePage() {
         </nav>
       </PageHeader>
 
-      <div className="mx-auto max-w-5xl px-4 pt-10">
-        <CareerTimeline entries={entries} undated={getUndatedComedians()} />
+      <div className="mx-auto max-w-5xl px-4">
+        {/* 静的HTMLには検索なしのタイムラインを出し、ブラウザで検索付きに置き換える */}
+        <Suspense
+          fallback={
+            <div className="pt-10">
+              <CareerTimeline entries={entries} undated={getUndatedComedians()} />
+            </div>
+          }
+        >
+          <TimelineExplorer />
+        </Suspense>
       </div>
     </div>
   )

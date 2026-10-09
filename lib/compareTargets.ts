@@ -104,3 +104,12 @@ export function describeMemberTarget(target: CompareTarget) {
     ? `${target.comedian.name}のメンバー`
     : `${target.comedian.name}の元メンバー`
 }
+
+// プルダウン用の全候補。グループ・ピン芸人を名前順に並べ、グループの直後にそのメンバーを続ける
+const allTargets: CompareTarget[] = [...comedians]
+  .sort((a, b) => a.name.localeCompare(b.name, "ja"))
+  .flatMap((c) => [entryTarget(c), ...membersOf(c).map((m) => memberTarget(c, m))])
+
+export function listCompareTargets() {
+  return allTargets
+}

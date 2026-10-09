@@ -83,7 +83,6 @@ export default async function ComedianDetailPage({
   const datedMembers = currentMembers.filter(
     (m) => m.careerStartYear != null
   )
-  const timelineYear = comedian.careerStartYear ?? datedMembers[0]?.careerStartYear
   const memberYearGroups = Array.from(
     new Set(datedMembers.map((m) => m.careerStartYear as number))
   ).map((year) => ({
@@ -257,7 +256,7 @@ export default async function ComedianDetailPage({
         {/* 操作 */}
         <section className="flex flex-wrap gap-3">
           <Link
-            href={timelineYear ? `/timeline#year-${timelineYear}` : "/timeline#year-unknown"}
+            href={`/timeline?focus=${comedian.slug}`}
             className="inline-flex items-center gap-2 rounded-full border-2 border-ink bg-card px-5 py-2.5 text-sm font-bold transition-colors hover:bg-ink hover:text-paper"
           >
             タイムラインで見る

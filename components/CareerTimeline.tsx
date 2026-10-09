@@ -10,6 +10,7 @@ export default function CareerTimeline({
   entries: YearEntry[]
   // 芸歴開始年が不明で年に配置できない芸人
   undated?: Comedian[]
+  // 検索で選んだ芸人。該当するチップを強調表示する
   highlightId?: string
 }) {
   const years = Array.from(new Set(entries.map((e) => e.year))).sort(
@@ -19,8 +20,10 @@ export default function CareerTimeline({
 
   const chipClass = (comedian: Comedian) =>
     comedian.id === highlightId
-      ? "border-shu bg-shu text-white"
-      : "border-line bg-card hover:border-ink hover:bg-ink hover:text-paper"
+      ? "border-shu bg-shu text-white shadow-[0_0_0_4px_var(--color-shu-soft)] scale-105"
+      : highlightId
+        ? "border-line bg-card opacity-60 hover:opacity-100 hover:border-ink hover:bg-ink hover:text-paper"
+        : "border-line bg-card hover:border-ink hover:bg-ink hover:text-paper"
 
   return (
     <div className="space-y-14">
@@ -39,11 +42,15 @@ export default function CareerTimeline({
                   .filter((e) => e.year === year)
                   .sort((a, b) => a.comedian.name.localeCompare(b.comedian.name, "ja"))
 
+                const rowHighlighted = group.some((e) => e.comedian.id === highlightId)
+
                 return (
                   <li
                     key={year}
                     id={`year-${year}`}
-                    className="relative grid scroll-mt-24 gap-3 pl-8 sm:grid-cols-[6rem_1fr] sm:gap-6"
+                    className={`relative grid scroll-mt-40 gap-3 rounded-2xl py-1 pl-8 transition-colors sm:grid-cols-[6rem_1fr] sm:gap-6 ${
+                      rowHighlighted ? "bg-shu-soft/70" : ""
+                    }`}
                   >
                     <span className="absolute left-0 top-1.5 h-4 w-4 rounded-full border-[3px] border-paper bg-shu ring-2 ring-shu/30" />
                     <Link
@@ -60,7 +67,8 @@ export default function CareerTimeline({
                         <li key={yearEntryKey(entry)}>
                           <Link
                             href={`/comedians/${entry.comedian.slug}`}
-                            className={`inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${chipClass(entry.comedian)}`}
+                            data-comedian={entry.comedian.id}
+                            className={`inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-sm font-medium transition-all ${chipClass(entry.comedian)}`}
                           >
                             {entry.comedian.name}
                             {entry.member && (
@@ -87,7 +95,8 @@ export default function CareerTimeline({
               <li key={comedian.id}>
                 <Link
                   href={`/comedians/${comedian.slug}`}
-                  className={`inline-flex rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${chipClass(comedian)}`}
+                  data-comedian={comedian.id}
+                  className={`inline-flex rounded-full border px-3 py-1.5 text-sm font-medium transition-all ${chipClass(comedian)}`}
                 >
                   {comedian.name}
                 </Link>
