@@ -349,6 +349,14 @@ function MemberCard({
         {showSchool && <p>養成所 {formatMemberSchool(member)}</p>}
         {showEquivalent && <p>{member.schoolEquivalent}相当</p>}
       </div>
+      {member.id && (
+        <Link
+          href={`/compare?first=${member.id}`}
+          className="mt-3 inline-flex text-xs font-bold text-shu hover:underline"
+        >
+          この人で比較 →
+        </Link>
+      )}
     </div>
   )
 }

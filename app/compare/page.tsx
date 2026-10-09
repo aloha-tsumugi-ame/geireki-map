@@ -14,7 +14,7 @@ export default function ComparePage() {
       <PageHeader
         eyebrow="COMPARE"
         title="芸人を比較する"
-        description="2組の芸人を選ぶと、芸歴開始年をもとに芸歴上どちらが何年先かを表示します。"
+        description="芸人を2人（2組）選ぶと、芸歴開始年をもとに芸歴上どちらが何年先輩かを表示します。コンビのメンバー個人どうしでも比較できます。"
       />
 
       <div className="mx-auto max-w-3xl space-y-8 px-4 pt-10">

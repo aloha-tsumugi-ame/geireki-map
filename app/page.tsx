@@ -106,7 +106,7 @@ export default function Home() {
               <p className="text-xs font-bold tracking-[0.2em] text-kin">COMPARE</p>
               <h2 className="mt-2 font-display text-2xl sm:text-3xl">2組の芸歴を比べる</h2>
               <p className="mt-3 text-sm text-paper/70">
-                芸歴開始年をもとに、芸歴上どちらが何年先かを表示します。
+                芸歴開始年をもとに、芸歴上どちらが何年先輩かを表示します。
               </p>
             </div>
             <Link
