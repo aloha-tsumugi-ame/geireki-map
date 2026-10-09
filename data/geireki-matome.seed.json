@@ -50,6 +50,14 @@
       {
         "date": "2026-10-09",
         "note": "東京ホテイソン（group-0108 / person-0247〜0248）を人間レビュー済み確定データで追加。出典URLの utm_source パラメータは除去。"
+      },
+      {
+        "date": "2026-10-09",
+        "note": "ダウンタウン（group-0030）に formationYear 1982・agency 吉本興業をユーザー指示で設定（出典未登録）。careerStartYear 等は変更なし。"
+      },
+      {
+        "date": "2026-10-09",
+        "note": "ダウンタウン（group-0030）の formationYear・agency の出典として吉本興業公式プロフィール（id=250）を追加。既存の出典（メンバー由来の geireki-matome.net）はグループの sources に明記して維持。"
       }
     ],
     "legacyRecords": {
@@ -7942,6 +7950,26 @@
         "松本人志",
         "浜田雅功"
       ],
+      "formationYear": 1982,
+      "agency": "吉本興業",
+      "sources": [
+        {
+          "title": "geireki-matome.net（二次情報源・要検証）",
+          "url": "https://geireki-matome.net/",
+          "type": "secondary_database",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "title": "ダウンタウン プロフィール｜吉本興業株式会社",
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=250",
+          "type": "agency_official",
+          "checkedAt": "2026-10-09",
+          "fields": [
+            "formationYear",
+            "agency"
+          ]
+        }
+      ],
       "memberCareerStartYears": {
         "松本人志": 1983,
         "浜田雅功": 1983
@@ -7950,7 +7978,8 @@
       "derivedEarliestCareerStartYear": 1983,
       "derivedLatestCareerStartYear": 1983,
       "groupCareerYearPolicy": "same_as_members",
-      "verificationStatus": "extracted_secondary"
+      "verificationStatus": "extracted_secondary",
+      "note": "formationYear（1982）・agency（吉本興業）はユーザー指示による確定値（2026-10-09）。出典: 吉本興業 公式プロフィール。"
     },
     {
       "id": "group-0031",
