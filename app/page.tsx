@@ -28,12 +28,12 @@ export default function Home() {
 
   return (
     <div>
-      <section className="bg-washi relative overflow-hidden border-b border-line">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-16 -top-20 hidden h-72 w-72 rotate-12 items-center justify-center rounded-full border-[10px] border-shu/15 font-display text-[9rem] text-shu/10 md:flex"
-        >
-          芸
+      {/* 検索候補のドロップダウンがヒーローの外へはみ出せるよう、section 自体は overflow を切らない */}
+      <section className="bg-washi relative border-b border-line">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute -right-16 -top-20 hidden h-72 w-72 rotate-12 items-center justify-center rounded-full border-[10px] border-shu/15 font-display text-[9rem] text-shu/10 md:flex">
+            芸
+          </div>
         </div>
         <div className="relative mx-auto max-w-5xl px-4 pb-16 pt-14 sm:pt-20">
           <p className="inline-flex items-center gap-2 rounded-full bg-ink px-3 py-1 text-xs font-bold tracking-wider text-paper">
